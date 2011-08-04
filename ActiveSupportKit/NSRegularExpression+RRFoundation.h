@@ -1,4 +1,4 @@
-// ActiveSupportKit ActiveSupportKitTests.m
+// RRFoundation NSRegularExpression+RRFoundation.h
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,17 +22,16 @@
 //
 //------------------------------------------------------------------------------
 
-#import "ActiveSupportKitTests.h"
-#import "ASInflectorMethods.h"
+#import <Foundation/Foundation.h>
 
-@implementation ActiveSupportKitTests
+@interface NSRegularExpression (RRFoundation)
 
-- (void)testCamelize
-{
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", YES), @"ActiveRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", NO), @"activeRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", YES), @"ActiveRecord::Errors", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", NO), @"activeRecord::Errors", @"");
-}
+/*!
+ * Replaces all matches of a given regular expression in a given string using a
+ * given block to compute the replacement string for each match. The block
+ * accepts the match result, the progressively replaced string along with its
+ * progressive offset.
+ */
+- (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult;
 
 @end

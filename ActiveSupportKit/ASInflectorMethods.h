@@ -1,4 +1,4 @@
-// ActiveSupportKit ActiveSupportKitTests.m
+// ActiveSupportKit ASInflectorMethods.h
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,17 +22,6 @@
 //
 //------------------------------------------------------------------------------
 
-#import "ActiveSupportKitTests.h"
-#import "ASInflectorMethods.h"
+#import <Foundation/Foundation.h>
 
-@implementation ActiveSupportKitTests
-
-- (void)testCamelize
-{
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", YES), @"ActiveRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", NO), @"activeRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", YES), @"ActiveRecord::Errors", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", NO), @"activeRecord::Errors", @"");
-}
-
-@end
+NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase);

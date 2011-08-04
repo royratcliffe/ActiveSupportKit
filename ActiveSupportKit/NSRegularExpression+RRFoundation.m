@@ -1,4 +1,4 @@
-// ActiveSupportKit ActiveSupportKitTests.m
+// RRFoundation NSRegularExpression+RRFoundation.m
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,17 +22,29 @@
 //
 //------------------------------------------------------------------------------
 
-#import "ActiveSupportKitTests.h"
-#import "ASInflectorMethods.h"
+#import "NSRegularExpression+RRFoundation.h"
 
-@implementation ActiveSupportKitTests
+@implementation NSRegularExpression (RRFoundation)
 
-- (void)testCamelize
+- (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult
 {
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", YES), @"ActiveRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", NO), @"activeRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", YES), @"ActiveRecord::Errors", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", NO), @"activeRecord::Errors", @"");
+	NSMutableString *mutableString = [string mutableCopy];
+	
+	NSInteger offset = 0;
+	for (NSTextCheckingResult *result in [self matchesInString:string options:0 range:NSMakeRange(0, [string length])])
+	{
+		// Replaces the entire result range. However the results after matching
+		// have ranges in the index space of the original string. Offset the
+		// range to correct for progressive replacements.
+		NSRange resultRange = [result range];
+		resultRange.location += offset;
+		
+		NSString *replacementString = replacementStringForResult(result, mutableString, offset);
+		[mutableString replaceCharactersInRange:resultRange withString:replacementString];
+		offset += [replacementString length] - resultRange.length;
+	}
+	
+	return [mutableString copy];
 }
 
 @end
