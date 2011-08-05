@@ -556,7 +556,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
 				INFOPLIST_FILE = "ActiveSupportKit/ActiveSupportKit-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ActiveSupportKit;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -570,7 +570,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
 				INFOPLIST_FILE = "ActiveSupportKit/ActiveSupportKit-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ActiveSupportKit;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
