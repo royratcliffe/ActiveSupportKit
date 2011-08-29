@@ -17,18 +17,16 @@
 		7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
-		7835462313EA6A050049385C /* NSRegularExpression+RRFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835462113EA6A050049385C /* NSRegularExpression+RRFoundation.h */; };
-		7835462413EA6A050049385C /* NSRegularExpression+RRFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835462213EA6A050049385C /* NSRegularExpression+RRFoundation.m */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
 		78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBDAC13EC587900BBFC62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78AFBDAA13EC587900BBFC62 /* InfoPlist.strings */; };
 		78AFBDB613EC58FC00BBFC62 /* ActiveSupportKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461113EA64C50049385C /* ActiveSupportKitTests.m */; };
 		78AFBDB813EC5B7F00BBFC62 /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
-		78AFBDB913EC5B7F00BBFC62 /* NSRegularExpression+RRFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835462213EA6A050049385C /* NSRegularExpression+RRFoundation.m */; };
 		78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
+		78C72956140BDC7B00D6752D /* RRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C72951140BDBEE00D6752D /* RRFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +43,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 78AFBD8E13EC587900BBFC62;
 			remoteInfo = ActiveSupportKitLibrary;
+		};
+		78C72950140BDBEE00D6752D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7877B4A513F4291B0088EFE0;
+			remoteInfo = RRFoundation;
+		};
+		78C72952140BDBEE00D6752D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7877B4BD13F4291B0088EFE0;
+			remoteInfo = RRFoundationTests;
+		};
+		78C72954140BDC6C00D6752D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7877B4A413F4291B0088EFE0;
+			remoteInfo = RRFoundation;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -66,8 +85,6 @@
 		7835461B13EA67C50049385C /* ActiveSupportKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveSupportKit.h; sourceTree = "<group>"; };
 		7835461C13EA67C50049385C /* ASInflectorMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflectorMethods.h; sourceTree = "<group>"; };
 		7835461D13EA67C50049385C /* ASInflectorMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflectorMethods.m; sourceTree = "<group>"; };
-		7835462113EA6A050049385C /* NSRegularExpression+RRFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+RRFoundation.h"; sourceTree = "<group>"; };
-		7835462213EA6A050049385C /* NSRegularExpression+RRFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+RRFoundation.m"; sourceTree = "<group>"; };
 		78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libActiveSupportKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AFBD9013EC587900BBFC62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78AFBD9413EC587900BBFC62 /* ActiveSupportKitLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActiveSupportKitLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -76,6 +93,7 @@
 		78AFBDA213EC587900BBFC62 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		78AFBDA913EC587900BBFC62 /* ActiveSupportKitLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKitLibraryTests-Info.plist"; sourceTree = "<group>"; };
 		78AFBDAB13EC587900BBFC62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RRFoundation.xcodeproj; path = ../RRFoundation/RRFoundation.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C72956140BDC7B00D6752D /* RRFoundation.framework in Frameworks */,
 				783545EF13EA64C50049385C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +140,7 @@
 		783545DF13EA64C40049385C = {
 			isa = PBXGroup;
 			children = (
+				78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */,
 				783545F413EA64C50049385C /* ActiveSupportKit */,
 				7835460A13EA64C50049385C /* ActiveSupportKitTests */,
 				78AFBD9213EC587900BBFC62 /* ActiveSupportKitLibrary */,
@@ -170,8 +190,6 @@
 				7835461B13EA67C50049385C /* ActiveSupportKit.h */,
 				7835461C13EA67C50049385C /* ASInflectorMethods.h */,
 				7835461D13EA67C50049385C /* ASInflectorMethods.m */,
-				7835462113EA6A050049385C /* NSRegularExpression+RRFoundation.h */,
-				7835462213EA6A050049385C /* NSRegularExpression+RRFoundation.m */,
 				783545F513EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKit;
@@ -239,6 +257,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		78C72949140BDBED00D6752D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78C72951140BDBEE00D6752D /* RRFoundation.framework */,
+				78C72953140BDBEE00D6752D /* RRFoundationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -248,7 +275,6 @@
 			files = (
 				7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */,
 				7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */,
-				7835462313EA6A050049385C /* NSRegularExpression+RRFoundation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +302,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				78C72955140BDC6C00D6752D /* PBXTargetDependency */,
 			);
 			name = ActiveSupportKitFramework;
 			productName = ActiveSupportKit;
@@ -356,6 +383,12 @@
 			mainGroup = 783545DF13EA64C40049385C;
 			productRefGroup = 783545EC13EA64C50049385C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 78C72949140BDBED00D6752D /* Products */;
+					ProjectRef = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				783545EA13EA64C50049385C /* ActiveSupportKitFramework */,
@@ -365,6 +398,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		78C72951140BDBEE00D6752D /* RRFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RRFoundation.framework;
+			remoteRef = 78C72950140BDBEE00D6752D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78C72953140BDBEE00D6752D /* RRFoundationTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RRFoundationTests.octest;
+			remoteRef = 78C72952140BDBEE00D6752D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		783545E913EA64C50049385C /* Resources */ = {
@@ -428,7 +478,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */,
-				7835462413EA6A050049385C /* NSRegularExpression+RRFoundation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,7 +494,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				78AFBDB813EC5B7F00BBFC62 /* ASInflectorMethods.m in Sources */,
-				78AFBDB913EC5B7F00BBFC62 /* NSRegularExpression+RRFoundation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +517,11 @@
 			isa = PBXTargetDependency;
 			target = 78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */;
 			targetProxy = 78AFBDA413EC587900BBFC62 /* PBXContainerItemProxy */;
+		};
+		78C72955140BDC6C00D6752D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RRFoundation;
+			targetProxy = 78C72954140BDC6C00D6752D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

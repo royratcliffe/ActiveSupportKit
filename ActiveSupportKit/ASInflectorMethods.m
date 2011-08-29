@@ -23,7 +23,7 @@
 //------------------------------------------------------------------------------
 
 #import "ASInflectorMethods.h"
-#import "NSRegularExpression+RRFoundation.h"
+#import <RRFoundation/RRFoundation.h>
 
 NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase)
 {
