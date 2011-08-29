@@ -27,7 +27,7 @@
 
 NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase)
 {
-	NSString *__autoreleasing camelizedString;
+	NSString *camelizedString;
 	if (firstLetterInUppercase)
 	{
 		camelizedString = [[NSRegularExpression regularExpressionWithPattern:@"/(.?)" options:0 error:NULL] replaceMatchesInString:lowerCaseAndUnderscoredWord replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
