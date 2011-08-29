@@ -24,11 +24,11 @@
 
 #import "NSRegularExpression+RRFoundation.h"
 
-@implementation NSRegularExpression (RRFoundation)
+@implementation NSRegularExpression(RRFoundation)
 
 - (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult
 {
-	NSMutableString *mutableString = [string mutableCopy];
+	NSMutableString *mutableString = [[string mutableCopy] autorelease];
 	
 	NSInteger offset = 0;
 	for (NSTextCheckingResult *result in [self matchesInString:string options:0 range:NSMakeRange(0, [string length])])
@@ -44,7 +44,7 @@
 		offset += [replacementString length] - resultRange.length;
 	}
 	
-	return [mutableString copy];
+	return [[mutableString copy] autorelease];
 }
 
 @end

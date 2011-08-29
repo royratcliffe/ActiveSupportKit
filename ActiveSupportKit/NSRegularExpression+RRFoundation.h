@@ -24,7 +24,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSRegularExpression (RRFoundation)
+@interface NSRegularExpression(RRFoundation)
 
 /*!
  * Replaces all matches of a given regular expression in a given string using a
