@@ -26,6 +26,7 @@
 		78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
+		78B10A8B140BF698007E5683 /* libRRFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */; };
 		78C72956140BDC7B00D6752D /* RRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C72951140BDBEE00D6752D /* RRFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +63,22 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 7877B4A413F4291B0088EFE0;
+			remoteGlobalIDString = 78DCC2E9140BE3620048D4F0;
 			remoteInfo = RRFoundation;
+		};
+		78DCC2D5140BE1950048D4F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C7295B140BDDE900D6752D;
+			remoteInfo = RRFoundationLibrary;
+		};
+		78DCC2D7140BE1950048D4F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78C72968140BDDE900D6752D;
+			remoteInfo = RRFoundationLibraryTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -128,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B10A8B140BF698007E5683 /* libRRFoundation.a in Frameworks */,
 				78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */,
 				78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */,
 				78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */,
@@ -262,6 +278,8 @@
 			children = (
 				78C72951140BDBEE00D6752D /* RRFoundation.framework */,
 				78C72953140BDBEE00D6752D /* RRFoundationTests.octest */,
+				78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */,
+				78DCC2D8140BE1950048D4F0 /* RRFoundationLibraryTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -412,6 +430,20 @@
 			fileType = wrapper.cfbundle;
 			path = RRFoundationTests.octest;
 			remoteRef = 78C72952140BDBEE00D6752D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRRFoundation.a;
+			remoteRef = 78DCC2D5140BE1950048D4F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78DCC2D8140BE1950048D4F0 /* RRFoundationLibraryTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RRFoundationLibraryTests.octest;
+			remoteRef = 78DCC2D7140BE1950048D4F0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
