@@ -15,7 +15,7 @@
 		7835460F13EA64C50049385C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7835460D13EA64C50049385C /* InfoPlist.strings */; };
 		7835461213EA64C50049385C /* ActiveSupportKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461113EA64C50049385C /* ActiveSupportKitTests.m */; };
 		7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
 		7835462313EA6A050049385C /* NSRegularExpression+RRFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835462113EA6A050049385C /* NSRegularExpression+RRFoundation.h */; };
 		7835462413EA6A050049385C /* NSRegularExpression+RRFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835462213EA6A050049385C /* NSRegularExpression+RRFoundation.m */; };
@@ -27,7 +27,7 @@
 		78AFBDB813EC5B7F00BBFC62 /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
 		78AFBDB913EC5B7F00BBFC62 /* NSRegularExpression+RRFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835462213EA6A050049385C /* NSRegularExpression+RRFoundation.m */; };
 		78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		783545F613EA64C50049385C /* ActiveSupportKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKit-Info.plist"; sourceTree = "<group>"; };
 		783545F813EA64C50049385C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		783545FA13EA64C50049385C /* ActiveSupportKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActiveSupportKit-Prefix.pch"; sourceTree = "<group>"; };
-		7835460313EA64C50049385C /* ActiveSupportKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7835460313EA64C50049385C /* ActiveSupportKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ActiveSupportKitTests.octest; path = ActiveSupportKitFrameworkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7835460413EA64C50049385C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7835460C13EA64C50049385C /* ActiveSupportKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKitTests-Info.plist"; sourceTree = "<group>"; };
 		7835460E13EA64C50049385C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -523,6 +523,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				PUBLIC_HEADERS_FOLDER_PATH = /include;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -543,6 +544,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PUBLIC_HEADERS_FOLDER_PATH = /include;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -606,11 +608,10 @@
 				DSTROOT = /tmp/ActiveSupportKitLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKitLibrary/ActiveSupportKitLibrary-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/$(PROJECT_NAME)";
 				PRODUCT_NAME = ActiveSupportKit;
-				PUBLIC_HEADERS_FOLDER_PATH = include;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -623,11 +624,10 @@
 				DSTROOT = /tmp/ActiveSupportKitLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKitLibrary/ActiveSupportKitLibrary-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/$(PROJECT_NAME)";
 				PRODUCT_NAME = ActiveSupportKit;
-				PUBLIC_HEADERS_FOLDER_PATH = include;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
@@ -645,7 +645,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKitLibrary/ActiveSupportKitLibrary-Prefix.pch";
 				INFOPLIST_FILE = "ActiveSupportKitLibraryTests/ActiveSupportKitLibraryTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -664,7 +663,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKitLibrary/ActiveSupportKitLibrary-Prefix.pch";
 				INFOPLIST_FILE = "ActiveSupportKitLibraryTests/ActiveSupportKitLibraryTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -710,6 +708,7 @@
 				78AFBDB213EC587900BBFC62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78AFBDB313EC587900BBFC62 /* Build configuration list for PBXNativeTarget "ActiveSupportKitLibraryTests" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +717,7 @@
 				78AFBDB513EC587900BBFC62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
