@@ -28,6 +28,9 @@
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
 		78B10A8B140BF698007E5683 /* libRRFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */; };
 		78C72956140BDC7B00D6752D /* RRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C72951140BDBEE00D6752D /* RRFoundation.framework */; };
+		78E0B180140D320C004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78E0B181140D320C004E1041 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
+		78E0B186140D3D68004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +112,8 @@
 		78AFBDA913EC587900BBFC62 /* ActiveSupportKitLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKitLibraryTests-Info.plist"; sourceTree = "<group>"; };
 		78AFBDAB13EC587900BBFC62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RRFoundation.xcodeproj; path = ../RRFoundation/RRFoundation.xcodeproj; sourceTree = "<group>"; };
+		78E0B17E140D320C004E1041 /* ASInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflector.h; sourceTree = "<group>"; };
+		78E0B17F140D320C004E1041 /* ASInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +211,8 @@
 				7835461B13EA67C50049385C /* ActiveSupportKit.h */,
 				7835461C13EA67C50049385C /* ASInflectorMethods.h */,
 				7835461D13EA67C50049385C /* ASInflectorMethods.m */,
+				78E0B17E140D320C004E1041 /* ASInflector.h */,
+				78E0B17F140D320C004E1041 /* ASInflector.m */,
 				783545F513EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKit;
@@ -293,6 +300,7 @@
 			files = (
 				7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */,
 				7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */,
+				78E0B180140D320C004E1041 /* ASInflector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +310,7 @@
 			files = (
 				78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */,
 				78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */,
+				78E0B186140D3D68004E1041 /* ASInflector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */,
+				78E0B181140D320C004E1041 /* ASInflector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

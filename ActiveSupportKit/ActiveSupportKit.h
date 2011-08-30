@@ -23,3 +23,4 @@
 //------------------------------------------------------------------------------
 
 #import <ActiveSupportKit/ASInflectorMethods.h>
+#import <ActiveSupportKit/ASInflector.h>

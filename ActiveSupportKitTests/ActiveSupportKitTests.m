@@ -23,7 +23,7 @@
 //------------------------------------------------------------------------------
 
 #import "ActiveSupportKitTests.h"
-#import "ASInflectorMethods.h"
+#import <ActiveSupportKit/ActiveSupportKit.h>
 
 @implementation ActiveSupportKitTests
 
@@ -62,6 +62,50 @@
 	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1003]), @"1003rd", nil);
 	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:-11]), @"-11th", nil);
 	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:-1021]), @"-1021st", nil);
+}
+
+//------------------------------------------------------------------------------
+#pragma mark                                                           Inflector
+//------------------------------------------------------------------------------
+
+- (void)testInflectorRegularExpressionRules
+{
+	ASInflector *inflector = [[[ASInflector alloc] init] autorelease];
+	[inflector addPluralRegularExpressionRule:@"^(ox)$" options:NSRegularExpressionCaseInsensitive replacement:@"$1en"];
+	STAssertEqualObjects([inflector pluralize:@"ox"], @"oxen", nil);
+	STAssertEqualObjects([inflector pluralize:@"Ox"], @"Oxen", nil);
+}
+
+- (void)testInflectorStringRules
+{
+	ASInflector *inflector = [[[ASInflector alloc] init] autorelease];
+	[inflector addPluralStringRule:@"person" options:NSCaseInsensitiveSearch replacement:@"people"];
+	STAssertEqualObjects([inflector pluralize:@"person"], @"people", nil);
+	
+	// The following tests a failure. It finds a match but replaces it with the
+	// literal replacement disregarding case considerations.
+	STAssertEqualObjects([inflector pluralize:@"Person"], @"people", nil);
+}
+
+- (void)testIrregular
+{
+	ASInflector *inflector = [[[ASInflector alloc] init] autorelease];
+	[inflector addIrregularWithSingular:@"person" plural:@"people"];
+	STAssertEqualObjects([inflector pluralize:@"person"], @"people", nil);
+	STAssertEqualObjects([inflector pluralize:@"Person"], @"People", nil);
+	
+	// Ignores capitals after the first letter. Rails does that too.
+	//
+	//	require 'active_support'
+	//	require 'active_support/inflector/inflections'
+	//	require 'active_support/inflections'
+	//	p ActiveSupport::Inflector.pluralize "PERSON"
+	//
+	// gives
+	//
+	//	"People"
+	//
+	STAssertEqualObjects([inflector pluralize:@"PERSON"], @"People", nil);
 }
 
 @end
