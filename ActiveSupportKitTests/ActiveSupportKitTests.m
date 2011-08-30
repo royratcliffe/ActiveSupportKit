@@ -125,6 +125,7 @@
 - (void)testHumanize
 {
 	STAssertEqualObjects([[ASInflector defaultInflector] humanize:@"employee_salary"], @"Employee salary", nil);
+	STAssertEqualObjects([[ASInflector defaultInflector] humanize:@"author_id"], @"Author", nil);
 }
 
 @end
