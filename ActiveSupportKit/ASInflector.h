@@ -42,13 +42,19 @@
 	NSMutableArray *humans;
 }
 
++ (ASInflector *)defaultInflector;
+
 - (void)addPluralRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
 - (void)addPluralStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
+
 - (void)addSingularRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
 - (void)addSingularStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
 
 - (void)addIrregularWithSingular:(NSString *)singular plural:(NSString *)plural;
 
+- (void)addUncountable:(NSString *)uncountable;
+
 - (NSString *)pluralize:(NSString *)word;
+- (NSString *)singularize:(NSString *)word;
 
 @end

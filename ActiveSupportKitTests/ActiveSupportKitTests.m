@@ -108,4 +108,18 @@
 	STAssertEqualObjects([inflector pluralize:@"PERSON"], @"People", nil);
 }
 
+- (void)testPlurals
+{
+	STAssertEqualObjects([[ASInflector defaultInflector] pluralize:@"quiz"], @"quizzes", nil);
+	STAssertEqualObjects([[ASInflector defaultInflector] pluralize:@"bus"], @"buses", nil);
+	STAssertEqualObjects([[ASInflector defaultInflector] pluralize:@"octopus"], @"octopi", nil);
+	STAssertEqualObjects([[ASInflector defaultInflector] pluralize:@"axe"], @"axes", nil);
+	STAssertEqualObjects([[ASInflector defaultInflector] pluralize:@"object"], @"objects", nil);
+}
+
+- (void)testSingulars
+{
+	STAssertEqualObjects([[ASInflector defaultInflector] singularize:@"quizzes"], @"quiz", nil);
+}
+
 @end
