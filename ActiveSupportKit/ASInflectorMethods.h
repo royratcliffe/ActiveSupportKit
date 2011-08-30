@@ -41,3 +41,5 @@ NSString *ASInflectorUnderscore(NSString *camelCasedWord);
  * Replaces underscores with dashes.
  */
 NSString *ASInflectorDasherize(NSString *underscoredWord);
+
+NSString *ASInflectorDemodulize(NSString *classNameInModule);

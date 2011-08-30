@@ -60,3 +60,8 @@ NSString *ASInflectorDasherize(NSString *underscoredWord)
 {
 	return [underscoredWord stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
 }
+
+NSString *ASInflectorDemodulize(NSString *classNameInModule)
+{
+	return [[NSRegularExpression regularExpressionWithPattern:@"^.*::" options:0 error:NULL] stringByReplacingMatchesInString:classNameInModule options:0 range:NSMakeRange(0, [classNameInModule length]) withTemplate:@""];
+}

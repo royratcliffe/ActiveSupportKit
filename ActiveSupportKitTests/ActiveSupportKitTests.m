@@ -48,4 +48,10 @@
 	STAssertEqualObjects(ASInflectorDasherize(@"puni_puni"), @"puni-puni", nil);
 }
 
+- (void)testDemodulize
+{
+	STAssertEqualObjects(ASInflectorDemodulize(@"ActiveRecord::CoreExtensions::String::Inflections"), @"Inflections", nil);
+	STAssertEqualObjects(ASInflectorDemodulize(@"Inflections"), @"Inflections", nil);
+}
+
 @end
