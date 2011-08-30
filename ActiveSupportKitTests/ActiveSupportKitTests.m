@@ -128,4 +128,10 @@
 	STAssertEqualObjects([[ASInflector defaultInflector] humanize:@"author_id"], @"Author", nil);
 }
 
+- (void)testTitleize
+{
+	STAssertEqualObjects([[ASInflector defaultInflector] titleize:@"man from the boondocks"], @"Man From The Boondocks", nil);
+	STAssertEqualObjects([[ASInflector defaultInflector] titleize:@"x-men: the last stand"], @"X Men: The Last Stand", nil);
+}
+
 @end

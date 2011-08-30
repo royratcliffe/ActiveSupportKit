@@ -62,5 +62,6 @@
 - (NSString *)pluralize:(NSString *)word;
 - (NSString *)singularize:(NSString *)word;
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord;
+- (NSString *)titleize:(NSString *)word;
 
 @end

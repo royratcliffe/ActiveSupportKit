@@ -23,6 +23,9 @@
 //------------------------------------------------------------------------------
 
 #import "ASInflector.h"
+#import "ASInflectorMethods.h"
+
+#import <RRFoundation/RRFoundation.h>
 
 NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word);
 
@@ -277,6 +280,13 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 		[result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringToIndex:1] capitalizedString]];
 	}
 	return result;
+}
+
+- (NSString *)titleize:(NSString *)word
+{
+	return [[NSRegularExpression regularExpressionWithPattern:@"\\b('?[a-z])" options:0 error:NULL] replaceMatchesInString:[self humanize:ASInflectorUnderscore(word)] replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+		return [[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$1"] capitalizedString];
+	}];
 }
 
 - (void)dealloc
