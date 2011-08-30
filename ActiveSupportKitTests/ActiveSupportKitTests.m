@@ -54,4 +54,14 @@
 	STAssertEqualObjects(ASInflectorDemodulize(@"Inflections"), @"Inflections", nil);
 }
 
+- (void)testOrdinalize
+{
+	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1]), @"1st", nil);
+	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:2]), @"2nd", nil);
+	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1002]), @"1002nd", nil);
+	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1003]), @"1003rd", nil);
+	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:-11]), @"-11th", nil);
+	STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:-1021]), @"-1021st", nil);
+}
+
 @end

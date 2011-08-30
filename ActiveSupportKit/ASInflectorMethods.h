@@ -43,3 +43,5 @@ NSString *ASInflectorUnderscore(NSString *camelCasedWord);
 NSString *ASInflectorDasherize(NSString *underscoredWord);
 
 NSString *ASInflectorDemodulize(NSString *classNameInModule);
+
+NSString *ASInflectorOrdinalize(NSNumber *number);
