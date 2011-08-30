@@ -195,6 +195,24 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	[singulars insertObject:[NSArray arrayWithObjects:rule, replacement, [NSNumber numberWithUnsignedInteger:options], nil] atIndex:0];
 }
 
+- (void)addHumanRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement
+{
+	[humans insertObject:[NSArray arrayWithObjects:[NSRegularExpression regularExpressionWithPattern:rule options:options error:NULL], replacement, nil] atIndex:0];
+}
+
+- (void)addHumanStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement
+{
+	[humans insertObject:[NSArray arrayWithObjects:rule, replacement, [NSNumber numberWithUnsignedInteger:options], nil] atIndex:0];
+}
+
+- (void)clear
+{
+	[plurals removeAllObjects];
+	[singulars removeAllObjects];
+	[uncountables removeAllObjects];
+	[humans removeAllObjects];
+}
+
 - (void)addIrregularWithSingular:(NSString *)singular plural:(NSString *)plural
 {
 	[uncountables removeObject:singular];
@@ -246,6 +264,19 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 		}
 	}
 	return ASInflectorApplyRulesAndReplacements(singulars, word);
+}
+
+- (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord
+{
+	NSMutableString *result = [[ASInflectorApplyRulesAndReplacements(humans, lowerCaseAndUnderscoredWord) mutableCopy] autorelease];
+	[[NSRegularExpression regularExpressionWithPattern:@"_id$" options:0 error:NULL] replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:@""];
+	[result replaceOccurrencesOfString:@"_" withString:@" " options:0 range:NSMakeRange(0, [result length])];
+	// Take care. Do not use Apple's -[NSString capitalizedString] method because it capitalises every word. Just do the first letter.
+	if ([result length])
+	{
+		[result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringToIndex:1] capitalizedString]];
+	}
+	return result;
 }
 
 - (void)dealloc

@@ -54,7 +54,13 @@
 
 - (void)addUncountable:(NSString *)uncountable;
 
+- (void)addHumanRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
+- (void)addHumanStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
+
+- (void)clear;
+
 - (NSString *)pluralize:(NSString *)word;
 - (NSString *)singularize:(NSString *)word;
+- (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord;
 
 @end
