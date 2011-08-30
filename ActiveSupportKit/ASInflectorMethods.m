@@ -46,3 +46,17 @@ NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstL
 	}
 	return camelizedString;
 }
+
+NSString *ASInflectorUnderscore(NSString *camelCasedWord)
+{
+	NSMutableString *word = [[camelCasedWord mutableCopy] autorelease];
+	[[NSRegularExpression regularExpressionWithPattern:@"::" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"/"];
+	[[NSRegularExpression regularExpressionWithPattern:@"([A-Z]+)([A-Z][a-z])" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"$1_$2"];
+	[[NSRegularExpression regularExpressionWithPattern:@"([a-z\\d])([A-Z])" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"$1_$2"];
+	return [[[[word copy] autorelease] stringByReplacingOccurrencesOfString:@"-" withString:@"_"] lowercaseString];
+}
+
+NSString *ASInflectorDasherize(NSString *underscoredWord)
+{
+	return [underscoredWord stringByReplacingOccurrencesOfString:@"_" withString:@"-"];
+}

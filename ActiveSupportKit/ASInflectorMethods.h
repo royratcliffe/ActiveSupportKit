@@ -25,3 +25,19 @@
 #import <Foundation/Foundation.h>
 
 NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase);
+
+/*!
+ * Makes an underscored and lowercase form of the given string. Replaces
+ * double-colons with slashes. Two or more capital letters followed by lower
+ * case letters become separated words, separated that is by an underscore; the
+ * underscore appears before the last capital, e.g. ABCdef becomes ab_cdef
+ * assuming that Cdef is a meaningful word. Similarly, a1A becomes
+ * underscore-separated as a1_a. Finally replaces dashes for underscores and
+ * down-cases the result.
+ */
+NSString *ASInflectorUnderscore(NSString *camelCasedWord);
+
+/*!
+ * Replaces underscores with dashes.
+ */
+NSString *ASInflectorDasherize(NSString *underscoredWord);

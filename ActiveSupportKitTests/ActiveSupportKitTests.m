@@ -35,4 +35,17 @@
 	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", NO), @"activeRecord::Errors", @"");
 }
 
+- (void)testUnderscore
+{
+	STAssertEqualObjects(ASInflectorUnderscore(@"ActiveRecord"), @"active_record", nil);
+	STAssertEqualObjects(ASInflectorUnderscore(@"ActiveRecord::Errors"), @"active_record/errors", nil);
+	STAssertEqualObjects(ASInflectorUnderscore(@"AAAAzzzz"), @"aaa_azzzz", nil);
+	STAssertEqualObjects(ASInflectorUnderscore(@"a1Z"), @"a1_z", nil);
+}
+
+- (void)testDasherize
+{
+	STAssertEqualObjects(ASInflectorDasherize(@"puni_puni"), @"puni-puni", nil);
+}
+
 @end
