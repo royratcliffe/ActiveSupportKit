@@ -58,7 +58,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 				{ @"([ti])um$", @"$1a" },
 				{ @"([ti])a$", @"$1a" },
 				{ @"sis$", @"ses" },
-				{ @"(?:([^f])fe|([lr])f)$", @"$1\2ves" },
+				{ @"(?:([^f])fe|([lr])f)$", @"$1$2ves" },
 				{ @"(hive)$", @"$1s" },
 				{ @"([^aeiouy]|qu)y$", @"$1ies" },
 				{ @"(x|ch|ss|sh)$", @"$1es" },
@@ -263,16 +263,16 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 {
 	NSMutableString *result = [[word mutableCopy] autorelease];
 	// Plurals is an array of arrays. The elements have two or three
-	// sub-elements. If two elements, the first specifies a regular
-	// expression and the second its replacement template. If three
-	// elements, the first specifies a string target, the second its
-	// replacement and the third its string compare options.
+	// sub-elements. If two elements, the first specifies a regular expression
+	// and the second its replacement template. If three elements, the first
+	// specifies a string target, the second its replacement and the third its
+	// string compare options.
 	//
 	// Why is this necessary? Simply because Objective-C has no polymorphic
-	// “gsub” method which accepts either a regular expression or
-	// string. Nor can string-based search and replacements incorporate any
-	// flags; comparison options amount to extra baggage. Hence the array of
-	// plurals polymorphically carries different kinds of rules and their
+	// “gsub” method which accepts either a regular expression or string. Nor
+	// can string-based search and replacements incorporate any flags;
+	// comparison options amount to extra baggage. Hence the array of plurals
+	// polymorphically carries different kinds of rules and their
 	// replacements. The number of elements, the array count, determines
 	// behaviour.
 	for (NSArray *ruleAndReplacement in rulesAndReplacements)
