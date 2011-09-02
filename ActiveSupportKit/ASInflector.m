@@ -274,7 +274,8 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	NSMutableString *result = [[ASInflectorApplyRulesAndReplacements(humans, lowerCaseAndUnderscoredWord) mutableCopy] autorelease];
 	[[NSRegularExpression regularExpressionWithPattern:@"_id$" options:0 error:NULL] replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:@""];
 	[result replaceOccurrencesOfString:@"_" withString:@" " options:0 range:NSMakeRange(0, [result length])];
-	// Take care. Do not use Apple's -[NSString capitalizedString] method because it capitalises every word. Just do the first letter.
+	// Take care. Do not use Apple's -[NSString capitalizedString] method
+	// because it capitalises every word. Just do the first letter.
 	if ([result length])
 	{
 		[result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringToIndex:1] capitalizedString]];
