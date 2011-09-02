@@ -26,4 +26,6 @@
 
 @interface NSObject(ActiveSupport)
 
+- (NSString *)toParam;
+
 @end

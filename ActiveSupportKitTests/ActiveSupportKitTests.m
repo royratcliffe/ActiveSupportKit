@@ -138,6 +138,8 @@
 {
 	NSArray *array = [NSArray arrayWithObjects:@"a", @"b", @"c", nil];
 	STAssertEqualObjects([array toParam], @"a/b/c", nil);
+	array = [NSArray arrayWithObjects:[NSNumber numberWithInt:1], [NSNumber numberWithInt:2], [NSNumber numberWithInt:3], nil];
+	STAssertEqualObjects([array toParam], @"1/2/3", nil);
 }
 
 @end
