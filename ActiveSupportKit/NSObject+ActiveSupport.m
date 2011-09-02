@@ -34,4 +34,9 @@
 	return [self description];
 }
 
+- (NSString *)toQueryWithKey:(NSString *)key
+{
+	return [NSString stringWithFormat:@"%@=%@", [[key description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[self toParam] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+}
+
 @end

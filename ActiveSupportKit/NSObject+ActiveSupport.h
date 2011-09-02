@@ -27,5 +27,6 @@
 @interface NSObject(ActiveSupport)
 
 - (NSString *)toParam;
+- (NSString *)toQueryWithKey:(NSString *)key;
 
 @end

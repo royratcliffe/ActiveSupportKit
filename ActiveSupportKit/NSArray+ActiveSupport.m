@@ -37,4 +37,15 @@
 	return [paramArray componentsJoinedByString:@"/"];
 }
 
+- (NSString *)toQueryWithKey:(NSString *)key
+{
+	NSString *prefix = [NSString stringWithFormat:@"%@[]", key];
+	NSMutableArray *paramArray = [NSMutableArray arrayWithCapacity:[self count]];
+	for (id object in self)
+	{
+		[paramArray addObject:[object toQueryWithKey:prefix]];
+	}
+	return [paramArray componentsJoinedByString:@"&"];
+}
+
 @end

@@ -1,4 +1,4 @@
-// ActiveSupportKit NSArray+ActiveSupport.h
+// ActiveSupportKit NSDictionary+ActiveSupport.h
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -24,15 +24,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray(ActiveSupport)
+@interface NSDictionary(ActiveSupport)
 
-/*!
- * Sends -[NSObject toParam] to every element of this array. Collects the
- * resulting strings. Finally joins the strings using forward slashes as
- * separators. Useful for constructing URL paths from array elements.
- */
-- (NSString *)toParam;
-
-- (NSString *)toQueryWithKey:(NSString *)key;
+- (NSString *)toParamWithNamespace:(NSString *)name;
 
 @end

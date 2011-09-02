@@ -1,4 +1,4 @@
-// ActiveSupportKit NSArray+ActiveSupport.h
+// ActiveSupportKit NSDictionary+ActiveSupport.m
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,17 +22,25 @@
 //
 //------------------------------------------------------------------------------
 
-#import <Foundation/Foundation.h>
+#import "NSDictionary+ActiveSupport.h"
+#import "NSArray+ActiveSupport.h"
 
-@interface NSArray(ActiveSupport)
+@implementation NSDictionary(ActiveSupport)
 
-/*!
- * Sends -[NSObject toParam] to every element of this array. Collects the
- * resulting strings. Finally joins the strings using forward slashes as
- * separators. Useful for constructing URL paths from array elements.
+/*
+ * You might be wondering why the implementation uses “to query” even though
+ * this method's name is “to param.” That is a good question. This usage simply
+ * echoes Rails.
  */
-- (NSString *)toParam;
-
-- (NSString *)toQueryWithKey:(NSString *)key;
+- (NSString *)toParamWithNamespace:(NSString *)name
+{
+	NSMutableArray *paramArray = [NSMutableArray arrayWithCapacity:[self count]];
+	for (id key in self)
+	{
+		id value = [self objectForKey:key];
+		[paramArray addObject:[value toQueryWithKey:name ? [NSString stringWithFormat:@"%@[%@]", name, key] : key]];
+	}
+	return [paramArray componentsJoinedByString:@"&"];
+}
 
 @end

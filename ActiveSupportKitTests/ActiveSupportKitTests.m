@@ -142,4 +142,28 @@
 	STAssertEqualObjects([array toParam], @"1/2/3", nil);
 }
 
+- (void)testArrayToQuery
+{
+	NSArray *array = [NSArray arrayWithObjects:@"Rails", @"coding", nil];
+	STAssertEqualObjects([array toQueryWithKey:@"hobbies"], @"hobbies%5B%5D=Rails&hobbies%5B%5D=coding", nil);
+}
+
+- (void)testHashToParam
+{
+	NSDictionary *hash = [NSDictionary dictionaryWithObjectsAndKeys:@"David", @"name", @"Danish", @"nationality", nil];
+	STAssertEqualObjects([hash toParamWithNamespace:nil], @"name=David&nationality=Danish", nil);
+	STAssertEqualObjects([hash toParamWithNamespace:@"user"], @"user%5Bname%5D=David&user%5Bnationality%5D=Danish", nil);
+	// Rails outputs
+	//
+	//	user[name]=David&user[nationality]=Danish
+	//
+	// but this Objective-C implementation outputs
+	//
+	//	user%5Bname%5D=David&user%5Bnationality%5D=Danish
+	//
+	// This happens because [ and ] turns to %5B and %5D. Apple's
+	// -stringByAddingPercentEscapesUsingEncoding: escapes more zealously
+	// compared to Rails. Does it amount to the same thing in the end?
+}
+
 @end
