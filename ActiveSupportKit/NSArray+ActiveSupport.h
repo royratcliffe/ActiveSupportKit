@@ -1,9 +1,9 @@
-// ActiveSupportKit ActiveSupportKit.h
+// ActiveSupportKit NSArray+ActiveSupport.h
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the “Software”), to deal
+// of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
@@ -12,7 +12,7 @@
 //	The above copyright notice and this permission notice shall be included in
 //	all copies or substantial portions of the Software.
 //
-// THE SOFTWARE IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EITHER
+// THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EITHER
 // EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO
 // EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
@@ -22,9 +22,15 @@
 //
 //------------------------------------------------------------------------------
 
-#import <ActiveSupportKit/ASInflectorMethods.h>
-#import <ActiveSupportKit/ASInflector.h>
+#import <Foundation/Foundation.h>
 
-// categories
-#import <ActiveSupportKit/NSObject+ActiveSupport.h>
-#import <ActiveSupportKit/NSArray+ActiveSupport.h>
+@interface NSArray(ActiveSupport)
+
+/*!
+ * Sends -[NSObject toParam] to every element of this array. Collects the
+ * resulting strings. Finally joins the strings using forward slashes as
+ * separators. Useful for constructing URL paths from array elements.
+ */
+- (NSString *)toParam;
+
+@end

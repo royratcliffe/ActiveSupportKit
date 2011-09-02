@@ -134,4 +134,10 @@
 	STAssertEqualObjects([[ASInflector defaultInflector] titleize:@"x-men: the last stand"], @"X Men: The Last Stand", nil);
 }
 
+- (void)testArrayToParam
+{
+	NSArray *array = [NSArray arrayWithObjects:@"a", @"b", @"c", nil];
+	STAssertEqualObjects([array toParam], @"a/b/c", nil);
+}
+
 @end
