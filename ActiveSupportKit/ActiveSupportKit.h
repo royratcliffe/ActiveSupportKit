@@ -29,3 +29,5 @@
 #import <ActiveSupportKit/NSObject+ActiveSupport.h>
 #import <ActiveSupportKit/NSArray+ActiveSupport.h>
 #import <ActiveSupportKit/NSDictionary+ActiveSupport.h>
+
+#import <ActiveSupportKit/Versioning.h>

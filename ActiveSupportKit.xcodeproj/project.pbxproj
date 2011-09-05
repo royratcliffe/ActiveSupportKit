@@ -25,6 +25,10 @@
 		7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
+		7835BC751414B8E600CC4B56 /* Versioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7835BC761414B8E600CC4B56 /* Versioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7835BC771414B8E600CC4B56 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BC741414B8E600CC4B56 /* Versioning.m */; };
+		7835BC781414B8E600CC4B56 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BC741414B8E600CC4B56 /* Versioning.m */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
 		78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
@@ -119,6 +123,8 @@
 		7835461B13EA67C50049385C /* ActiveSupportKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveSupportKit.h; sourceTree = "<group>"; };
 		7835461C13EA67C50049385C /* ASInflectorMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflectorMethods.h; sourceTree = "<group>"; };
 		7835461D13EA67C50049385C /* ASInflectorMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflectorMethods.m; sourceTree = "<group>"; };
+		7835BC731414B8E600CC4B56 /* Versioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
+		7835BC741414B8E600CC4B56 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libActiveSupportKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AFBD9013EC587900BBFC62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78AFBD9413EC587900BBFC62 /* ActiveSupportKitLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActiveSupportKitLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -237,6 +243,8 @@
 				7835461D13EA67C50049385C /* ASInflectorMethods.m */,
 				78E0B17E140D320C004E1041 /* ASInflector.h */,
 				78E0B17F140D320C004E1041 /* ASInflector.m */,
+				7835BC731414B8E600CC4B56 /* Versioning.h */,
+				7835BC741414B8E600CC4B56 /* Versioning.m */,
 				783545F513EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKit;
@@ -328,6 +336,7 @@
 				7832703814115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */,
 				7832704214115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */,
 				78B628FC141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */,
+				7835BC751414B8E600CC4B56 /* Versioning.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 				7832703914115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */,
 				7832704314115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */,
 				78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */,
+				7835BC761414B8E600CC4B56 /* Versioning.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +563,7 @@
 				7832703A14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */,
 				7832704414115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */,
 				78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */,
+				7835BC771414B8E600CC4B56 /* Versioning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +583,7 @@
 				7832703B14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */,
 				7832704514115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */,
 				78B628FF141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */,
+				7835BC781414B8E600CC4B56 /* Versioning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,8 +648,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -655,6 +667,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = k;
 			};
 			name = Debug;
 		};
@@ -663,8 +677,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -675,6 +689,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = k;
 			};
 			name = Release;
 		};

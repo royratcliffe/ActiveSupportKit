@@ -27,6 +27,11 @@
 
 @implementation ActiveSupportKitTests
 
+- testVersioning
+{
+	STAssertEquals(kActiveSupportKitVersionNumber, 1.0, nil);
+}
+
 - (void)testCamelize
 {
 	STAssertEqualObjects(ASInflectorCamelize(@"active_record", YES), @"ActiveRecord", @"");
