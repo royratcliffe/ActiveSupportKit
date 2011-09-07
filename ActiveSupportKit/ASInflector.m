@@ -25,7 +25,7 @@
 #import "ASInflector.h"
 #import "ASInflectorMethods.h"
 
-#import <RRFoundation/RRFoundation.h>
+#import "NSRegularExpression+ActiveSupport.h"
 
 NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word);
 

@@ -1,4 +1,4 @@
-// ActiveSupportKit ActiveSupportKit.h
+// ActiveSupportKit NSRegularExpression+ActiveSupport.m
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,13 +22,29 @@
 //
 //------------------------------------------------------------------------------
 
-#import <ActiveSupportKit/ASInflectorMethods.h>
-#import <ActiveSupportKit/ASInflector.h>
+#import "NSRegularExpression+ActiveSupport.h"
 
-// categories
-#import <ActiveSupportKit/NSObject+ActiveSupport.h>
-#import <ActiveSupportKit/NSArray+ActiveSupport.h>
-#import <ActiveSupportKit/NSDictionary+ActiveSupport.h>
-#import <ActiveSupportKit/NSRegularExpression+ActiveSupport.h>
+@implementation NSRegularExpression(ActiveSupport)
 
-#import <ActiveSupportKit/Versioning.h>
+- (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult
+{
+	NSMutableString *mutableString = [[string mutableCopy] autorelease];
+	
+	NSInteger offset = 0;
+	for (NSTextCheckingResult *result in [self matchesInString:string options:0 range:NSMakeRange(0, [string length])])
+	{
+		// Replaces the entire result range. However the results after matching
+		// have ranges in the index space of the original string. Offset the
+		// range to correct for progressive replacements.
+		NSRange resultRange = [result range];
+		resultRange.location += offset;
+		
+		NSString *replacementString = replacementStringForResult(result, mutableString, offset);
+		[mutableString replaceCharactersInRange:resultRange withString:replacementString];
+		offset += [replacementString length] - resultRange.length;
+	}
+	
+	return [[mutableString copy] autorelease];
+}
+
+@end

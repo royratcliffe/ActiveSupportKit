@@ -31,7 +31,6 @@
 		78719ACE141542CD00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78719ACF141542CE00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78719AD0141543C800D102A0 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
-		789946C214154B74008440EF /* RRFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78719AC71415411700D102A0 /* RRFoundation.framework */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
 		78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
@@ -40,7 +39,6 @@
 		78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
-		78B10A8B140BF698007E5683 /* libRRFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */; };
 		78B628FC141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
@@ -48,6 +46,10 @@
 		78E0B180140D320C004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E0B181140D320C004E1041 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
 		78E0B186140D3D68004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
+		78F3B50A14175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,54 +60,12 @@
 			remoteGlobalIDString = 783545EA13EA64C50049385C;
 			remoteInfo = ActiveSupportKit;
 		};
-		78719AC61415411700D102A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78DCC2EA140BE3620048D4F0;
-			remoteInfo = RRFoundationFramework;
-		};
-		78719AC81415411700D102A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78DCC302140BE3620048D4F0;
-			remoteInfo = RRFoundationFrameworkTests;
-		};
-		78719ACB1415416800D102A0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78DCC33D140BE4E40048D4F0;
-			remoteInfo = RRFoundationLibrary;
-		};
 		78AFBDA413EC587900BBFC62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 783545E113EA64C40049385C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 78AFBD8E13EC587900BBFC62;
 			remoteInfo = ActiveSupportKitLibrary;
-		};
-		78C72954140BDC6C00D6752D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78DCC2E9140BE3620048D4F0;
-			remoteInfo = RRFoundation;
-		};
-		78DCC2D5140BE1950048D4F0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78C7295B140BDDE900D6752D;
-			remoteInfo = RRFoundationLibrary;
-		};
-		78DCC2D7140BE1950048D4F0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78C72968140BDDE900D6752D;
-			remoteInfo = RRFoundationLibraryTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -134,9 +94,10 @@
 		78AFBD9D13EC587900BBFC62 /* ActiveSupportKitLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ActiveSupport.h"; sourceTree = "<group>"; };
 		78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ActiveSupport.m"; sourceTree = "<group>"; };
-		78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RRFoundation.xcodeproj; path = ../RRFoundation/RRFoundation.xcodeproj; sourceTree = "<group>"; };
 		78E0B17E140D320C004E1041 /* ASInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflector.h; sourceTree = "<group>"; };
 		78E0B17F140D320C004E1041 /* ASInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflector.m; sourceTree = "<group>"; };
+		78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+ActiveSupport.h"; sourceTree = "<group>"; };
+		78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+ActiveSupport.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				789946C214154B74008440EF /* RRFoundation.framework in Frameworks */,
 				78719ACE141542CD00D102A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78B10A8B140BF698007E5683 /* libRRFoundation.a in Frameworks */,
 				78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */,
 				78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */,
 				78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */,
@@ -184,7 +143,6 @@
 		783545DF13EA64C40049385C = {
 			isa = PBXGroup;
 			children = (
-				78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */,
 				783545F413EA64C50049385C /* ActiveSupportKit */,
 				7835460A13EA64C50049385C /* ActiveSupportKitTests */,
 				783545ED13EA64C50049385C /* Frameworks */,
@@ -230,6 +188,8 @@
 				7832704114115D3400ECCE7D /* NSArray+ActiveSupport.m */,
 				78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */,
 				78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */,
+				78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */,
+				78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */,
 				7835461C13EA67C50049385C /* ASInflectorMethods.h */,
 				7835461D13EA67C50049385C /* ASInflectorMethods.m */,
 				78E0B17E140D320C004E1041 /* ASInflector.h */,
@@ -270,17 +230,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		78C72949140BDBED00D6752D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				78719AC71415411700D102A0 /* RRFoundation.framework */,
-				78719AC91415411700D102A0 /* RRFoundationTests.octest */,
-				78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */,
-				78DCC2D8140BE1950048D4F0 /* RRFoundationLibraryTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -295,6 +244,7 @@
 				7832704214115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */,
 				78B628FC141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */,
 				7835BC751414B8E600CC4B56 /* Versioning.h in Headers */,
+				78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +259,7 @@
 				7832704314115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */,
 				78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */,
 				7835BC761414B8E600CC4B56 /* Versioning.h in Headers */,
+				78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +278,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				78C72955140BDC6C00D6752D /* PBXTargetDependency */,
 			);
 			name = ActiveSupportKitFramework;
 			productName = ActiveSupportKit;
@@ -364,7 +314,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				78719ACC1415416800D102A0 /* PBXTargetDependency */,
 			);
 			name = ActiveSupportKitLibrary;
 			productName = ActiveSupportKitLibrary;
@@ -409,12 +358,6 @@
 			mainGroup = 783545DF13EA64C40049385C;
 			productRefGroup = 783545EC13EA64C50049385C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 78C72949140BDBED00D6752D /* Products */;
-					ProjectRef = 78C72948140BDBED00D6752D /* RRFoundation.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				783545EA13EA64C50049385C /* ActiveSupportKitFramework */,
@@ -424,38 +367,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		78719AC71415411700D102A0 /* RRFoundation.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RRFoundation.framework;
-			remoteRef = 78719AC61415411700D102A0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78719AC91415411700D102A0 /* RRFoundationTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			name = RRFoundationTests.octest;
-			path = RRFoundationFrameworkTests.octest;
-			remoteRef = 78719AC81415411700D102A0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78DCC2D6140BE1950048D4F0 /* libRRFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRRFoundation.a;
-			remoteRef = 78DCC2D5140BE1950048D4F0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78DCC2D8140BE1950048D4F0 /* RRFoundationLibraryTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RRFoundationLibraryTests.octest;
-			remoteRef = 78DCC2D7140BE1950048D4F0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		783545E913EA64C50049385C /* Resources */ = {
@@ -524,6 +435,7 @@
 				7832704414115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */,
 				78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */,
 				7835BC771414B8E600CC4B56 /* Versioning.m in Sources */,
+				78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +457,7 @@
 				78B628FF141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */,
 				7835BC781414B8E600CC4B56 /* Versioning.m in Sources */,
 				78719AD0141543C800D102A0 /* ASInflector.m in Sources */,
+				78F3B50A14175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,20 +477,10 @@
 			target = 783545EA13EA64C50049385C /* ActiveSupportKitFramework */;
 			targetProxy = 7835460713EA64C50049385C /* PBXContainerItemProxy */;
 		};
-		78719ACC1415416800D102A0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RRFoundationLibrary;
-			targetProxy = 78719ACB1415416800D102A0 /* PBXContainerItemProxy */;
-		};
 		78AFBDA513EC587900BBFC62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */;
 			targetProxy = 78AFBDA413EC587900BBFC62 /* PBXContainerItemProxy */;
-		};
-		78C72955140BDC6C00D6752D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = RRFoundation;
-			targetProxy = 78C72954140BDC6C00D6752D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
