@@ -173,6 +173,8 @@
 
 - (void)testJSONDecode
 {
+	// require 'active_support'
+	// p ActiveSupport::JSON.decode("[\"hello world\"]")
 	NSError *error = nil;
 	id object = ASJSONDecode([@"[\"hello world\"]" dataUsingEncoding:NSUTF8StringEncoding], &error);
 	STAssertTrue([object isKindOfClass:[NSArray class]], nil);
