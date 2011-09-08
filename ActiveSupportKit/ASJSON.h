@@ -1,4 +1,4 @@
-// ActiveSupportKit ActiveSupportKit.h
+// ActiveSupportKit ASJSON.h
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,14 +22,6 @@
 //
 //------------------------------------------------------------------------------
 
-#import <ActiveSupportKit/ASJSON.h>
-#import <ActiveSupportKit/ASInflectorMethods.h>
-#import <ActiveSupportKit/ASInflector.h>
+#import <Foundation/Foundation.h>
 
-// categories
-#import <ActiveSupportKit/NSObject+ActiveSupport.h>
-#import <ActiveSupportKit/NSArray+ActiveSupport.h>
-#import <ActiveSupportKit/NSDictionary+ActiveSupport.h>
-#import <ActiveSupportKit/NSRegularExpression+ActiveSupport.h>
-
-#import <ActiveSupportKit/Versioning.h>
+id ASJSONDecode(NSData *data, NSError **outError);

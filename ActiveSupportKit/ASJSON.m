@@ -1,4 +1,4 @@
-// ActiveSupportKit ActiveSupportKit.h
+// ActiveSupportKit ASJSON.m
 //
 // Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
@@ -22,14 +22,21 @@
 //
 //------------------------------------------------------------------------------
 
-#import <ActiveSupportKit/ASJSON.h>
-#import <ActiveSupportKit/ASInflectorMethods.h>
-#import <ActiveSupportKit/ASInflector.h>
+#import "ASJSON.h"
 
-// categories
-#import <ActiveSupportKit/NSObject+ActiveSupport.h>
-#import <ActiveSupportKit/NSArray+ActiveSupport.h>
-#import <ActiveSupportKit/NSDictionary+ActiveSupport.h>
-#import <ActiveSupportKit/NSRegularExpression+ActiveSupport.h>
+#import <YAJL/YAJL.h>
 
-#import <ActiveSupportKit/Versioning.h>
+id ASJSONDecode(NSData *data, NSError **outError)
+{
+	id object;
+	YAJLParser *parser = [[[YAJLParser alloc] init] autorelease];
+	if ([parser parseData:data error:outError] && [parser completeParseWithError:outError])
+	{
+		object = [parser rootObject];
+	}
+	else
+	{
+		object = nil;
+	}
+	return object;
+}
