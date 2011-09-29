@@ -30,7 +30,7 @@
 {
 	// Cocoa (or Cocoa Touch) makes this easy to implement. This implementation
 	// works on strings, numbers, all primitive types. Asking for the
-	// “description” answers some kind of string version of the object.
+	// “description” answers some kind of string representation of the object.
 	return [self description];
 }
 

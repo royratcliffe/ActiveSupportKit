@@ -27,5 +27,6 @@
 @interface NSDictionary(ActiveSupport)
 
 - (NSString *)toParamWithNamespace:(NSString *)name;
+- (NSString *)toQueryWithNamespace:(NSString *)name;
 
 @end
