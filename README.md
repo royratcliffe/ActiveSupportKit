@@ -35,3 +35,6 @@ Mirrors the Rails ActiveSupport::Inflector::Inflections class.
 	NSString *ASInflectorDemodulize(NSString *classNameInModule);
 	NSString *ASInflectorOrdinalize(NSNumber *number);
 
+## Operating Systems
+
+The framework targets OS X 10.7 Lion and iOS 5.0. It depends on Foundation framework's `NSJSONSerialization`, although you could easily adapt the underlying requirement for JSON serialisation. Earlier versions depended on [YAJL and some Objective-C wrappers](https://github.com/royratcliffe/yajl/tree/master/objc).
