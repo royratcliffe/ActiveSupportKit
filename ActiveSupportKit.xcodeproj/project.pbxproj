@@ -54,7 +54,6 @@
 		78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B5551418CEB7005D6F5D /* ASJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B5591418CEB8005D6F5D /* ASJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B5561418CEB7005D6F5D /* ASJSON.m */; };
 		78F3B55A1418CEB8005D6F5D /* ASJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B5561418CEB7005D6F5D /* ASJSON.m */; };
-		78F3B55D1418CF3B005D6F5D /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3B54D1418CE43005D6F5D /* YAJL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,48 +70,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 78AFBD8E13EC587900BBFC62;
 			remoteInfo = ActiveSupportKitLibrary;
-		};
-		78F3B54C1418CE43005D6F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78DBBEC314151050006A598E;
-			remoteInfo = YAJLFramework;
-		};
-		78F3B54E1418CE43005D6F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78DBBEDB14151050006A598E;
-			remoteInfo = YAJLFrameworkTests;
-		};
-		78F3B5501418CE43005D6F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78C6755314151A0700981790;
-			remoteInfo = YAJLLibrary;
-		};
-		78F3B5521418CE43005D6F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 78C6756114151A0800981790;
-			remoteInfo = YAJLLibraryTests;
-		};
-		78F3B55B1418CF32005D6F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78DBBEC214151050006A598E;
-			remoteInfo = YAJLFramework;
-		};
-		78F3B55E1418CF42005D6F5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 78C6755214151A0700981790;
-			remoteInfo = YAJLLibrary;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -145,7 +102,6 @@
 		78E0B17F140D320C004E1041 /* ASInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflector.m; sourceTree = "<group>"; };
 		78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+ActiveSupport.h"; sourceTree = "<group>"; };
 		78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+ActiveSupport.m"; sourceTree = "<group>"; };
-		78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YAJL.xcodeproj; path = ../yajl/objc/YAJL.xcodeproj; sourceTree = "<group>"; };
 		78F3B5551418CEB7005D6F5D /* ASJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASJSON.h; sourceTree = "<group>"; };
 		78F3B5561418CEB7005D6F5D /* ASJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASJSON.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78F3B55D1418CF3B005D6F5D /* YAJL.framework in Frameworks */,
 				78719ACE141542CD00D102A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,7 +149,6 @@
 		783545DF13EA64C40049385C = {
 			isa = PBXGroup;
 			children = (
-				78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */,
 				783545F413EA64C50049385C /* ActiveSupportKit */,
 				7835460A13EA64C50049385C /* ActiveSupportKitTests */,
 				783545ED13EA64C50049385C /* Frameworks */,
@@ -284,17 +238,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		78F3B5431418CE43005D6F5D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				78F3B54D1418CE43005D6F5D /* YAJL.framework */,
-				78F3B54F1418CE43005D6F5D /* YAJLFrameworkTests.octest */,
-				78F3B5511418CE43005D6F5D /* libYAJL.a */,
-				78F3B5531418CE43005D6F5D /* YAJLLibraryTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -345,7 +288,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				78F3B55C1418CF32005D6F5D /* PBXTargetDependency */,
 			);
 			name = ActiveSupportKitFramework;
 			productName = ActiveSupportKit;
@@ -382,7 +324,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				78F3B55F1418CF42005D6F5D /* PBXTargetDependency */,
 			);
 			name = ActiveSupportKitLibrary;
 			productName = ActiveSupportKitLibrary;
@@ -427,12 +368,6 @@
 			mainGroup = 783545DF13EA64C40049385C;
 			productRefGroup = 783545EC13EA64C50049385C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 78F3B5431418CE43005D6F5D /* Products */;
-					ProjectRef = 78F3B5421418CE43005D6F5D /* YAJL.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				783545EA13EA64C50049385C /* ActiveSupportKitFramework */,
@@ -442,37 +377,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		78F3B54D1418CE43005D6F5D /* YAJL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = YAJL.framework;
-			remoteRef = 78F3B54C1418CE43005D6F5D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78F3B54F1418CE43005D6F5D /* YAJLFrameworkTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = YAJLFrameworkTests.octest;
-			remoteRef = 78F3B54E1418CE43005D6F5D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78F3B5511418CE43005D6F5D /* libYAJL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libYAJL.a;
-			remoteRef = 78F3B5501418CE43005D6F5D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78F3B5531418CE43005D6F5D /* YAJLLibraryTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = YAJLLibraryTests.octest;
-			remoteRef = 78F3B5521418CE43005D6F5D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		783545E913EA64C50049385C /* Resources */ = {
@@ -589,16 +493,6 @@
 			isa = PBXTargetDependency;
 			target = 78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */;
 			targetProxy = 78AFBDA413EC587900BBFC62 /* PBXContainerItemProxy */;
-		};
-		78F3B55C1418CF32005D6F5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = YAJLFramework;
-			targetProxy = 78F3B55B1418CF32005D6F5D /* PBXContainerItemProxy */;
-		};
-		78F3B55F1418CF42005D6F5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = YAJLLibrary;
-			targetProxy = 78F3B55E1418CF42005D6F5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -24,19 +24,7 @@
 
 #import "ASJSON.h"
 
-#import <YAJL/YAJL.h>
-
 id ASJSONDecode(NSData *data, NSError **outError)
 {
-	id object;
-	YAJLParser *parser = [[[YAJLParser alloc] init] autorelease];
-	if ([parser parseData:data error:outError] && [parser completeParseWithError:outError])
-	{
-		object = [parser rootObject];
-	}
-	else
-	{
-		object = nil;
-	}
-	return object;
+	return [NSJSONSerialization JSONObjectWithData:data options:0 error:outError];
 }
