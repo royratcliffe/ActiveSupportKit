@@ -26,5 +26,6 @@
 
 id ASJSONDecode(NSData *data, NSError **outError)
 {
+	// OS X 10.7 and iOS 5.0 make this easy
 	return [NSJSONSerialization JSONObjectWithData:data options:0 error:outError];
 }
