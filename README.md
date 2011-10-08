@@ -6,7 +6,7 @@ Translating interfaces and semantics from Ruby to Objective-C is not _always_ an
 
 [as]:http://as.rubyonrails.org/
 
-The kit provides a class and a set of helper methods in its first version, as follows.
+The kit provides a class and a set of helper methods in its first version, as follows. You can find more detailed documentation [here](http://royratcliffe.github.com/ActiveSupportKit/html/).
 
 ## ASInflector
 
