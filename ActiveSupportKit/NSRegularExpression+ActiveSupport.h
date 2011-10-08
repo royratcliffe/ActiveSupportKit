@@ -40,6 +40,7 @@
  * optionally followed by any character. The parentheses act as markers for
  * substitution.
  *
+ * @code
  *	NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:@"/(.?)"
  *																		options:0
  *																		  error:NULL];
@@ -57,6 +58,7 @@
  *						   return [@"::" stringByAppendingString:[s1 uppercaseString]];
  *					   }];
  *	NSLog(@"\"%@\"", answer);
+ * @endcode
  *
  * The answer "a::B::C" appears in the log.
  *
