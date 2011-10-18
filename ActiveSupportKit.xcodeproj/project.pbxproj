@@ -202,8 +202,6 @@
 				7835461D13EA67C50049385C /* ASInflectorMethods.m */,
 				78E0B17E140D320C004E1041 /* ASInflector.h */,
 				78E0B17F140D320C004E1041 /* ASInflector.m */,
-				7835BC731414B8E600CC4B56 /* Versioning.h */,
-				7835BC741414B8E600CC4B56 /* Versioning.m */,
 				783545F513EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKit;
@@ -215,6 +213,8 @@
 				783545F613EA64C50049385C /* ActiveSupportKit-Info.plist */,
 				783545F713EA64C50049385C /* InfoPlist.strings */,
 				783545FA13EA64C50049385C /* ActiveSupportKit-Prefix.pch */,
+				7835BC731414B8E600CC4B56 /* Versioning.h */,
+				7835BC741414B8E600CC4B56 /* Versioning.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -571,7 +571,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
@@ -585,7 +585,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
