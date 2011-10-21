@@ -120,7 +120,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 		{
 			struct
 			{
-				NSString *const plural, *const singular;
+				NSString *const singular, *const plural;
 			}
 			irregulars[] =
 			{
