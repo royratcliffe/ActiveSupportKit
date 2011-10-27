@@ -24,4 +24,10 @@
 
 #import <Foundation/Foundation.h>
 
-id ASJSONDecode(NSData *data, NSError **outError);
+// data
+id ASJSONDecodeFromData(NSData *data, NSError **outError);
+NSData *ASJSONEncodeToData(id object, NSError **outError);
+
+// string
+id ASJSONDecodeFromString(NSString *string, NSError **outError);
+NSString *ASJSONEncodeToString(id object, NSError **outError);

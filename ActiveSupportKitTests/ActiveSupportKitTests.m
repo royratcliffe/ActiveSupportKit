@@ -176,11 +176,16 @@
 	// require 'active_support'
 	// p ActiveSupport::JSON.decode("[\"hello world\"]")
 	NSError *error = nil;
-	id object = ASJSONDecode([@"[\"hello world\"]" dataUsingEncoding:NSUTF8StringEncoding], &error);
+	id object = ASJSONDecodeFromData([@"[\"hello world\"]" dataUsingEncoding:NSUTF8StringEncoding], &error);
 	STAssertTrue([object isKindOfClass:[NSArray class]], nil);
 	STAssertEquals([object count], (NSUInteger)1, nil);
 	STAssertEqualObjects([object objectAtIndex:0], @"hello world", nil);
 	STAssertEqualObjects(error, nil, nil);
+}
+
+- (void)testJSONEncode
+{
+	STAssertEqualObjects(ASJSONEncodeToString([NSArray arrayWithObject:@"hello world"], NULL), @"[\"hello world\"]", nil);
 }
 
 @end
