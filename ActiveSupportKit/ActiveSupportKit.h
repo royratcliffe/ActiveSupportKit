@@ -44,7 +44,7 @@
  * application framework. Active Support Kit's goal is to provide functionally
  * compatible classes and helper functions.
  *
- * Translating interfaces and semantics from Ruby to Objective-C is not _always_
+ * Translating interfaces and semantics from Ruby to Objective-C is not @em always
  * an easy task, even though most of the time it is. Although both languages
  * share some elements, e.g. dynamic typing, there remain significant
  * differences. Ruby has singleton classes, for instance, and Rails makes
@@ -84,6 +84,6 @@
  * @section operating_systems Operating Systems
  *
  * The framework targets OS X 10.7 Lion and iOS 5.0. It depends on Foundation
- * framework's `NSJSONSerialization`, although you could easily adapt the
+ * framework's @c NSJSONSerialization, although you could easily adapt the
  * underlying requirement for JSON serialisation.
  */
