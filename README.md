@@ -10,7 +10,7 @@ The kit provides a class and a set of helper methods in its first version, as fo
 
 ## ASInflector
 
-Mirrors the Rails ActiveSupport::Inflector::Inflections class.
+Mirrors the Rails ActiveSupport::Inflector::Inflections class. Interface as follows.
 
 	+ (ASInflector *)defaultInflector;
 	- (void)addPluralRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
