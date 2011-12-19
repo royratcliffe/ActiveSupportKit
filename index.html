@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>ActiveSupportKit: Main Page</title>
+<title>ActiveSupportKit: Active Support Kit</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -69,10 +69,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">ActiveSupportKit Documentation</div>  </div>
+<div class="title">Active Support Kit </div>  </div>
 </div>
 <div class="contents">
-</div>
+<div class="textblock"><p>Active Support Kit mimics Ruby on Rails <a href="http://as.rubyonrails.org/">Active Support</a>. Rails' ActiveSupport gem provides a collection of utility classes and standard library extensions designed primarily albeit not exclusively for working with the Rails application framework. Active Support Kit's goal is to provide functionally compatible classes and helper functions.</p>
+<p>Translating interfaces and semantics from Ruby to Objective-C is not _always_ an easy task, even though most of the time it is. Although both languages share some elements, e.g. dynamic typing, there remain significant differences. Ruby has singleton classes, for instance, and Rails makes extensive use of them. Objective-C has nothing equivalent.</p>
+<p>The kit provides a class and a set of helper methods in its first version, as follows.</p>
+<h2><a class="anchor" id="as_inflector"></a>
+ASInflector</h2>
+<p>Mirrors the Rails ActiveSupport::Inflector::Inflections class. Interface as follows.</p>
+<ul>
+<li>+ (<a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *)defaultInflector</li>
+<li>- (void)addPluralRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement</li>
+<li>- (void)addPluralStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement</li>
+<li>- (void)addSingularRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement</li>
+<li>- (void)addSingularStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement</li>
+<li>- (void)addIrregularWithSingular:(NSString *)singular plural:(NSString *)plural</li>
+<li>- (void)addUncountable:(NSString *)uncountable</li>
+<li>- (void)addHumanRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement</li>
+<li>- (void)addHumanStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement</li>
+<li>- (void)clear</li>
+<li>- (NSString *)pluralize:(NSString *)word</li>
+<li>- (NSString *)singularize:(NSString *)word</li>
+<li>- (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord</li>
+<li>- (NSString *)titleize:(NSString *)word</li>
+</ul>
+<h2><a class="anchor" id="inflector_methods"></a>
+Inflector Methods</h2>
+<ul>
+<li>- NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase)</li>
+<li>- NSString *ASInflectorUnderscore(NSString *camelCasedWord)</li>
+<li>- NSString *ASInflectorDasherize(NSString *underscoredWord)</li>
+<li>- NSString *ASInflectorDemodulize(NSString *classNameInModule)</li>
+<li>- NSString *ASInflectorOrdinalize(NSNumber *number)</li>
+</ul>
+<h2><a class="anchor" id="operating_systems"></a>
+Operating Systems</h2>
+<p>The framework targets OS X 10.7 Lion and iOS 5.0. It depends on Foundation framework's `NSJSONSerialization`, although you could easily adapt the underlying requirement for JSON serialisation. </p>
+</div></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -90,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 19 2011 14:31:59 for ActiveSupportKit by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 19 2011 15:12:42 for ActiveSupportKit by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.5.1
 </small></address>
