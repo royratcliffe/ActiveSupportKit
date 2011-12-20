@@ -22,28 +22,28 @@ follows. You can find more detailed documentation
 
 Mirrors the Rails ActiveSupport::Inflector::Inflections class. Interface as follows.
 
-	+ (ASInflector *)defaultInflector;
-	- (void)addPluralRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
-	- (void)addPluralStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
-	- (void)addSingularRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
-	- (void)addSingularStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
-	- (void)addIrregularWithSingular:(NSString *)singular plural:(NSString *)plural;
-	- (void)addUncountable:(NSString *)uncountable;
-	- (void)addHumanRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
-	- (void)addHumanStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
-	- (void)clear;
-	- (NSString *)pluralize:(NSString *)word;
-	- (NSString *)singularize:(NSString *)word;
-	- (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord;
-	- (NSString *)titleize:(NSString *)word;
+	+ (ASInflector *)defaultInflector
+	- (void)addPluralRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement
+	- (void)addPluralStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement
+	- (void)addSingularRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement
+	- (void)addSingularStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement
+	- (void)addIrregularWithSingular:(NSString *)singular plural:(NSString *)plural
+	- (void)addUncountable:(NSString *)uncountable
+	- (void)addHumanRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement
+	- (void)addHumanStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement
+	- (void)clear
+	- (NSString *)pluralize:(NSString *)word
+	- (NSString *)singularize:(NSString *)word
+	- (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord
+	- (NSString *)titleize:(NSString *)word
 
 ## Inflector Methods
 
-	NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase);
-	NSString *ASInflectorUnderscore(NSString *camelCasedWord);
-	NSString *ASInflectorDasherize(NSString *underscoredWord);
-	NSString *ASInflectorDemodulize(NSString *classNameInModule);
-	NSString *ASInflectorOrdinalize(NSNumber *number);
+	NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase)
+	NSString *ASInflectorUnderscore(NSString *camelCasedWord)
+	NSString *ASInflectorDasherize(NSString *underscoredWord)
+	NSString *ASInflectorDemodulize(NSString *classNameInModule)
+	NSString *ASInflectorOrdinalize(NSNumber *number)
 
 ## Operating Systems
 
