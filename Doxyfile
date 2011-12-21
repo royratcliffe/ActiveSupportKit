@@ -1,0 +1,23 @@
+# When GENERATE_DOCSET tag is set to YES, this tag determines the name of the
+# feed. A documentation feed provides an umbrella under which multiple
+# documentation sets from a single provider (such as a company or product suite)
+# can be grouped.
+
+DOCSET_FEEDNAME        = "Active Support Kit Documentation Set"
+
+# When GENERATE_DOCSET tag is set to YES, this tag specifies a string that
+# should uniquely identify the documentation set bundle. This should be a
+# reverse domain-name style string, e.g. com.mycompany.MyDocSet. Doxygen
+# will append .docset to the name.
+
+DOCSET_BUNDLE_ID       = org.rubyonrails.api.ActiveSupportKitDocSet
+
+# When GENERATE_PUBLISHER_ID tag specifies a string that should uniquely identify
+# the documentation publisher. This should be a reverse domain-name style
+# string, e.g. com.mycompany.MyDocSet.documentation.
+
+DOCSET_PUBLISHER_ID    = uk.co.pioneeringsoftware.ActiveSupportKitDocSet.documentation
+
+# The GENERATE_PUBLISHER_NAME tag identifies the documentation publisher.
+
+DOCSET_PUBLISHER_NAME  = Pioneering Software
