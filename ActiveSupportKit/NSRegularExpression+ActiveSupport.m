@@ -28,7 +28,7 @@
 
 - (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult
 {
-	NSMutableString *mutableString = [[string mutableCopy] autorelease];
+	NSMutableString *mutableString = [string mutableCopy];
 	
 	NSInteger offset = 0;
 	for (NSTextCheckingResult *result in [self matchesInString:string options:0 range:NSMakeRange(0, [string length])])
@@ -44,7 +44,7 @@
 		offset += [replacementString length] - resultRange.length;
 	}
 	
-	return [[mutableString copy] autorelease];
+	return [mutableString copy];
 }
 
 @end

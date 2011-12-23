@@ -33,21 +33,19 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 
 + (ASInflector *)defaultInflector
 {
-	static ASInflector *inflector;
+	static ASInflector *__strong inflector;
 	if (inflector == nil)
 	{
 		inflector = [[ASInflector alloc] init];
 		atexit_b(^(void) {
-			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-			[inflector release];
-			[pool drain];
+			inflector = nil;
 		});
 		// plurals
 		{
 			[inflector addPluralRegularExpressionRule:@"$" options:0 replacement:@"s"];
 			struct
 			{
-				NSString *const rule, *const replacement;
+				NSString *const __unsafe_unretained rule, *const __unsafe_unretained replacement;
 			}
 			plurals[] =
 			{
@@ -81,7 +79,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 		{
 			struct
 			{
-				NSString *const rule, *const replacement;
+				NSString *const __unsafe_unretained rule, *const __unsafe_unretained replacement;
 			}
 			singulars[] =
 			{
@@ -120,7 +118,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 		{
 			struct
 			{
-				NSString *const singular, *const plural;
+				NSString *const __unsafe_unretained singular, *const __unsafe_unretained plural;
 			}
 			irregulars[] =
 			{
@@ -271,7 +269,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord
 {
-	NSMutableString *result = [[ASInflectorApplyRulesAndReplacements(humans, lowerCaseAndUnderscoredWord) mutableCopy] autorelease];
+	NSMutableString *result = [ASInflectorApplyRulesAndReplacements(humans, lowerCaseAndUnderscoredWord) mutableCopy];
 	[[NSRegularExpression regularExpressionWithPattern:@"_id$" options:0 error:NULL] replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:@""];
 	[result replaceOccurrencesOfString:@"_" withString:@" " options:0 range:NSMakeRange(0, [result length])];
 	// Take care. Do not use Apple's -[NSString capitalizedString] method
@@ -290,20 +288,11 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	}];
 }
 
-- (void)dealloc
-{
-	[plurals release];
-	[singulars release];
-	[uncountables release];
-	[humans release];
-	[super dealloc];
-}
-
 @end
 
 NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word)
 {
-	NSMutableString *result = [[word mutableCopy] autorelease];
+	NSMutableString *result = [word mutableCopy];
 	// Plurals is an array of arrays. The elements have two or three
 	// sub-elements. If two elements, the first specifies a regular expression
 	// and the second its replacement template. If three elements, the first
@@ -339,5 +328,5 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 			}
 		}
 	}
-	return [[result copy] autorelease];
+	return [result copy];
 }

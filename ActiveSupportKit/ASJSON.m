@@ -42,5 +42,5 @@ id ASJSONDecodeFromString(NSString *string, NSError **outError)
 NSString *ASJSONEncodeToString(id object, NSError **outError)
 {
 	NSData *data = ASJSONEncodeToData(object, outError);
-	return data ? [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease] : nil;
+	return data ? [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] : nil;
 }

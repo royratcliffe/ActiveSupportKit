@@ -75,7 +75,7 @@
 
 - (void)testInflectorRegularExpressionRules
 {
-	ASInflector *inflector = [[[ASInflector alloc] init] autorelease];
+	ASInflector *inflector = [[ASInflector alloc] init];
 	[inflector addPluralRegularExpressionRule:@"^(ox)$" options:NSRegularExpressionCaseInsensitive replacement:@"$1en"];
 	STAssertEqualObjects([inflector pluralize:@"ox"], @"oxen", nil);
 	STAssertEqualObjects([inflector pluralize:@"Ox"], @"Oxen", nil);
@@ -83,7 +83,7 @@
 
 - (void)testInflectorStringRules
 {
-	ASInflector *inflector = [[[ASInflector alloc] init] autorelease];
+	ASInflector *inflector = [[ASInflector alloc] init];
 	[inflector addPluralStringRule:@"person" options:NSCaseInsensitiveSearch replacement:@"people"];
 	STAssertEqualObjects([inflector pluralize:@"person"], @"people", nil);
 	
@@ -94,7 +94,7 @@
 
 - (void)testIrregular
 {
-	ASInflector *inflector = [[[ASInflector alloc] init] autorelease];
+	ASInflector *inflector = [[ASInflector alloc] init];
 	[inflector addIrregularWithSingular:@"person" plural:@"people"];
 	STAssertEqualObjects([inflector pluralize:@"person"], @"people", nil);
 	STAssertEqualObjects([inflector pluralize:@"Person"], @"People", nil);
