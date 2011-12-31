@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(57.0)</span>
+   &#160;<span id="projectnumber">v1.1&nbsp;(61.0)</span>
    </div>
    
   </td>
@@ -69,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -76,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ActiveSupportKitTests/ActiveSupportKitTests.m</div>  </div>
 </div>
 <div class="contents">
-<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// ActiveSupportKit ActiveSupportKitTests.m</span>
+<a href="_active_support_kit_tests_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// ActiveSupportKit ActiveSupportKitTests.m</span>
 <a name="l00002"></a>00002 <span class="comment">//</span>
 <a name="l00003"></a>00003 <span class="comment">// Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
@@ -100,69 +101,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 <span class="comment">//</span>
 <a name="l00023"></a>00023 <span class="comment">//------------------------------------------------------------------------------</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#import &quot;ActiveSupportKitTests.h&quot;</span>
-<a name="l00026"></a>00026 <span class="preprocessor">#import &lt;ActiveSupportKit/ActiveSupportKit.h&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#import &quot;<a class="code" href="_active_support_kit_tests_8h.html">ActiveSupportKitTests.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#import &lt;<a class="code" href="_active_support_kit_8h.html">ActiveSupportKit/ActiveSupportKit.h</a>&gt;</span>
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 <span class="keyword">@implementation </span><a class="code" href="interface_active_support_kit_tests.html">ActiveSupportKitTests</a>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 - testVersioning
+<a name="l00030"></a><a class="code" href="interface_active_support_kit_tests.html#a735141163a0fd316036fda3a6f78df93">00030</a> - <a class="code" href="interface_active_support_kit_tests.html#a735141163a0fd316036fda3a6f78df93">testVersioning</a>
 <a name="l00031"></a>00031 {
-<a name="l00032"></a>00032     STAssertEquals(kActiveSupportKitVersionNumber, 1.0, nil);
+<a name="l00032"></a>00032     STAssertEquals(<a class="code" href="_versioning_8h.html#a8804e41f8002796d6bb3f644a476ef35">kActiveSupportKitVersionNumber</a>, 1.0, nil);
 <a name="l00033"></a>00033 }
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035 - (void)testCamelize
+<a name="l00035"></a><a class="code" href="interface_active_support_kit_tests.html#a03fb54ae20821098fe7b83b849bbb076">00035</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a03fb54ae20821098fe7b83b849bbb076">testCamelize</a>
 <a name="l00036"></a>00036 {
-<a name="l00037"></a>00037     STAssertEqualObjects(ASInflectorCamelize(<span class="stringliteral">@&quot;active_record&quot;</span>, YES), <span class="stringliteral">@&quot;ActiveRecord&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
-<a name="l00038"></a>00038     STAssertEqualObjects(ASInflectorCamelize(<span class="stringliteral">@&quot;active_record&quot;</span>, NO), <span class="stringliteral">@&quot;activeRecord&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
-<a name="l00039"></a>00039     STAssertEqualObjects(ASInflectorCamelize(<span class="stringliteral">@&quot;active_record/errors&quot;</span>, YES), <span class="stringliteral">@&quot;ActiveRecord::Errors&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
-<a name="l00040"></a>00040     STAssertEqualObjects(ASInflectorCamelize(<span class="stringliteral">@&quot;active_record/errors&quot;</span>, NO), <span class="stringliteral">@&quot;activeRecord::Errors&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
+<a name="l00037"></a>00037     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a3598bde7e659ce071e9548c2b46e1ed9">ASInflectorCamelize</a>(<span class="stringliteral">@&quot;active_record&quot;</span>, YES), <span class="stringliteral">@&quot;ActiveRecord&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
+<a name="l00038"></a>00038     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a3598bde7e659ce071e9548c2b46e1ed9">ASInflectorCamelize</a>(<span class="stringliteral">@&quot;active_record&quot;</span>, NO), <span class="stringliteral">@&quot;activeRecord&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
+<a name="l00039"></a>00039     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a3598bde7e659ce071e9548c2b46e1ed9">ASInflectorCamelize</a>(<span class="stringliteral">@&quot;active_record/errors&quot;</span>, YES), <span class="stringliteral">@&quot;ActiveRecord::Errors&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
+<a name="l00040"></a>00040     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a3598bde7e659ce071e9548c2b46e1ed9">ASInflectorCamelize</a>(<span class="stringliteral">@&quot;active_record/errors&quot;</span>, NO), <span class="stringliteral">@&quot;activeRecord::Errors&quot;</span>, <span class="stringliteral">@&quot;&quot;</span>);
 <a name="l00041"></a>00041 }
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043 - (void)testUnderscore
+<a name="l00043"></a><a class="code" href="interface_active_support_kit_tests.html#ad3b52f74b05874fe5e5fa4b22a77740e">00043</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#ad3b52f74b05874fe5e5fa4b22a77740e">testUnderscore</a>
 <a name="l00044"></a>00044 {
-<a name="l00045"></a>00045     STAssertEqualObjects(ASInflectorUnderscore(<span class="stringliteral">@&quot;ActiveRecord&quot;</span>), <span class="stringliteral">@&quot;active_record&quot;</span>, nil);
-<a name="l00046"></a>00046     STAssertEqualObjects(ASInflectorUnderscore(<span class="stringliteral">@&quot;ActiveRecord::Errors&quot;</span>), <span class="stringliteral">@&quot;active_record/errors&quot;</span>, nil);
-<a name="l00047"></a>00047     STAssertEqualObjects(ASInflectorUnderscore(<span class="stringliteral">@&quot;AAAAzzzz&quot;</span>), <span class="stringliteral">@&quot;aaa_azzzz&quot;</span>, nil);
-<a name="l00048"></a>00048     STAssertEqualObjects(ASInflectorUnderscore(<span class="stringliteral">@&quot;a1Z&quot;</span>), <span class="stringliteral">@&quot;a1_z&quot;</span>, nil);
+<a name="l00045"></a>00045     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a659774e820479c46d44e9cb91fad05c8">ASInflectorUnderscore</a>(<span class="stringliteral">@&quot;ActiveRecord&quot;</span>), <span class="stringliteral">@&quot;active_record&quot;</span>, nil);
+<a name="l00046"></a>00046     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a659774e820479c46d44e9cb91fad05c8">ASInflectorUnderscore</a>(<span class="stringliteral">@&quot;ActiveRecord::Errors&quot;</span>), <span class="stringliteral">@&quot;active_record/errors&quot;</span>, nil);
+<a name="l00047"></a>00047     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a659774e820479c46d44e9cb91fad05c8">ASInflectorUnderscore</a>(<span class="stringliteral">@&quot;AAAAzzzz&quot;</span>), <span class="stringliteral">@&quot;aaa_azzzz&quot;</span>, nil);
+<a name="l00048"></a>00048     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a659774e820479c46d44e9cb91fad05c8">ASInflectorUnderscore</a>(<span class="stringliteral">@&quot;a1Z&quot;</span>), <span class="stringliteral">@&quot;a1_z&quot;</span>, nil);
 <a name="l00049"></a>00049 }
 <a name="l00050"></a>00050 
-<a name="l00051"></a>00051 - (void)testDasherize
+<a name="l00051"></a><a class="code" href="interface_active_support_kit_tests.html#ac3c47dccb45486e8cc81769c83a2a39e">00051</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#ac3c47dccb45486e8cc81769c83a2a39e">testDasherize</a>
 <a name="l00052"></a>00052 {
-<a name="l00053"></a>00053     STAssertEqualObjects(ASInflectorDasherize(<span class="stringliteral">@&quot;puni_puni&quot;</span>), <span class="stringliteral">@&quot;puni-puni&quot;</span>, nil);
+<a name="l00053"></a>00053     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#afe8f9323aaff1093092769c277f2dc90">ASInflectorDasherize</a>(<span class="stringliteral">@&quot;puni_puni&quot;</span>), <span class="stringliteral">@&quot;puni-puni&quot;</span>, nil);
 <a name="l00054"></a>00054 }
 <a name="l00055"></a>00055 
-<a name="l00056"></a>00056 - (void)testDemodulize
+<a name="l00056"></a><a class="code" href="interface_active_support_kit_tests.html#aa2f11b114499788f0a5ff5c7fe1b6fd0">00056</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#aa2f11b114499788f0a5ff5c7fe1b6fd0">testDemodulize</a>
 <a name="l00057"></a>00057 {
-<a name="l00058"></a>00058     STAssertEqualObjects(ASInflectorDemodulize(<span class="stringliteral">@&quot;ActiveRecord::CoreExtensions::String::Inflections&quot;</span>), <span class="stringliteral">@&quot;Inflections&quot;</span>, nil);
-<a name="l00059"></a>00059     STAssertEqualObjects(ASInflectorDemodulize(<span class="stringliteral">@&quot;Inflections&quot;</span>), <span class="stringliteral">@&quot;Inflections&quot;</span>, nil);
+<a name="l00058"></a>00058     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#addcae23e756f33e54cc67aeaf63b4c73">ASInflectorDemodulize</a>(<span class="stringliteral">@&quot;ActiveRecord::CoreExtensions::String::Inflections&quot;</span>), <span class="stringliteral">@&quot;Inflections&quot;</span>, nil);
+<a name="l00059"></a>00059     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#addcae23e756f33e54cc67aeaf63b4c73">ASInflectorDemodulize</a>(<span class="stringliteral">@&quot;Inflections&quot;</span>), <span class="stringliteral">@&quot;Inflections&quot;</span>, nil);
 <a name="l00060"></a>00060 }
 <a name="l00061"></a>00061 
-<a name="l00062"></a>00062 - (void)testOrdinalize
+<a name="l00062"></a><a class="code" href="interface_active_support_kit_tests.html#a06ce7dd1d892852b9744021f5ab2a271">00062</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a06ce7dd1d892852b9744021f5ab2a271">testOrdinalize</a>
 <a name="l00063"></a>00063 {
-<a name="l00064"></a>00064     STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1]), <span class="stringliteral">@&quot;1st&quot;</span>, nil);
-<a name="l00065"></a>00065     STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:2]), <span class="stringliteral">@&quot;2nd&quot;</span>, nil);
-<a name="l00066"></a>00066     STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1002]), <span class="stringliteral">@&quot;1002nd&quot;</span>, nil);
-<a name="l00067"></a>00067     STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:1003]), <span class="stringliteral">@&quot;1003rd&quot;</span>, nil);
-<a name="l00068"></a>00068     STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:-11]), <span class="stringliteral">@&quot;-11th&quot;</span>, nil);
-<a name="l00069"></a>00069     STAssertEqualObjects(ASInflectorOrdinalize([NSNumber numberWithInt:-1021]), <span class="stringliteral">@&quot;-1021st&quot;</span>, nil);
+<a name="l00064"></a>00064     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a496f1c2baf4868fdebfcd10e56d06320">ASInflectorOrdinalize</a>([NSNumber numberWithInt:1]), <span class="stringliteral">@&quot;1st&quot;</span>, nil);
+<a name="l00065"></a>00065     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a496f1c2baf4868fdebfcd10e56d06320">ASInflectorOrdinalize</a>([NSNumber numberWithInt:2]), <span class="stringliteral">@&quot;2nd&quot;</span>, nil);
+<a name="l00066"></a>00066     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a496f1c2baf4868fdebfcd10e56d06320">ASInflectorOrdinalize</a>([NSNumber numberWithInt:1002]), <span class="stringliteral">@&quot;1002nd&quot;</span>, nil);
+<a name="l00067"></a>00067     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a496f1c2baf4868fdebfcd10e56d06320">ASInflectorOrdinalize</a>([NSNumber numberWithInt:1003]), <span class="stringliteral">@&quot;1003rd&quot;</span>, nil);
+<a name="l00068"></a>00068     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a496f1c2baf4868fdebfcd10e56d06320">ASInflectorOrdinalize</a>([NSNumber numberWithInt:-11]), <span class="stringliteral">@&quot;-11th&quot;</span>, nil);
+<a name="l00069"></a>00069     STAssertEqualObjects(<a class="code" href="_a_s_inflector_methods_8h.html#a496f1c2baf4868fdebfcd10e56d06320">ASInflectorOrdinalize</a>([NSNumber numberWithInt:-1021]), <span class="stringliteral">@&quot;-1021st&quot;</span>, nil);
 <a name="l00070"></a>00070 }
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072 <span class="comment">//------------------------------------------------------------------------------</span>
 <a name="l00073"></a>00073 <span class="preprocessor">#pragma mark                                                           Inflector</span>
 <a name="l00074"></a>00074 <span class="preprocessor"></span><span class="comment">//------------------------------------------------------------------------------</span>
 <a name="l00075"></a>00075 
-<a name="l00076"></a>00076 - (void)testInflectorRegularExpressionRules
+<a name="l00076"></a><a class="code" href="interface_active_support_kit_tests.html#acedc82eaeb04cb353601ab4cabff1a9d">00076</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#acedc82eaeb04cb353601ab4cabff1a9d">testInflectorRegularExpressionRules</a>
 <a name="l00077"></a>00077 {
-<a name="l00078"></a>00078     <a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *inflector = [[[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> alloc] init] autorelease];
-<a name="l00079"></a>00079     [inflector addPluralRegularExpressionRule:@&quot;^(ox)$&quot; options:NSRegularExpressionCaseInsensitive replacement:@&quot;$1en&quot;];
+<a name="l00078"></a>00078     <a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *inflector = [[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> alloc] init];
+<a name="l00079"></a>00079     [inflector <a class="code" href="interface_a_s_inflector.html#ac695f4820b89d8b50397722f51762849">addPluralRegularExpressionRule</a>:@&quot;^(ox)$&quot; <a class="code" href="interface_a_s_inflector.html#ac695f4820b89d8b50397722f51762849">options</a>:NSRegularExpressionCaseInsensitive <a class="code" href="interface_a_s_inflector.html#ac695f4820b89d8b50397722f51762849">replacement</a>:@&quot;$1en&quot;];
 <a name="l00080"></a>00080     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;ox&quot;</span>], <span class="stringliteral">@&quot;oxen&quot;</span>, nil);
 <a name="l00081"></a>00081     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;Ox&quot;</span>], <span class="stringliteral">@&quot;Oxen&quot;</span>, nil);
 <a name="l00082"></a>00082 }
 <a name="l00083"></a>00083 
-<a name="l00084"></a>00084 - (void)testInflectorStringRules
+<a name="l00084"></a><a class="code" href="interface_active_support_kit_tests.html#afb9f7376b0eeb86fafa660cc4948fcaf">00084</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#afb9f7376b0eeb86fafa660cc4948fcaf">testInflectorStringRules</a>
 <a name="l00085"></a>00085 {
-<a name="l00086"></a>00086     <a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *inflector = [[[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> alloc] init] autorelease];
-<a name="l00087"></a>00087     [inflector addPluralStringRule:@&quot;person&quot; options:NSCaseInsensitiveSearch replacement:@&quot;people&quot;];
+<a name="l00086"></a>00086     <a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *inflector = [[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> alloc] init];
+<a name="l00087"></a>00087     [inflector <a class="code" href="interface_a_s_inflector.html#a0540a10f58ee61f2be95c907adf05a35">addPluralStringRule</a>:@&quot;person&quot; <a class="code" href="interface_a_s_inflector.html#a0540a10f58ee61f2be95c907adf05a35">options</a>:NSCaseInsensitiveSearch <a class="code" href="interface_a_s_inflector.html#a0540a10f58ee61f2be95c907adf05a35">replacement</a>:@&quot;people&quot;];
 <a name="l00088"></a>00088     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;person&quot;</span>], <span class="stringliteral">@&quot;people&quot;</span>, nil);
 <a name="l00089"></a>00089     
 <a name="l00090"></a>00090     <span class="comment">// The following tests a failure. It finds a match but replaces it with the</span>
@@ -170,10 +171,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00092"></a>00092     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;Person&quot;</span>], <span class="stringliteral">@&quot;people&quot;</span>, nil);
 <a name="l00093"></a>00093 }
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095 - (void)testIrregular
+<a name="l00095"></a><a class="code" href="interface_active_support_kit_tests.html#ad58238db95419a368f1da48eee2c1834">00095</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#ad58238db95419a368f1da48eee2c1834">testIrregular</a>
 <a name="l00096"></a>00096 {
-<a name="l00097"></a>00097     <a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *inflector = [[[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> alloc] init] autorelease];
-<a name="l00098"></a>00098     [inflector addIrregularWithSingular:@&quot;person&quot; plural:@&quot;people&quot;];
+<a name="l00097"></a>00097     <a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> *inflector = [[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> alloc] init];
+<a name="l00098"></a>00098     [inflector <a class="code" href="interface_a_s_inflector.html#aeb7fd10bb5a61ed0311884865fd21a91">addIrregularWithSingular</a>:@&quot;person&quot; <a class="code" href="interface_a_s_inflector.html#aeb7fd10bb5a61ed0311884865fd21a91">plural</a>:@&quot;people&quot;];
 <a name="l00099"></a>00099     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;person&quot;</span>], <span class="stringliteral">@&quot;people&quot;</span>, nil);
 <a name="l00100"></a>00100     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;Person&quot;</span>], <span class="stringliteral">@&quot;People&quot;</span>, nil);
 <a name="l00101"></a>00101     
@@ -191,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00113"></a>00113     STAssertEqualObjects([inflector pluralize:<span class="stringliteral">@&quot;PERSON&quot;</span>], <span class="stringliteral">@&quot;People&quot;</span>, nil);
 <a name="l00114"></a>00114 }
 <a name="l00115"></a>00115 
-<a name="l00116"></a>00116 - (void)testPlurals
+<a name="l00116"></a><a class="code" href="interface_active_support_kit_tests.html#aa5946c94a30a1340100339e38a948705">00116</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#aa5946c94a30a1340100339e38a948705">testPlurals</a>
 <a name="l00117"></a>00117 {
 <a name="l00118"></a>00118     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] pluralize:<span class="stringliteral">@&quot;quiz&quot;</span>], <span class="stringliteral">@&quot;quizzes&quot;</span>, nil);
 <a name="l00119"></a>00119     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] pluralize:<span class="stringliteral">@&quot;bus&quot;</span>], <span class="stringliteral">@&quot;buses&quot;</span>, nil);
@@ -200,24 +201,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00122"></a>00122     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] pluralize:<span class="stringliteral">@&quot;object&quot;</span>], <span class="stringliteral">@&quot;objects&quot;</span>, nil);
 <a name="l00123"></a>00123 }
 <a name="l00124"></a>00124 
-<a name="l00125"></a>00125 - (void)testSingulars
+<a name="l00125"></a><a class="code" href="interface_active_support_kit_tests.html#ae787f03b9f1096ed58eed09b94818777">00125</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#ae787f03b9f1096ed58eed09b94818777">testSingulars</a>
 <a name="l00126"></a>00126 {
 <a name="l00127"></a>00127     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] singularize:<span class="stringliteral">@&quot;quizzes&quot;</span>], <span class="stringliteral">@&quot;quiz&quot;</span>, nil);
 <a name="l00128"></a>00128 }
 <a name="l00129"></a>00129 
-<a name="l00130"></a>00130 - (void)testHumanize
+<a name="l00130"></a><a class="code" href="interface_active_support_kit_tests.html#a47c6389e2bb648af216630145a0a23f4">00130</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a47c6389e2bb648af216630145a0a23f4">testHumanize</a>
 <a name="l00131"></a>00131 {
 <a name="l00132"></a>00132     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] humanize:<span class="stringliteral">@&quot;employee_salary&quot;</span>], <span class="stringliteral">@&quot;Employee salary&quot;</span>, nil);
 <a name="l00133"></a>00133     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] humanize:<span class="stringliteral">@&quot;author_id&quot;</span>], <span class="stringliteral">@&quot;Author&quot;</span>, nil);
 <a name="l00134"></a>00134 }
 <a name="l00135"></a>00135 
-<a name="l00136"></a>00136 - (void)testTitleize
+<a name="l00136"></a><a class="code" href="interface_active_support_kit_tests.html#a0694133beeac6640d5ea5cafc399a35e">00136</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a0694133beeac6640d5ea5cafc399a35e">testTitleize</a>
 <a name="l00137"></a>00137 {
 <a name="l00138"></a>00138     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] titleize:<span class="stringliteral">@&quot;man from the boondocks&quot;</span>], <span class="stringliteral">@&quot;Man From The Boondocks&quot;</span>, nil);
 <a name="l00139"></a>00139     STAssertEqualObjects([[<a class="code" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector] titleize:<span class="stringliteral">@&quot;x-men: the last stand&quot;</span>], <span class="stringliteral">@&quot;X Men: The Last Stand&quot;</span>, nil);
 <a name="l00140"></a>00140 }
 <a name="l00141"></a>00141 
-<a name="l00142"></a>00142 - (void)testArrayToParam
+<a name="l00142"></a><a class="code" href="interface_active_support_kit_tests.html#ad2b6ee053bdd0fc74a47cdbf02f8e728">00142</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#ad2b6ee053bdd0fc74a47cdbf02f8e728">testArrayToParam</a>
 <a name="l00143"></a>00143 {
 <a name="l00144"></a>00144     NSArray *array = [NSArray arrayWithObjects:@&quot;a&quot;, @&quot;b&quot;, @&quot;c&quot;, nil];
 <a name="l00145"></a>00145     STAssertEqualObjects([array toParam], <span class="stringliteral">@&quot;a/b/c&quot;</span>, nil);
@@ -225,13 +226,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00147"></a>00147     STAssertEqualObjects([array toParam], <span class="stringliteral">@&quot;1/2/3&quot;</span>, nil);
 <a name="l00148"></a>00148 }
 <a name="l00149"></a>00149 
-<a name="l00150"></a>00150 - (void)testArrayToQuery
+<a name="l00150"></a><a class="code" href="interface_active_support_kit_tests.html#a2698548e26b077b9257fce259e67d201">00150</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a2698548e26b077b9257fce259e67d201">testArrayToQuery</a>
 <a name="l00151"></a>00151 {
 <a name="l00152"></a>00152     NSArray *array = [NSArray arrayWithObjects:@&quot;Rails&quot;, @&quot;coding&quot;, nil];
 <a name="l00153"></a>00153     STAssertEqualObjects([array toQueryWithKey:<span class="stringliteral">@&quot;hobbies&quot;</span>], <span class="stringliteral">@&quot;hobbies%5B%5D=Rails&amp;hobbies%5B%5D=coding&quot;</span>, nil);
 <a name="l00154"></a>00154 }
 <a name="l00155"></a>00155 
-<a name="l00156"></a>00156 - (void)testHashToParam
+<a name="l00156"></a><a class="code" href="interface_active_support_kit_tests.html#a9f1df2b23e37bbeb93e3ca77c8e9737d">00156</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a9f1df2b23e37bbeb93e3ca77c8e9737d">testHashToParam</a>
 <a name="l00157"></a>00157 {
 <a name="l00158"></a>00158     NSDictionary *hash = [NSDictionary dictionaryWithObjectsAndKeys:@&quot;David&quot;, @&quot;name&quot;, @&quot;Danish&quot;, @&quot;nationality&quot;, nil];
 <a name="l00159"></a>00159     STAssertEqualObjects([hash toParamWithNamespace:nil], <span class="stringliteral">@&quot;name=David&amp;nationality=Danish&quot;</span>, nil);
@@ -249,21 +250,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00171"></a>00171     <span class="comment">// compared to Rails. Does it amount to the same thing in the end?</span>
 <a name="l00172"></a>00172 }
 <a name="l00173"></a>00173 
-<a name="l00174"></a>00174 - (void)testJSONDecode
+<a name="l00174"></a><a class="code" href="interface_active_support_kit_tests.html#a1f6394f9780dca301e2f642901aceba4">00174</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#a1f6394f9780dca301e2f642901aceba4">testJSONDecode</a>
 <a name="l00175"></a>00175 {
 <a name="l00176"></a>00176     <span class="comment">// require &#39;active_support&#39;</span>
 <a name="l00177"></a>00177     <span class="comment">// p ActiveSupport::JSON.decode(&quot;[\&quot;hello world\&quot;]&quot;)</span>
 <a name="l00178"></a>00178     NSError *error = nil;
-<a name="l00179"></a>00179     <span class="keywordtype">id</span> <span class="keywordtype">object</span> = ASJSONDecodeFromData([<span class="stringliteral">@&quot;[\&quot;</span>hello world\<span class="stringliteral">&quot;]&quot;</span> dataUsingEncoding:NSUTF8StringEncoding], &amp;error);
+<a name="l00179"></a>00179     <span class="keywordtype">id</span> <span class="keywordtype">object</span> = <a class="code" href="_a_s_j_s_o_n_8h.html#ae353e403c8e5ac28b6caab9b6b0c7718">ASJSONDecodeFromData</a>([<span class="stringliteral">@&quot;[\&quot;</span>hello world\<span class="stringliteral">&quot;]&quot;</span> dataUsingEncoding:NSUTF8StringEncoding], &amp;error);
 <a name="l00180"></a>00180     STAssertTrue([<span class="keywordtype">object</span> isKindOfClass:[NSArray <span class="keyword">class</span>]], nil);
 <a name="l00181"></a>00181     STAssertEquals([<span class="keywordtype">object</span> count], (NSUInteger)1, nil);
 <a name="l00182"></a>00182     STAssertEqualObjects([<span class="keywordtype">object</span> objectAtIndex:0], <span class="stringliteral">@&quot;hello world&quot;</span>, nil);
 <a name="l00183"></a>00183     STAssertEqualObjects(error, nil, nil);
 <a name="l00184"></a>00184 }
 <a name="l00185"></a>00185 
-<a name="l00186"></a>00186 - (void)testJSONEncode
+<a name="l00186"></a><a class="code" href="interface_active_support_kit_tests.html#abfc231d29c89af7573256c966f088724">00186</a> - (void)<a class="code" href="interface_active_support_kit_tests.html#abfc231d29c89af7573256c966f088724">testJSONEncode</a>
 <a name="l00187"></a>00187 {
-<a name="l00188"></a>00188     STAssertEqualObjects(ASJSONEncodeToString([NSArray arrayWithObject:<span class="stringliteral">@&quot;hello world&quot;</span>], NULL), <span class="stringliteral">@&quot;[\&quot;</span>hello world\<span class="stringliteral">&quot;]&quot;</span>, nil);
+<a name="l00188"></a>00188     STAssertEqualObjects(<a class="code" href="_a_s_j_s_o_n_8h.html#a953a956941fc6cd28f2418eb20cd1f70">ASJSONEncodeToString</a>([NSArray arrayWithObject:<span class="stringliteral">@&quot;hello world&quot;</span>], NULL), <span class="stringliteral">@&quot;[\&quot;</span>hello world\<span class="stringliteral">&quot;]&quot;</span>, nil);
 <a name="l00189"></a>00189 }
 <a name="l00190"></a>00190 
 <a name="l00191"></a>00191 <span class="keyword">@end</span>
@@ -274,7 +275,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

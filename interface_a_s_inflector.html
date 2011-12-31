@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(57.0)</span>
+   &#160;<span id="projectnumber">v1.1&nbsp;(61.0)</span>
    </div>
    
   </td>
@@ -77,7 +77,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ASInflector Class Reference</div>  </div>
 </div>
@@ -92,43 +93,486 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac695f4820b89d8b50397722f51762849"></a><!-- doxytag: member="ASInflector::addPluralRegularExpressionRule:options:replacement:" ref="ac695f4820b89d8b50397722f51762849" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addPluralRegularExpressionRule:options:replacement:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0540a10f58ee61f2be95c907adf05a35"></a><!-- doxytag: member="ASInflector::addPluralStringRule:options:replacement:" ref="a0540a10f58ee61f2be95c907adf05a35" args="(NSString *rule,[options] NSStringCompareOptions options,[replacement] NSString *replacement)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addPluralStringRule:options:replacement:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4131bba424056ad00dc63ab485c1139c"></a><!-- doxytag: member="ASInflector::addSingularRegularExpressionRule:options:replacement:" ref="a4131bba424056ad00dc63ab485c1139c" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addSingularRegularExpressionRule:options:replacement:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf297c5bbdfa7d53e2702b1fd87858eb"></a><!-- doxytag: member="ASInflector::addSingularStringRule:options:replacement:" ref="abf297c5bbdfa7d53e2702b1fd87858eb" args="(NSString *rule,[options] NSStringCompareOptions options,[replacement] NSString *replacement)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addSingularStringRule:options:replacement:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb7fd10bb5a61ed0311884865fd21a91"></a><!-- doxytag: member="ASInflector::addIrregularWithSingular:plural:" ref="aeb7fd10bb5a61ed0311884865fd21a91" args="(NSString *singular,[plural] NSString *plural)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addIrregularWithSingular:plural:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4735bef8b5d76b5a4b5ee30fd764877d"></a><!-- doxytag: member="ASInflector::addUncountable:" ref="a4735bef8b5d76b5a4b5ee30fd764877d" args="(NSString *uncountable)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addUncountable:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9ea9e58accd06893a6bf0f479e87be7"></a><!-- doxytag: member="ASInflector::addHumanRegularExpressionRule:options:replacement:" ref="ad9ea9e58accd06893a6bf0f479e87be7" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addHumanRegularExpressionRule:options:replacement:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59781eed4e8d18e5adbc7e49c439a6d9"></a><!-- doxytag: member="ASInflector::addHumanStringRule:options:replacement:" ref="a59781eed4e8d18e5adbc7e49c439a6d9" args="(NSString *rule,[options] NSStringCompareOptions options,[replacement] NSString *replacement)" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>addHumanStringRule:options:replacement:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af70fc4f089fa1f06d260637b3bd9d166"></a><!-- doxytag: member="ASInflector::clear" ref="af70fc4f089fa1f06d260637b3bd9d166" args="()" -->
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <b>clear</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32c1120080d3337135dd06c6fc5cf410"></a><!-- doxytag: member="ASInflector::pluralize:" ref="a32c1120080d3337135dd06c6fc5cf410" args="(NSString *word)" -->
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <b>pluralize:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a192f5b2117a5d775986e3569118bd6b6"></a><!-- doxytag: member="ASInflector::singularize:" ref="a192f5b2117a5d775986e3569118bd6b6" args="(NSString *word)" -->
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <b>singularize:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac890a7dd1902ebeac3e28b68e557f574"></a><!-- doxytag: member="ASInflector::humanize:" ref="ac890a7dd1902ebeac3e28b68e557f574" args="(NSString *lowerCaseAndUnderscoredWord)" -->
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <b>humanize:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13eef0c8214b2b4857efb43dd87c206a"></a><!-- doxytag: member="ASInflector::titleize:" ref="a13eef0c8214b2b4857efb43dd87c206a" args="(NSString *word)" -->
-(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <b>titleize:</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#ac695f4820b89d8b50397722f51762849">addPluralRegularExpressionRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a0540a10f58ee61f2be95c907adf05a35">addPluralStringRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a4131bba424056ad00dc63ab485c1139c">addSingularRegularExpressionRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#abf297c5bbdfa7d53e2702b1fd87858eb">addSingularStringRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#aeb7fd10bb5a61ed0311884865fd21a91">addIrregularWithSingular:plural:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a4735bef8b5d76b5a4b5ee30fd764877d">addUncountable:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#ad9ea9e58accd06893a6bf0f479e87be7">addHumanRegularExpressionRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a59781eed4e8d18e5adbc7e49c439a6d9">addHumanStringRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#af70fc4f089fa1f06d260637b3bd9d166">clear</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a32c1120080d3337135dd06c6fc5cf410">pluralize:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a192f5b2117a5d775986e3569118bd6b6">singularize:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#ac890a7dd1902ebeac3e28b68e557f574">humanize:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a13eef0c8214b2b4857efb43dd87c206a">titleize:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a159667067d0b0d5a6ac7af3f1431dad5">init</a><code> [implementation]</code></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57223842e1076410a626fd80b0e6c420"></a><!-- doxytag: member="ASInflector::defaultInflector" ref="a57223842e1076410a626fd80b0e6c420" args="()" -->
-(<a class="el" href="interface_a_s_inflector.html">ASInflector</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <b>defaultInflector</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_a_s_inflector.html">ASInflector</a> *)&#160;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_a_s_inflector.html#a57223842e1076410a626fd80b0e6c420">defaultInflector</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#a7d6d72766cc9b8e5aaea8600025aa96a">plurals</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#a81dbc6c7d90d394f923ce7a5dd7a4177">singulars</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#aee19490e374f052de7febec3bcd73115">uncountables</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#aeaa938ade2a6aafb576756a1f7251eb5">humans</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Transforms words from singular to plural and vice versa, transforms lowercase and underscored words to human-readable form, etc. </p>
 <p><a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> departs somewhat with Rails in its design. Rails uses ActiveSupport and Inflector as nested modules, neither as classes. Rails also uses Inflections as the primary class for capturing the inflection behaviour. The module Inflector defines methods for accessing the default inflections instance. Objective-C has nothing quite like modules. Hence <a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> encapsulates the primary behaviour. You can access the shared inflector using +[<a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector]. </p>
 
 <p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00039">39</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad9ea9e58accd06893a6bf0f479e87be7"></a><!-- doxytag: member="ASInflector::addHumanRegularExpressionRule:options:replacement:" ref="ad9ea9e58accd06893a6bf0f479e87be7" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addHumanRegularExpressionRule: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>rule</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">options:</td>
+          <td></td>
+          <td class="paramtype">(NSRegularExpressionOptions)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacement:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00199">199</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59781eed4e8d18e5adbc7e49c439a6d9"></a><!-- doxytag: member="ASInflector::addHumanStringRule:options:replacement:" ref="a59781eed4e8d18e5adbc7e49c439a6d9" args="(NSString *rule,[options] NSStringCompareOptions options,[replacement] NSString *replacement)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addHumanStringRule: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>rule</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">options:</td>
+          <td></td>
+          <td class="paramtype">(NSStringCompareOptions)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacement:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00204">204</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb7fd10bb5a61ed0311884865fd21a91"></a><!-- doxytag: member="ASInflector::addIrregularWithSingular:plural:" ref="aeb7fd10bb5a61ed0311884865fd21a91" args="(NSString *singular,[plural] NSString *plural)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addIrregularWithSingular: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>singular</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">plural:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>plural</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00217">217</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac695f4820b89d8b50397722f51762849"></a><!-- doxytag: member="ASInflector::addPluralRegularExpressionRule:options:replacement:" ref="ac695f4820b89d8b50397722f51762849" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addPluralRegularExpressionRule: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>rule</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">options:</td>
+          <td></td>
+          <td class="paramtype">(NSRegularExpressionOptions)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacement:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00173">173</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0540a10f58ee61f2be95c907adf05a35"></a><!-- doxytag: member="ASInflector::addPluralStringRule:options:replacement:" ref="a0540a10f58ee61f2be95c907adf05a35" args="(NSString *rule,[options] NSStringCompareOptions options,[replacement] NSString *replacement)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addPluralStringRule: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>rule</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">options:</td>
+          <td></td>
+          <td class="paramtype">(NSStringCompareOptions)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacement:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00179">179</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4131bba424056ad00dc63ab485c1139c"></a><!-- doxytag: member="ASInflector::addSingularRegularExpressionRule:options:replacement:" ref="a4131bba424056ad00dc63ab485c1139c" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addSingularRegularExpressionRule: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>rule</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">options:</td>
+          <td></td>
+          <td class="paramtype">(NSRegularExpressionOptions)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacement:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00186">186</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf297c5bbdfa7d53e2702b1fd87858eb"></a><!-- doxytag: member="ASInflector::addSingularStringRule:options:replacement:" ref="abf297c5bbdfa7d53e2702b1fd87858eb" args="(NSString *rule,[options] NSStringCompareOptions options,[replacement] NSString *replacement)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addSingularStringRule: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>rule</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">options:</td>
+          <td></td>
+          <td class="paramtype">(NSStringCompareOptions)&#160;</td>
+          <td class="paramname"><em>options</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacement:</td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>replacement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00192">192</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4735bef8b5d76b5a4b5ee30fd764877d"></a><!-- doxytag: member="ASInflector::addUncountable:" ref="a4735bef8b5d76b5a4b5ee30fd764877d" args="(NSString *uncountable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addUncountable: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>uncountable</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00244">244</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af70fc4f089fa1f06d260637b3bd9d166"></a><!-- doxytag: member="ASInflector::clear" ref="af70fc4f089fa1f06d260637b3bd9d166" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) clear </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00209">209</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57223842e1076410a626fd80b0e6c420"></a><!-- doxytag: member="ASInflector::defaultInflector" ref="a57223842e1076410a626fd80b0e6c420" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (<a class="el" href="interface_a_s_inflector.html">ASInflector</a> *) defaultInflector </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00034">34</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac890a7dd1902ebeac3e28b68e557f574"></a><!-- doxytag: member="ASInflector::humanize:" ref="ac890a7dd1902ebeac3e28b68e557f574" args="(NSString *lowerCaseAndUnderscoredWord)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) humanize: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>lowerCaseAndUnderscoredWord</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00270">270</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a159667067d0b0d5a6ac7af3f1431dad5"></a><!-- doxytag: member="ASInflector::init" ref="a159667067d0b0d5a6ac7af3f1431dad5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) init </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td><code> [implementation]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00160">160</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32c1120080d3337135dd06c6fc5cf410"></a><!-- doxytag: member="ASInflector::pluralize:" ref="a32c1120080d3337135dd06c6fc5cf410" args="(NSString *word)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) pluralize: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>word</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00249">249</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a192f5b2117a5d775986e3569118bd6b6"></a><!-- doxytag: member="ASInflector::singularize:" ref="a192f5b2117a5d775986e3569118bd6b6" args="(NSString *word)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) singularize: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>word</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00258">258</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a13eef0c8214b2b4857efb43dd87c206a"></a><!-- doxytag: member="ASInflector::titleize:" ref="a13eef0c8214b2b4857efb43dd87c206a" args="(NSString *word)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) titleize: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>word</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00284">284</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aeaa938ade2a6aafb576756a1f7251eb5"></a><!-- doxytag: member="ASInflector::humans" ref="aeaa938ade2a6aafb576756a1f7251eb5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray*) <a class="el" href="interface_a_s_inflector.html#aeaa938ade2a6aafb576756a1f7251eb5">humans</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00045">45</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7d6d72766cc9b8e5aaea8600025aa96a"></a><!-- doxytag: member="ASInflector::plurals" ref="a7d6d72766cc9b8e5aaea8600025aa96a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray*) <a class="el" href="interface_a_s_inflector.html#a7d6d72766cc9b8e5aaea8600025aa96a">plurals</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00042">42</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81dbc6c7d90d394f923ce7a5dd7a4177"></a><!-- doxytag: member="ASInflector::singulars" ref="a81dbc6c7d90d394f923ce7a5dd7a4177" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray*) <a class="el" href="interface_a_s_inflector.html#a81dbc6c7d90d394f923ce7a5dd7a4177">singulars</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00043">43</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee19490e374f052de7febec3bcd73115"></a><!-- doxytag: member="ASInflector::uncountables" ref="aee19490e374f052de7febec3bcd73115" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableArray*) <a class="el" href="interface_a_s_inflector.html#aee19490e374f052de7febec3bcd73115">uncountables</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00044">44</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>ActiveSupportKit/<a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a></li>
 <li>ActiveSupportKit/<a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a></li>
 </ul>
@@ -138,7 +582,7 @@ Static Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
