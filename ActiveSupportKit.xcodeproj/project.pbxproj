@@ -46,6 +46,10 @@
 		78E0B180140D320C004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E0B181140D320C004E1041 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
 		78E0B186140D3D68004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78ED15DC14B228B400149AEE /* ASRFC3339.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED15DB14B228B400149AEE /* ASRFC3339.m */; };
+		78ED15DD14B228B400149AEE /* ASRFC3339.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED15DB14B228B400149AEE /* ASRFC3339.m */; };
 		78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
@@ -100,6 +104,8 @@
 		78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ActiveSupport.m"; sourceTree = "<group>"; };
 		78E0B17E140D320C004E1041 /* ASInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflector.h; sourceTree = "<group>"; };
 		78E0B17F140D320C004E1041 /* ASInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflector.m; sourceTree = "<group>"; };
+		78ED15D714B2282E00149AEE /* ASRFC3339.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRFC3339.h; sourceTree = "<group>"; };
+		78ED15DB14B228B400149AEE /* ASRFC3339.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRFC3339.m; sourceTree = "<group>"; };
 		78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+ActiveSupport.h"; sourceTree = "<group>"; };
 		78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+ActiveSupport.m"; sourceTree = "<group>"; };
 		78F3B5551418CEB7005D6F5D /* ASJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASJSON.h; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 				7835461D13EA67C50049385C /* ASInflectorMethods.m */,
 				78E0B17E140D320C004E1041 /* ASInflector.h */,
 				78E0B17F140D320C004E1041 /* ASInflector.m */,
+				78ED15D714B2282E00149AEE /* ASRFC3339.h */,
+				78ED15DB14B228B400149AEE /* ASRFC3339.m */,
 				783545F513EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKit;
@@ -254,6 +262,7 @@
 				7835BC751414B8E600CC4B56 /* Versioning.h in Headers */,
 				78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
 				78F3B5571418CEB8005D6F5D /* ASJSON.h in Headers */,
+				78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +279,7 @@
 				7835BC761414B8E600CC4B56 /* Versioning.h in Headers */,
 				78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
 				78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */,
+				78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +475,7 @@
 				7835BC771414B8E600CC4B56 /* Versioning.m in Sources */,
 				78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
 				78F3B5591418CEB8005D6F5D /* ASJSON.m in Sources */,
+				78ED15DC14B228B400149AEE /* ASRFC3339.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +499,7 @@
 				78719AD0141543C800D102A0 /* ASInflector.m in Sources */,
 				78F3B50A14175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
 				78F3B55A1418CEB8005D6F5D /* ASJSON.m in Sources */,
+				78ED15DD14B228B400149AEE /* ASRFC3339.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +553,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 61.0;
+				CURRENT_PROJECT_VERSION = 66.1;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -571,7 +583,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 61.0;
+				CURRENT_PROJECT_VERSION = 66.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -591,7 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 61.0;
+				DYLIB_CURRENT_VERSION = 66.1;
 				DYLIB_INSTALL_NAME_BASE = "@executable_path/../Frameworks/RailsKit.framework/Versions/Current/Frameworks";
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -606,7 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 61.0;
+				DYLIB_CURRENT_VERSION = 66.1;
 				DYLIB_INSTALL_NAME_BASE = "@executable_path/../Frameworks/RailsKit.framework/Versions/Current/Frameworks";
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
