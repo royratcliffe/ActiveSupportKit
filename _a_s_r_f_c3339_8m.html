@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>ActiveSupportKit: ActiveSupportKit/ASInflector.m File Reference</title>
+<title>ActiveSupportKit: ActiveSupportKit/ASRFC3339.m File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -77,53 +77,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ActiveSupportKit/ASInflector.m File Reference</div>  </div>
+<div class="title">ActiveSupportKit/ASRFC3339.m File Reference</div>  </div>
 </div>
 <div class="contents">
-<div class="textblock"><code>#import &quot;<a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>&quot;</code><br/>
-<code>#import &quot;<a class="el" href="_a_s_inflector_methods_8h_source.html">ASInflectorMethods.h</a>&quot;</code><br/>
-<code>#import &quot;<a class="el" href="_n_s_regular_expression_09_active_support_8h_source.html">NSRegularExpression+ActiveSupport.h</a>&quot;</code><br/>
+<div class="textblock"><code>#import &quot;<a class="el" href="_a_s_r_f_c3339_8h_source.html">ASRFC3339.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for ASInflector.m:</div>
+Include dependency graph for ASRFC3339.m:</div>
 <div class="dyncontent">
-<div class="center"><img src="_a_s_inflector_8m__incl.png" border="0" usemap="#_active_support_kit_2_a_s_inflector_8m" alt=""/></div>
-<map name="_active_support_kit_2_a_s_inflector_8m" id="_active_support_kit_2_a_s_inflector_8m">
-<area shape="rect" id="node3" href="_a_s_inflector_8h.html" title="ASInflector.h" alt="" coords="5,80,96,107"/><area shape="rect" id="node7" href="_a_s_inflector_methods_8h.html" title="ASInflectorMethods.h" alt="" coords="121,80,260,107"/><area shape="rect" id="node10" href="_n_s_regular_expression_09_active_support_8h.html" title="NSRegularExpression+ActiveSupport.h" alt="" coords="285,80,531,107"/></map>
+<div class="center"><img src="_a_s_r_f_c3339_8m__incl.png" border="0" usemap="#_active_support_kit_2_a_s_r_f_c3339_8m" alt=""/></div>
+<map name="_active_support_kit_2_a_s_r_f_c3339_8m" id="_active_support_kit_2_a_s_r_f_c3339_8m">
+<area shape="rect" id="node3" href="_a_s_r_f_c3339_8h.html" title="ASRFC3339.h" alt="" coords="55,80,160,107"/></map>
 </div>
 </div>
-<p><a href="_a_s_inflector_8m_source.html">Go to the source code of this file.</a></p>
+<p><a href="_a_s_r_f_c3339_8m_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_inflector_8m.html#a02ef0a7409a511081de0eeddcb87bd19">ASInflectorApplyRulesAndReplacements</a> (NSArray *rulesAndReplacements, NSString *word)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_r_f_c3339_8m.html#ad366128f38a49d7f089337639aed139f">ASDateFromRFC3339String</a> (NSString *dateTimeString)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an RFC 3339 date-time string to a date.  <a href="#ad366128f38a49d7f089337639aed139f"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a02ef0a7409a511081de0eeddcb87bd19"></a><!-- doxytag: member="ASInflector.m::ASInflectorApplyRulesAndReplacements" ref="a02ef0a7409a511081de0eeddcb87bd19" args="(NSArray *rulesAndReplacements, NSString *word)" -->
+<a class="anchor" id="ad366128f38a49d7f089337639aed139f"></a><!-- doxytag: member="ASRFC3339.m::ASDateFromRFC3339String" ref="ad366128f38a49d7f089337639aed139f" args="(NSString *dateTimeString)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">NSString * ASInflectorApplyRulesAndReplacements </td>
+          <td class="memname">NSDate* ASDateFromRFC3339String </td>
           <td>(</td>
-          <td class="paramtype">NSArray *&#160;</td>
-          <td class="paramname"><em>rulesAndReplacements</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">NSString *&#160;</td>
-          <td class="paramname"><em>word</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>dateTimeString</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00293">293</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Converts an RFC 3339 date-time string to a date. </p>
+<p>Request for Comments 3339 describes a standard Internet date-time format as follows. </p>
+<div class="fragment"><pre class="fragment"> yyyy-mm-ddThh:mm:ssZ 
+</pre></div><p> where <code>yyyy-mm-dd</code> describes the year, month and day of month using decimal digits; <code>hh:mm:ss</code> describes hours, minutes and seconds. Time is expressed in Zulu time, more commonly known as Greenwich Mean Time. See Apple's Technical Q&amp;A QA1480 for more details. </p>
+
+<p>Definition at line <a class="el" href="_a_s_r_f_c3339_8m_source.html#l00027">27</a> of file <a class="el" href="_a_s_r_f_c3339_8m_source.html">ASRFC3339.m</a>.</p>
 
 </div>
 </div>
