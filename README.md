@@ -52,3 +52,14 @@ framework's `NSJSONSerialization`, although you could easily adapt the
 underlying requirement for JSON serialisation. Earlier versions depended on
 [YAJL and some Objective-C
 wrappers](https://github.com/royratcliffe/yajl/tree/master/objc).
+
+### iOS
+
+When building the library for iOS, remember to specify `-all_load` in
+the Other Linker Flags (`OTHER_LDFLAGS`). You need this because the
+library defines categories on standard NextStep foundation
+classes. Without 'all load,' you will see run-time exceptions for
+"selector not recognised." Linking against static libraries does not
+automatically fix up run-time dependencies. See Apple's Technical Q&A
+QA1490, Building Objective-C static libraries with categories, for
+more details.
