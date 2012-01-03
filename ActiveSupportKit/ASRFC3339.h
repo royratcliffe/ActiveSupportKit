@@ -26,11 +26,11 @@
 
 /*!
  * @brief Converts an RFC 3339 date-time string to a date.
- * @details Request for Comments 3339 describes a standard Internet date-time
- * format as follows. @code yyyy-mm-ddThh:mm:ssZ @endcode where @c yyyy-mm-dd
- * describes the year, month and day of month using decimal digits; @c hh:mm:ss
- * describes hours, minutes and seconds. Time is expressed in Zulu time, more
- * commonly known as Greenwich Mean Time. See Apple's Technical Q&A QA1480 for
- * more details.
+ * @details @link http://www.ietf.org/rfc/rfc3339.txt Request for Comments 3339
+ * @endlink describes a standard Internet date-time format as follows. @code
+ * yyyy-mm-ddThh:mm:ssZ @endcode where @c yyyy-mm-dd describes the year, month
+ * and day of month using decimal digits; @c hh:mm:ss describes hours, minutes
+ * and seconds. Time is expressed in Zulu time, more commonly known as Greenwich
+ * Mean Time. See Apple's Technical Q&A QA1480 for more details.
  */
 NSDate *ASDateFromRFC3339String(NSString *dateTimeString);
