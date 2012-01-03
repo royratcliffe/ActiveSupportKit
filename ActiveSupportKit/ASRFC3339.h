@@ -26,8 +26,8 @@
 
 /*!
  * @brief Converts an RFC 3339 date-time string to a date.
- * @details @link http://www.ietf.org/rfc/rfc3339.txt Request for Comments 3339
- * @endlink describes a standard Internet date-time format as follows. @code
+ * @details <a href="http://www.ietf.org/rfc/rfc3339.txt">Request for Comments
+ * 3339</a> describes a standard Internet date-time format as follows. @code
  * yyyy-mm-ddThh:mm:ssZ @endcode where @c yyyy-mm-dd describes the year, month
  * and day of month using decimal digits; @c hh:mm:ss describes hours, minutes
  * and seconds. Time is expressed in Zulu time, more commonly known as Greenwich
