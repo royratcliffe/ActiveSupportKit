@@ -24,6 +24,8 @@
 
 #import <Foundation/Foundation.h>
 
+NSDateFormatter *ASRFC3339DateFormatter(void);
+
 /*!
  * @brief Converts an RFC 3339 date-time string to a date.
  * @details <a href="http://www.ietf.org/rfc/rfc3339.txt">Request for Comments
@@ -33,4 +35,6 @@
  * and seconds. Time is expressed in Zulu time, more commonly known as Greenwich
  * Mean Time. See Apple's Technical Q&A QA1480 for more details.
  */
-NSDate *ASDateFromRFC3339String(NSString *dateTimeString);
+NSDate *ASDateFromRFC3339String(NSString *dateString);
+
+NSString *ASRFC3339StringFromDate(NSDate *date);

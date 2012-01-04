@@ -24,20 +24,25 @@
 
 #import "ASRFC3339.h"
 
-NSDate *ASDateFromRFC3339String(NSString *dateTimeString)
+NSDateFormatter *ASRFC3339DateFormatter()
 {
-	static NSDateFormatter *__strong dateFormatter;
-	if (dateFormatter == nil)
+	static NSDateFormatter *__strong zuluDateFormatter;
+	if (zuluDateFormatter == nil)
 	{
-		dateFormatter = [[NSDateFormatter alloc] init];
-		[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-		[dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-		[dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-		
-		// tidy up at exit
-		atexit_b(^{
-			dateFormatter = nil;
-		});
+		zuluDateFormatter = [[NSDateFormatter alloc] init];
+		[zuluDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+		[zuluDateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+		[zuluDateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 	}
-	return [dateFormatter dateFromString:dateTimeString];
+	return zuluDateFormatter;
+}
+
+NSDate *ASDateFromRFC3339String(NSString *dateString)
+{
+	return [ASRFC3339DateFormatter() dateFromString:dateString];
+}
+
+NSString *ASRFC3339StringFromDate(NSDate *date)
+{
+	return [ASRFC3339DateFormatter() stringFromDate:date];
 }
