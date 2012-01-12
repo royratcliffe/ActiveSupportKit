@@ -188,4 +188,22 @@
 	STAssertEqualObjects(ASJSONEncodeToString([NSArray arrayWithObject:@"hello world"], NULL), @"[\"hello world\"]", nil);
 }
 
+- (void)testRFC3339
+{
+	// Construct an arbitrary reference date-time.
+	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	[calendar setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+	[dateComponents setYear:1985];
+	[dateComponents setMonth:4];
+	[dateComponents setDay:12];
+	[dateComponents setHour:23];
+	[dateComponents setMinute:20];
+	[dateComponents setSecond:50];
+	NSDate *date = [calendar dateFromComponents:dateComponents];
+	
+	STAssertEqualObjects(ASDateFromRFC3339String(@"1985-04-12T23:20:50Z"), date, nil);
+	STAssertEqualObjects(ASDateFromRFC3339String(@"1985-04-12T23:20:50.52Z"), [date dateByAddingTimeInterval:0.52], nil);
+}
+
 @end
