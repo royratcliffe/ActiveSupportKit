@@ -660,6 +660,7 @@
 				DSTROOT = /tmp/ActiveSupportKitLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include";
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "/include/$(PROJECT_NAME)";
 				PRODUCT_NAME = ActiveSupportKit;
@@ -676,6 +677,7 @@
 				DSTROOT = /tmp/ActiveSupportKitLibrary.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include";
 				OTHER_LDFLAGS = "-ObjC";
 				PRIVATE_HEADERS_FOLDER_PATH = "/include/$(PROJECT_NAME)";
 				PRODUCT_NAME = ActiveSupportKit;
