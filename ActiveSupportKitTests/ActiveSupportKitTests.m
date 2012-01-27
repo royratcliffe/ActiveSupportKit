@@ -34,10 +34,10 @@
 
 - (void)testCamelize
 {
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", YES), @"ActiveRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record", NO), @"activeRecord", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", YES), @"ActiveRecord::Errors", @"");
-	STAssertEqualObjects(ASInflectorCamelize(@"active_record/errors", NO), @"activeRecord::Errors", @"");
+	STAssertEqualObjects([[ASInflector defaultInflector] camelize:@"active_record" uppercaseFirstLetter:YES], @"ActiveRecord", @"");
+	STAssertEqualObjects([[ASInflector defaultInflector] camelize:@"active_record" uppercaseFirstLetter:NO], @"activeRecord", @"");
+	STAssertEqualObjects([[ASInflector defaultInflector] camelize:@"active_record/errors" uppercaseFirstLetter:YES], @"ActiveRecord::Errors", @"");
+	STAssertEqualObjects([[ASInflector defaultInflector] camelize:@"active_record/errors" uppercaseFirstLetter:NO], @"activeRecord::Errors", @"");
 }
 
 - (void)testUnderscore
