@@ -31,6 +31,10 @@
 		78719ACE141542CD00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78719ACF141542CE00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78719AD0141543C800D102A0 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
+		788DB0F814D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
+		788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
+		788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
+		788DB0FE14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
 		78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
@@ -97,6 +101,8 @@
 		7835461D13EA67C50049385C /* ASInflectorMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflectorMethods.m; sourceTree = "<group>"; };
 		7835BC731414B8E600CC4B56 /* Versioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Versioning.h; sourceTree = "<group>"; };
 		7835BC741414B8E600CC4B56 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
+		788DB0F614D323CA00AF938D /* InflectorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InflectorTests.h; sourceTree = "<group>"; };
+		788DB0F714D323CA00AF938D /* InflectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InflectorTests.m; sourceTree = "<group>"; };
 		78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libActiveSupportKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AFBD9013EC587900BBFC62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78AFBD9D13EC587900BBFC62 /* ActiveSupportKitLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +238,8 @@
 			children = (
 				7835461013EA64C50049385C /* ActiveSupportKitTests.h */,
 				7835461113EA64C50049385C /* ActiveSupportKitTests.m */,
+				788DB0F614D323CA00AF938D /* InflectorTests.h */,
+				788DB0F714D323CA00AF938D /* InflectorTests.m */,
 				7835460B13EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKitTests;
@@ -263,6 +271,7 @@
 				78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
 				78F3B5571418CEB8005D6F5D /* ASJSON.h in Headers */,
 				78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */,
+				788DB0F814D323CA00AF938D /* InflectorTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +289,7 @@
 				78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
 				78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */,
 				78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */,
+				788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7835461213EA64C50049385C /* ActiveSupportKitTests.m in Sources */,
+				788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78AFBDB613EC58FC00BBFC62 /* ActiveSupportKitTests.m in Sources */,
+				788DB0FE14D3244A00AF938D /* InflectorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
