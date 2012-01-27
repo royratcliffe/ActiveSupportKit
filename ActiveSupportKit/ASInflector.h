@@ -43,6 +43,8 @@
 	NSMutableArray *singulars;
 	NSMutableArray *uncountables;
 	NSMutableArray *humans;
+	NSMutableDictionary *acronyms;
+	NSString *acronymsRegularExpressionString;
 }
 
 + (ASInflector *)defaultInflector;
@@ -60,10 +62,13 @@
 - (void)addHumanRegularExpressionRule:(NSString *)rule options:(NSRegularExpressionOptions)options replacement:(NSString *)replacement;
 - (void)addHumanStringRule:(NSString *)rule options:(NSStringCompareOptions)options replacement:(NSString *)replacement;
 
+- (void)addAcronym:(NSString *)acronym;
+
 - (void)clear;
 
 - (NSString *)pluralize:(NSString *)word;
 - (NSString *)singularize:(NSString *)word;
+- (NSString *)camelize:(NSString *)term uppercaseFirstLetter:(BOOL)uppercaseFirstLetter;
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord;
 - (NSString *)titleize:(NSString *)word;
 
