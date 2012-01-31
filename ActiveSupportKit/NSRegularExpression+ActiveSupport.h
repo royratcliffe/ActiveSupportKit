@@ -76,6 +76,9 @@
  * each match can have multiple matching subsections. See Apple documentation
  * for @c NSRegularExpression for more details.
  */
-- (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult;
+- (NSString *)replaceMatchesInString:(NSString *)string
+		  replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result,
+													NSString *inString,
+													NSInteger offset))replacementStringForResult;
 
 @end
