@@ -23,37 +23,17 @@
 //------------------------------------------------------------------------------
 
 #import "ASInflectorMethods.h"
+#import "ASInflector.h"
 #import "NSRegularExpression+ActiveSupport.h"
 
 NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase)
 {
-	NSString *camelizedString;
-	if (firstLetterInUppercase)
-	{
-		camelizedString = [[NSRegularExpression regularExpressionWithPattern:@"/(.?)" options:0 error:NULL] replaceMatchesInString:lowerCaseAndUnderscoredWord replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
-			return [@"::" stringByAppendingString:[[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$1"] uppercaseString]];
-		}];
-		//	(?:)	grouping without back-references
-		//	^|_		beginning of a line or string, or an underscore
-		camelizedString = [[NSRegularExpression regularExpressionWithPattern:@"(?:^|_)(.)" options:0 error:NULL] replaceMatchesInString:camelizedString replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
-			return [[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$1"] uppercaseString];
-		}];
-	}
-	else
-	{
-		camelizedString = ASInflectorCamelize(lowerCaseAndUnderscoredWord, YES);
-		camelizedString = [[[lowerCaseAndUnderscoredWord substringWithRange:NSMakeRange(0, 1)] lowercaseString] stringByAppendingString:[camelizedString substringWithRange:NSMakeRange(1, [camelizedString length] - 1)]];
-	}
-	return camelizedString;
+	return [[ASInflector defaultInflector] camelize:lowerCaseAndUnderscoredWord uppercaseFirstLetter:firstLetterInUppercase];
 }
 
 NSString *ASInflectorUnderscore(NSString *camelCasedWord)
 {
-	NSMutableString *word = [camelCasedWord mutableCopy];
-	[[NSRegularExpression regularExpressionWithPattern:@"::" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"/"];
-	[[NSRegularExpression regularExpressionWithPattern:@"([A-Z]+)([A-Z][a-z])" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"$1_$2"];
-	[[NSRegularExpression regularExpressionWithPattern:@"([a-z\\d])([A-Z])" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"$1_$2"];
-	return [[[word copy] stringByReplacingOccurrencesOfString:@"-" withString:@"_"] lowercaseString];
+	return [[ASInflector defaultInflector] underscore:camelCasedWord];
 }
 
 NSString *ASInflectorDasherize(NSString *underscoredWord)
