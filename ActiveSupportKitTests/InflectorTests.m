@@ -35,6 +35,11 @@
 - (void)testAcronyms
 {
 	[[ASInflector defaultInflector] addAcronym:@"API"];
+	[[ASInflector defaultInflector] addAcronym:@"HTML"];
+	[[ASInflector defaultInflector] addAcronym:@"HTTP"];
+	[[ASInflector defaultInflector] addAcronym:@"SSL"];
+	[[ASInflector defaultInflector] addAcronym:@"RESTful"];
+	[[ASInflector defaultInflector] addAcronym:@"W3C"];
 	static struct
 	{
 		NSString *const __unsafe_unretained camel;
@@ -44,11 +49,25 @@
 	}
 	camelUnderHumanTitle[] =
 	{
-		{ @"API", @"api", @"API", @"API" },
+		{ @"API",               @"api",                @"API",                @"API" },
+		{ @"APIController",     @"api_controller",     @"API controller",     @"API Controller" },
+		{ @"Nokogiri::HTML",    @"nokogiri/html",      @"Nokogiri/HTML",      @"Nokogiri/HTML" },
+		{ @"HTTPAPI",           @"http_api",           @"HTTP API",           @"HTTP API" },
+		{ @"HTTP::Get",         @"http/get",           @"HTTP/get",           @"HTTP/Get" },
+		{ @"SSLError",          @"ssl_error",          @"SSL error",          @"SSL Error" },
+		{ @"RESTful",           @"restful",            @"RESTful",            @"RESTful" },
+		{ @"RESTfulController", @"restful_controller", @"RESTful controller", @"RESTful Controller" },
+		{ @"IHeartW3C",         @"i_heart_w3c",        @"I heart W3C",        @"I Heart W3C" },
 	};
 	for (NSUInteger i = 0; i < sizeof(camelUnderHumanTitle)/sizeof(camelUnderHumanTitle[0]); i++)
 	{
 		STAssertEqualObjects(camelUnderHumanTitle[i].camel, [[ASInflector defaultInflector] camelize:camelUnderHumanTitle[i].under uppercaseFirstLetter:YES], nil);
+		STAssertEqualObjects(camelUnderHumanTitle[i].camel, [[ASInflector defaultInflector] camelize:camelUnderHumanTitle[i].camel uppercaseFirstLetter:YES], nil);
+		STAssertEqualObjects(camelUnderHumanTitle[i].under, [[ASInflector defaultInflector] underscore:camelUnderHumanTitle[i].under], nil);
+		STAssertEqualObjects(camelUnderHumanTitle[i].under, [[ASInflector defaultInflector] underscore:camelUnderHumanTitle[i].camel], nil);
+		STAssertEqualObjects(camelUnderHumanTitle[i].title, [[ASInflector defaultInflector] titleize:camelUnderHumanTitle[i].under], nil);
+		STAssertEqualObjects(camelUnderHumanTitle[i].title, [[ASInflector defaultInflector] titleize:camelUnderHumanTitle[i].camel], nil);
+		STAssertEqualObjects(camelUnderHumanTitle[i].human, [[ASInflector defaultInflector] humanize:camelUnderHumanTitle[i].under], nil);
 	}
 }
 
