@@ -26,6 +26,7 @@
 #import "ASInflectorMethods.h"
 
 #import "NSRegularExpression+ActiveSupport.h"
+#import "NSMutableString+ActiveSupport.h"
 
 NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word);
 
@@ -297,6 +298,11 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:@"(?:_|(\\/))([a-z\\d]*)" options:NSRegularExpressionCaseInsensitive error:NULL];
 	return [[re replaceMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 		NSRegularExpression *re = [result regularExpression];
+		// Note that the first replacement string may not find a match. The
+		// range, in that case, has location equal to NSNotFound. The ?: regular
+		// expression operator marks non-capturing parentheses. The enclosing
+		// parentheses group the pattern but does not capture the matching text;
+		// an optimisation.
 		NSString *replacementString1 = [result rangeAtIndex:1].location != NSNotFound ? [re replacementStringForResult:result inString:inString offset:offset template:@"$1"] : nil;
 		NSString *replacementString2 = [re replacementStringForResult:result inString:inString offset:offset template:@"$2"];
 		NSString *acronym = [acronyms objectForKey:replacementString2];
@@ -304,18 +310,63 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	}] stringByReplacingOccurrencesOfString:@"/" withString:@"::"];
 }
 
+- (NSString *)underscore:(NSString *)camelCasedWord
+{
+	NSMutableString *word = [camelCasedWord mutableCopy];
+	[[NSRegularExpression regularExpressionWithPattern:@"::" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"/"];
+	NSString *pattern = [NSString stringWithFormat:@"(?:([A-Za-z\\d])|^)(%@)(?=\\b|[^a-z])", acronymsRegularExpressionString];
+	[word replaceMatchesForRegularExpression:[NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL]
+				  replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+		NSRegularExpression *re = [result regularExpression];
+		NSString *replacementString1 = [result rangeAtIndex:1].location != NSNotFound ? [re replacementStringForResult:result inString:inString offset:offset template:@"$1"] : nil;
+		NSString *replacementString2 = [re replacementStringForResult:result inString:inString offset:offset template:@"$2"];
+		return [NSString stringWithFormat:@"%@%@%@", replacementString1 ? replacementString1 : @"", replacementString1 ? @"_" : @"", [replacementString2 lowercaseString]];
+	}];
+	[[NSRegularExpression regularExpressionWithPattern:@"([A-Z\\d]+)([A-Z][a-z])" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"$1_$2"];
+	[[NSRegularExpression regularExpressionWithPattern:@"([a-z\\d])([A-Z])" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"$1_$2"];
+	return [[[word copy] stringByReplacingOccurrencesOfString:@"-" withString:@"_"] lowercaseString];
+}
+
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord
 {
 	NSMutableString *result = [ASInflectorApplyRulesAndReplacements(humans, lowerCaseAndUnderscoredWord) mutableCopy];
-	[[NSRegularExpression regularExpressionWithPattern:@"_id$" options:0 error:NULL] replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:@""];
+	
+	// Strip any trailing "_id" string. The method could implement this without
+	// using regular expressions. Such might prove more efficient. Rails uses
+	// regular expressions however and since this framework aims to mimic Rails,
+	// use a regular expression too.
+	[[NSRegularExpression regularExpressionWithPattern:@"_id$"
+											   options:0
+												 error:NULL] replaceMatchesInString:result
+																			options:0
+																			  range:NSMakeRange(0, [result length])
+																	   withTemplate:@""];
+	
 	[result replaceOccurrencesOfString:@"_" withString:@" " options:0 range:NSMakeRange(0, [result length])];
-	// Take care. Do not use Apple's -[NSString capitalizedString] method
-	// because it capitalises every word. Just do the first letter.
-	if ([result length])
-	{
-		[result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringToIndex:1] capitalizedString]];
-	}
-	return result;
+	
+	// Match sequences of letters and numbers case-insensitively. Does the match
+	// correspond to an acronym? If it does, replace the acronym with its
+	// case-sensitive equivalent. Note, some acronyms use both upper and lower
+	// cases, e.g. RESTful. The acronyms dictionary keys contain acronyms in
+	// lower case. The argument is a lower-case and underscored word.
+	[result replaceMatchesForRegularExpression:[NSRegularExpression regularExpressionWithPattern:@"([a-z\\d]*)"
+																						 options:NSRegularExpressionCaseInsensitive
+																						   error:NULL]
+					replacementStringForResult:^NSString *(NSTextCheckingResult *result,
+														   NSString *inString,
+														   NSInteger offset) {
+		NSString *replacementString = [[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$0"], *acronym;
+		return (acronym = [acronyms objectForKey:replacementString]) ? acronym : [replacementString lowercaseString];
+	}];
+	
+	return [[NSRegularExpression regularExpressionWithPattern:@"^\\w"
+													  options:0
+														error:NULL] replaceMatchesInString:result
+																replacementStringForResult:^NSString *(NSTextCheckingResult *result,
+																									   NSString *inString,
+																									   NSInteger offset) {
+		return [[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$0"] uppercaseString];
+	}];
 }
 
 - (NSString *)titleize:(NSString *)word

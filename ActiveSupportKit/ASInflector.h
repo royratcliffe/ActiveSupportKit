@@ -69,6 +69,7 @@
 - (NSString *)pluralize:(NSString *)word;
 - (NSString *)singularize:(NSString *)word;
 - (NSString *)camelize:(NSString *)term uppercaseFirstLetter:(BOOL)uppercaseFirstLetter;
+- (NSString *)underscore:(NSString *)camelCasedWord;
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord;
 - (NSString *)titleize:(NSString *)word;
 
