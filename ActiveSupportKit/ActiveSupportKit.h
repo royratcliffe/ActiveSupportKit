@@ -26,6 +26,7 @@
 #import <ActiveSupportKit/ASInflectorMethods.h>
 #import <ActiveSupportKit/ASInflector.h>
 #import <ActiveSupportKit/ASRFC3339.h>
+#import <ActiveSupportKit/ASNull.h>
 
 // categories
 #import <ActiveSupportKit/NSObject+ActiveSupport.h>

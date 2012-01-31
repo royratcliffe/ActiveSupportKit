@@ -35,6 +35,10 @@
 		788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
 		788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
 		788DB0FE14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
+		788F9C1514D837F8000BA699 /* ASNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		788F9C1614D837F8000BA699 /* ASNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		788F9C1714D837F8000BA699 /* ASNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F9C1414D837F8000BA699 /* ASNull.m */; };
+		788F9C1814D837F8000BA699 /* ASNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F9C1414D837F8000BA699 /* ASNull.m */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
 		78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
@@ -103,6 +107,8 @@
 		7835BC741414B8E600CC4B56 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		788DB0F614D323CA00AF938D /* InflectorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InflectorTests.h; sourceTree = "<group>"; };
 		788DB0F714D323CA00AF938D /* InflectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InflectorTests.m; sourceTree = "<group>"; };
+		788F9C1314D837F8000BA699 /* ASNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASNull.h; sourceTree = "<group>"; };
+		788F9C1414D837F8000BA699 /* ASNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASNull.m; sourceTree = "<group>"; };
 		78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libActiveSupportKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AFBD9013EC587900BBFC62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		78AFBD9D13EC587900BBFC62 /* ActiveSupportKitLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +222,8 @@
 				78E0B17F140D320C004E1041 /* ASInflector.m */,
 				78ED15D714B2282E00149AEE /* ASRFC3339.h */,
 				78ED15DB14B228B400149AEE /* ASRFC3339.m */,
+				788F9C1314D837F8000BA699 /* ASNull.h */,
+				788F9C1414D837F8000BA699 /* ASNull.m */,
 				783545F513EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKit;
@@ -272,6 +280,7 @@
 				78F3B5571418CEB8005D6F5D /* ASJSON.h in Headers */,
 				78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */,
 				788DB0F814D323CA00AF938D /* InflectorTests.h in Headers */,
+				788F9C1514D837F8000BA699 /* ASNull.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +299,7 @@
 				78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */,
 				78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */,
 				788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */,
+				788F9C1614D837F8000BA699 /* ASNull.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +496,7 @@
 				78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
 				78F3B5591418CEB8005D6F5D /* ASJSON.m in Sources */,
 				78ED15DC14B228B400149AEE /* ASRFC3339.m in Sources */,
+				788F9C1714D837F8000BA699 /* ASNull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +522,7 @@
 				78F3B50A14175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
 				78F3B55A1418CEB8005D6F5D /* ASJSON.m in Sources */,
 				78ED15DD14B228B400149AEE /* ASRFC3339.m in Sources */,
+				788F9C1814D837F8000BA699 /* ASNull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
