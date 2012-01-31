@@ -23,10 +23,8 @@
 //------------------------------------------------------------------------------
 
 #import "ASInflector.h"
-#import "ASInflectorMethods.h"
 
 #import "NSRegularExpression+ActiveSupport.h"
-#import "NSMutableString+ActiveSupport.h"
 
 NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word);
 
@@ -281,22 +279,18 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	NSString *string;
 	if (uppercaseFirstLetter)
 	{
-		NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:@"^[a-z\\d]*" options:0 error:NULL];
-		string = [re replaceMatchesInString:term replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+		string = [[NSRegularExpression regularExpressionWithPattern:@"^[a-z\\d]*" options:0 error:NULL] stringByReplacingMatchesInString:term replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 			NSString *replacementString = [[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$0"], *acronym;
 			return (acronym = [acronyms objectForKey:replacementString]) ? acronym : [replacementString capitalizedString];
 		}];
 	}
 	else
 	{
-		NSString *pattern = [NSString stringWithFormat:@"^(?:%@(?=\\b|[A-Z_])|\\w)", acronymsRegularExpressionString];
-		NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];
-		string = [re replaceMatchesInString:term replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+		string = [[NSRegularExpression regularExpressionWithPattern:[NSString stringWithFormat:@"^(?:%@(?=\\b|[A-Z_])|\\w)", acronymsRegularExpressionString] options:0 error:NULL] stringByReplacingMatchesInString:term replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 			return [[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$0"] lowercaseString];
 		}];
 	}
-	NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:@"(?:_|(\\/))([a-z\\d]*)" options:NSRegularExpressionCaseInsensitive error:NULL];
-	return [[re replaceMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+	return [[[NSRegularExpression regularExpressionWithPattern:@"(?:_|(\\/))([a-z\\d]*)" options:NSRegularExpressionCaseInsensitive error:NULL] stringByReplacingMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 		NSRegularExpression *re = [result regularExpression];
 		// Note that the first replacement string may not find a match. The
 		// range, in that case, has location equal to NSNotFound. The ?: regular
@@ -315,8 +309,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	NSMutableString *word = [camelCasedWord mutableCopy];
 	[[NSRegularExpression regularExpressionWithPattern:@"::" options:0 error:NULL] replaceMatchesInString:word options:0 range:NSMakeRange(0, [word length]) withTemplate:@"/"];
 	NSString *pattern = [NSString stringWithFormat:@"(?:([A-Za-z\\d])|^)(%@)(?=\\b|[^a-z])", acronymsRegularExpressionString];
-	[word replaceMatchesForRegularExpression:[NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL]
-				  replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+	[[NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL] replaceMatchesInString:word replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 		NSRegularExpression *re = [result regularExpression];
 		NSString *replacementString1 = [result rangeAtIndex:1].location != NSNotFound ? [re replacementStringForResult:result inString:inString offset:offset template:@"$1"] : nil;
 		NSString *replacementString2 = [re replacementStringForResult:result inString:inString offset:offset template:@"$2"];
@@ -335,12 +328,7 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	// using regular expressions. Such might prove more efficient. Rails uses
 	// regular expressions however and since this framework aims to mimic Rails,
 	// use a regular expression too.
-	[[NSRegularExpression regularExpressionWithPattern:@"_id$"
-											   options:0
-												 error:NULL] replaceMatchesInString:result
-																			options:0
-																			  range:NSMakeRange(0, [result length])
-																	   withTemplate:@""];
+	[[NSRegularExpression regularExpressionWithPattern:@"_id$" options:0 error:NULL] replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:@""];
 	
 	[result replaceOccurrencesOfString:@"_" withString:@" " options:0 range:NSMakeRange(0, [result length])];
 	
@@ -349,29 +337,19 @@ NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NS
 	// case-sensitive equivalent. Note, some acronyms use both upper and lower
 	// cases, e.g. RESTful. The acronyms dictionary keys contain acronyms in
 	// lower case. The argument is a lower-case and underscored word.
-	[result replaceMatchesForRegularExpression:[NSRegularExpression regularExpressionWithPattern:@"([a-z\\d]*)"
-																						 options:NSRegularExpressionCaseInsensitive
-																						   error:NULL]
-					replacementStringForResult:^NSString *(NSTextCheckingResult *result,
-														   NSString *inString,
-														   NSInteger offset) {
+	[[NSRegularExpression regularExpressionWithPattern:@"([a-z\\d]*)" options:NSRegularExpressionCaseInsensitive error:NULL] replaceMatchesInString:result replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 		NSString *replacementString = [[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$0"], *acronym;
 		return (acronym = [acronyms objectForKey:replacementString]) ? acronym : [replacementString lowercaseString];
 	}];
 	
-	return [[NSRegularExpression regularExpressionWithPattern:@"^\\w"
-													  options:0
-														error:NULL] replaceMatchesInString:result
-																replacementStringForResult:^NSString *(NSTextCheckingResult *result,
-																									   NSString *inString,
-																									   NSInteger offset) {
+	return [[NSRegularExpression regularExpressionWithPattern:@"^\\w" options:0 error:NULL] stringByReplacingMatchesInString:result replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 		return [[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$0"] uppercaseString];
 	}];
 }
 
 - (NSString *)titleize:(NSString *)word
 {
-	return [[NSRegularExpression regularExpressionWithPattern:@"\\b('?[a-z])" options:0 error:NULL] replaceMatchesInString:[self humanize:ASInflectorUnderscore(word)] replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
+	return [[NSRegularExpression regularExpressionWithPattern:@"\\b('?[a-z])" options:0 error:NULL] stringByReplacingMatchesInString:[self humanize:[self underscore:word]] replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
 		return [[[result regularExpression] replacementStringForResult:result inString:inString offset:offset template:@"$1"] capitalizedString];
 	}];
 }

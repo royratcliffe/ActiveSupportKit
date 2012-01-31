@@ -32,7 +32,6 @@
 #import <ActiveSupportKit/NSArray+ActiveSupport.h>
 #import <ActiveSupportKit/NSDictionary+ActiveSupport.h>
 #import <ActiveSupportKit/NSRegularExpression+ActiveSupport.h>
-#import <ActiveSupportKit/NSMutableString+ActiveSupport.h>
 
 #import <ActiveSupportKit/Versioning.h>
 

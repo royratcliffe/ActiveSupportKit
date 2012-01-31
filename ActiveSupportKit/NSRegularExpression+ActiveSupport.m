@@ -23,18 +23,38 @@
 //------------------------------------------------------------------------------
 
 #import "NSRegularExpression+ActiveSupport.h"
-#import "NSMutableString+ActiveSupport.h"
 
 @implementation NSRegularExpression(ActiveSupport)
 
-- (NSString *)replaceMatchesInString:(NSString *)string
-		  replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result,
-													NSString *inString,
-													NSInteger offset))replacementStringForResult
+- (NSUInteger)replaceMatchesInString:(NSMutableString *)string replacementStringForResult:(ASReplacementStringForResultBlock)replacementStringForResult
+{
+	NSUInteger numberOfReplacements = 0;
+	
+	NSInteger offset = 0;
+	for (NSTextCheckingResult *result in [self matchesInString:string options:0 range:NSMakeRange(0, [string length])])
+	{
+		// Replaces the entire result range. However the results after matching
+		// have ranges in the index space of the original string. Offset the
+		// range to correct for progressive replacements.
+		NSRange resultRange = [result range];
+		resultRange.location += offset;
+		
+		// Pass the mutable string to the replacement block even though the
+		// interface specifies an immutable string.
+		NSString *replacementString = replacementStringForResult(result, string, offset);
+		[string replaceCharactersInRange:resultRange withString:replacementString];
+		offset += [replacementString length] - resultRange.length;
+		numberOfReplacements++;
+	}
+	
+	return numberOfReplacements;
+}
+
+- (NSString *)stringByReplacingMatchesInString:(NSString *)string replacementStringForResult:(ASReplacementStringForResultBlock)replacementStringForResult
 {
 	NSMutableString *mutableString = [string mutableCopy];
 	
-	[mutableString replaceMatchesForRegularExpression:self replacementStringForResult:replacementStringForResult];
+	[self replaceMatchesInString:mutableString replacementStringForResult:replacementStringForResult];
 	
 	return [mutableString copy];
 }

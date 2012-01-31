@@ -24,11 +24,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NSString *(^ASReplacementStringForResultBlock)(NSTextCheckingResult *result, NSString *inString, NSInteger offset);
+
 @interface NSRegularExpression(ActiveSupport)
 
 /*!
  * @brief Replaces all matches of a given regular expression in a given string
  * using a given block to compute the replacement string for each match.
+ * @result Answers the total number of replacements completed.
  * @details The block accepts the match result, the progressively replaced
  * string along with its progressive offset.
  *
@@ -76,9 +79,8 @@
  * each match can have multiple matching subsections. See Apple documentation
  * for @c NSRegularExpression for more details.
  */
-- (NSString *)replaceMatchesInString:(NSString *)string
-		  replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result,
-													NSString *inString,
-													NSInteger offset))replacementStringForResult;
+- (NSUInteger)replaceMatchesInString:(NSMutableString *)string replacementStringForResult:(ASReplacementStringForResultBlock)replacementStringForResult;
+
+- (NSString *)stringByReplacingMatchesInString:(NSString *)string replacementStringForResult:(ASReplacementStringForResultBlock)replacementStringForResult;
 
 @end
