@@ -1,9 +1,9 @@
-// ActiveSupportKit NSRegularExpression+ActiveSupport.m
+// ActiveSupportKit NSMutableString+ActiveSupport.h
 //
-// Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2012, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the “Software”), to deal
+// of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
@@ -12,7 +12,7 @@
 //	The above copyright notice and this permission notice shall be included in
 //	all copies or substantial portions of the Software.
 //
-// THE SOFTWARE IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EITHER
+// THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EITHER
 // EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO
 // EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES
@@ -22,21 +22,17 @@
 //
 //------------------------------------------------------------------------------
 
-#import "NSRegularExpression+ActiveSupport.h"
-#import "NSMutableString+ActiveSupport.h"
+#import <Foundation/Foundation.h>
 
-@implementation NSRegularExpression(ActiveSupport)
+@interface NSMutableString(ActiveSupport)
 
-- (NSString *)replaceMatchesInString:(NSString *)string
-		  replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result,
-													NSString *inString,
-													NSInteger offset))replacementStringForResult
-{
-	NSMutableString *mutableString = [string mutableCopy];
-	
-	[mutableString replaceMatchesForRegularExpression:self replacementStringForResult:replacementStringForResult];
-	
-	return [mutableString copy];
-}
+/*!
+ * @brief Replaces regular expression matches within this string with answers
+ * supplied by the given block.
+ */
+- (void)replaceMatchesForRegularExpression:(NSRegularExpression *)regularExpression
+				replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result,
+														  NSString *inString,
+														  NSInteger offset))replacementStringForResult;
 
 @end
