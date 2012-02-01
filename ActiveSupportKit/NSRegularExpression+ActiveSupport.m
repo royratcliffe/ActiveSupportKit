@@ -40,7 +40,9 @@
 		resultRange.location += offset;
 		
 		// Pass the mutable string to the replacement block even though the
-		// interface specifies an immutable string.
+		// interface specifies an immutable string. Do not make an immutable
+		// copy. NSMutableString inherits from NSString; hence they share a
+		// common immutable interface.
 		NSString *replacementString = replacementStringForResult(result, string, offset);
 		[string replaceCharactersInRange:resultRange withString:replacementString];
 		offset += [replacementString length] - resultRange.length;
