@@ -43,6 +43,15 @@ NSString *ASStringByReplacingMatchesInStringUsingBlock(NSString *pattern, NSRegu
 
 NSUInteger ASReplaceMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSMutableString *string, ASReplacementStringForResultsBlock replacementStringForResults);
 
+/*!
+ * @brief Safely extracts an array of captured ranges from a given text-checking result.
+ * @result Answers an array of string and nulls. Array elements are either
+ * NSString or NSNull instances. String elements contain the captured text. Null
+ * elements correspond to ranges not found. Pass elements through @ref
+ * ASNilForNull to convert nulls to @c nil.
+ */
+NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString *inString, NSInteger offset);
+
 @implementation ASInflector
 
 + (ASInflector *)defaultInflector
@@ -412,15 +421,7 @@ NSString *ASStringByReplacingMatchesInStringUsingBlock(NSString *pattern, NSRegu
 {
 	NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:options error:NULL];
 	return [regularExpression stringByReplacingMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
-		NSUInteger numberOfRanges = [result numberOfRanges];
-		id results[numberOfRanges];
-		result = [result resultByAdjustingRangesWithOffset:offset];
-		for (NSUInteger i = 0; i < numberOfRanges; i++)
-		{
-			NSRange range = [result rangeAtIndex:i];
-			results[i] = range.location != NSNotFound ? [inString substringWithRange:range] : [NSNull null];
-		}
-		return replacementStringForResults([NSArray arrayWithObjects:results count:numberOfRanges]);
+		return replacementStringForResults(ASResultsFromTextCheckingResult(result, inString, offset));
 	}];
 }
 
@@ -428,14 +429,19 @@ NSUInteger ASReplaceMatchesInStringUsingBlock(NSString *pattern, NSRegularExpres
 {
 	NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:options error:NULL];
 	return [regularExpression replaceMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
-		NSUInteger numberOfRanges = [result numberOfRanges];
-		id results[numberOfRanges];
-		result = [result resultByAdjustingRangesWithOffset:offset];
-		for (NSUInteger i = 0; i < numberOfRanges; i++)
-		{
-			NSRange range = [result rangeAtIndex:i];
-			results[i] = range.location != NSNotFound ? [inString substringWithRange:range] : [NSNull null];
-		}
-		return replacementStringForResults([NSArray arrayWithObjects:results count:numberOfRanges]);
+		return replacementStringForResults(ASResultsFromTextCheckingResult(result, inString, offset));
 	}];
+}
+
+NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString *inString, NSInteger offset)
+{
+	NSUInteger numberOfRanges = [result numberOfRanges];
+	id results[numberOfRanges];
+	result = [result resultByAdjustingRangesWithOffset:offset];
+	for (NSUInteger i = 0; i < numberOfRanges; i++)
+	{
+		NSRange range = [result rangeAtIndex:i];
+		results[i] = range.location != NSNotFound ? [inString substringWithRange:range] : [NSNull null];
+	}
+	return [NSArray arrayWithObjects:results count:numberOfRanges];
 }
