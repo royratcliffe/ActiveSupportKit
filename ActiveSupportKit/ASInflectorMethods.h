@@ -38,7 +38,7 @@ NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstL
 NSString *ASInflectorUnderscore(NSString *camelCasedWord);
 
 /*!
- * Replaces underscores with dashes.
+ * @brief Replaces underscores with dashes.
  */
 NSString *ASInflectorDasherize(NSString *underscoredWord);
 
