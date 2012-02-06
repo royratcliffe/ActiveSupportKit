@@ -24,22 +24,22 @@
 
 #import "ASJSON.h"
 
-id ASJSONDecodeFromData(NSData *data, NSError **outError)
+id ASJSONDecodeFromData(NSData *data, NSError *__autoreleasing *outError)
 {
 	return [NSJSONSerialization JSONObjectWithData:data options:0 error:outError];
 }
 
-NSData *ASJSONEncodeToData(id object, NSError **outError)
+NSData *ASJSONEncodeToData(id object, NSError *__autoreleasing *outError)
 {
 	return [NSJSONSerialization dataWithJSONObject:object options:0 error:outError];
 }
 
-id ASJSONDecodeFromString(NSString *string, NSError **outError)
+id ASJSONDecodeFromString(NSString *string, NSError *__autoreleasing *outError)
 {
 	return ASJSONDecodeFromData([string dataUsingEncoding:NSUTF8StringEncoding], outError);
 }
 
-NSString *ASJSONEncodeToString(id object, NSError **outError)
+NSString *ASJSONEncodeToString(id object, NSError *__autoreleasing *outError)
 {
 	NSData *data = ASJSONEncodeToData(object, outError);
 	return data ? [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] : nil;
