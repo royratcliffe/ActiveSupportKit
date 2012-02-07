@@ -87,3 +87,44 @@ NSString *ASInflectorOrdinalize(NSNumber *number)
 	}
 	return [[number description] stringByAppendingString:suffix];
 }
+
+NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word)
+{
+	NSMutableString *result = [word mutableCopy];
+	// Plurals is an array of arrays. The elements have two or three
+	// sub-elements. If two elements, the first specifies a regular expression
+	// and the second its replacement template. If three elements, the first
+	// specifies a string target, the second its replacement and the third its
+	// string compare options.
+	//
+	// Why is this necessary? Simply because Objective-C has no polymorphic
+	// “gsub” method which accepts either a regular expression or string. Nor
+	// can string-based search and replacements incorporate any flags;
+	// comparison options amount to extra baggage. Hence the array of plurals
+	// polymorphically carries different kinds of rules and their
+	// replacements. The number of elements, the array count, determines
+	// behaviour.
+	for (NSArray *ruleAndReplacement in rulesAndReplacements)
+	{
+		if ([ruleAndReplacement count] == 2)
+		{
+			NSRegularExpression *re = [ruleAndReplacement objectAtIndex:0];
+			NSString *replacement = [ruleAndReplacement objectAtIndex:1];
+			if ([re replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:replacement])
+			{
+				break;
+			}
+		}
+		else if ([ruleAndReplacement count] == 3)
+		{
+			NSString *target = [ruleAndReplacement objectAtIndex:0];
+			NSString *replacement = [ruleAndReplacement objectAtIndex:1];
+			NSUInteger options = [[ruleAndReplacement objectAtIndex:2] unsignedIntegerValue];
+			if ([result replaceOccurrencesOfString:target withString:replacement options:options range:NSMakeRange(0, [result length])])
+			{
+				break;
+			}
+		}
+	}
+	return [result copy];
+}

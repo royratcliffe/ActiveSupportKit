@@ -23,34 +23,9 @@
 //------------------------------------------------------------------------------
 
 #import "ASInflector.h"
+#import "ASInflectorMethods.h"
+#import "ASReplacementStringForResults.h"
 #import "ASNull.h"
-
-#import "NSRegularExpression+ActiveSupport.h"
-
-typedef NSString *(^ASReplacementStringForResultsBlock)(NSArray *results);
-
-NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word);
-
-/*!
- * @brief Helper function for simplifying regular-expression replacement.
- * @details The helper exists to simplify the common patterns of usage by the
- * inflector. It also decodes the resulting ranges. The replacement handler
- * block, argument @a replacementStringForResults, takes an array of strings,
- * one for each captured range. The @a results array can contain @c NSNull
- * elements. These correspond to ranges @em not found.
- */
-NSString *ASStringByReplacingMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSString *string, ASReplacementStringForResultsBlock replacementStringForResults);
-
-NSUInteger ASReplaceMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSMutableString *string, ASReplacementStringForResultsBlock replacementStringForResults);
-
-/*!
- * @brief Safely extracts an array of captured ranges from a given text-checking result.
- * @result Answers an array of string and nulls. Array elements are either
- * NSString or NSNull instances. String elements contain the captured text. Null
- * elements correspond to ranges not found. Pass elements through @ref
- * ASNilForNull to convert nulls to @c nil.
- */
-NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString *inString, NSInteger offset);
 
 @implementation ASInflector
 
@@ -375,73 +350,3 @@ NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString 
 }
 
 @end
-
-NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word)
-{
-	NSMutableString *result = [word mutableCopy];
-	// Plurals is an array of arrays. The elements have two or three
-	// sub-elements. If two elements, the first specifies a regular expression
-	// and the second its replacement template. If three elements, the first
-	// specifies a string target, the second its replacement and the third its
-	// string compare options.
-	//
-	// Why is this necessary? Simply because Objective-C has no polymorphic
-	// “gsub” method which accepts either a regular expression or string. Nor
-	// can string-based search and replacements incorporate any flags;
-	// comparison options amount to extra baggage. Hence the array of plurals
-	// polymorphically carries different kinds of rules and their
-	// replacements. The number of elements, the array count, determines
-	// behaviour.
-	for (NSArray *ruleAndReplacement in rulesAndReplacements)
-	{
-		if ([ruleAndReplacement count] == 2)
-		{
-			NSRegularExpression *re = [ruleAndReplacement objectAtIndex:0];
-			NSString *replacement = [ruleAndReplacement objectAtIndex:1];
-			if ([re replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:replacement])
-			{
-				break;
-			}
-		}
-		else if ([ruleAndReplacement count] == 3)
-		{
-			NSString *target = [ruleAndReplacement objectAtIndex:0];
-			NSString *replacement = [ruleAndReplacement objectAtIndex:1];
-			NSUInteger options = [[ruleAndReplacement objectAtIndex:2] unsignedIntegerValue];
-			if ([result replaceOccurrencesOfString:target withString:replacement options:options range:NSMakeRange(0, [result length])])
-			{
-				break;
-			}
-		}
-	}
-	return [result copy];
-}
-
-NSString *ASStringByReplacingMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSString *string, ASReplacementStringForResultsBlock replacementStringForResults)
-{
-	NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:options error:NULL];
-	return [regularExpression stringByReplacingMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
-		return replacementStringForResults(ASResultsFromTextCheckingResult(result, inString, offset));
-	}];
-}
-
-NSUInteger ASReplaceMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSMutableString *string, ASReplacementStringForResultsBlock replacementStringForResults)
-{
-	NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:pattern options:options error:NULL];
-	return [regularExpression replaceMatchesInString:string replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) {
-		return replacementStringForResults(ASResultsFromTextCheckingResult(result, inString, offset));
-	}];
-}
-
-NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString *inString, NSInteger offset)
-{
-	NSUInteger numberOfRanges = [result numberOfRanges];
-	id results[numberOfRanges];
-	result = [result resultByAdjustingRangesWithOffset:offset];
-	for (NSUInteger i = 0; i < numberOfRanges; i++)
-	{
-		NSRange range = [result rangeAtIndex:i];
-		results[i] = range.location != NSNotFound ? [inString substringWithRange:range] : [NSNull null];
-	}
-	return [NSArray arrayWithObjects:results count:numberOfRanges];
-}

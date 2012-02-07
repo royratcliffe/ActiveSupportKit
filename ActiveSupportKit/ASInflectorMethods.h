@@ -45,3 +45,5 @@ NSString *ASInflectorDasherize(NSString *underscoredWord);
 NSString *ASInflectorDemodulize(NSString *classNameInModule);
 
 NSString *ASInflectorOrdinalize(NSNumber *number);
+
+NSString *ASInflectorApplyRulesAndReplacements(NSArray *rulesAndReplacements, NSString *word);
