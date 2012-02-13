@@ -51,6 +51,8 @@
 		78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
 		78B628FF141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
+		78D9883C14E9166D0081C350 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9883B14E9166D0081C350 /* EncodingTests.m */; };
+		78D9883D14E9166D0081C350 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9883B14E9166D0081C350 /* EncodingTests.m */; };
 		78E0B180140D320C004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E0B181140D320C004E1041 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
 		78E0B186140D3D68004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -118,6 +120,8 @@
 		78AFBD9D13EC587900BBFC62 /* ActiveSupportKitLibraryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitLibraryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ActiveSupport.h"; sourceTree = "<group>"; };
 		78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ActiveSupport.m"; sourceTree = "<group>"; };
+		78D9883A14E9166D0081C350 /* EncodingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncodingTests.h; sourceTree = "<group>"; };
+		78D9883B14E9166D0081C350 /* EncodingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodingTests.m; sourceTree = "<group>"; };
 		78E0B17E140D320C004E1041 /* ASInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflector.h; sourceTree = "<group>"; };
 		78E0B17F140D320C004E1041 /* ASInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflector.m; sourceTree = "<group>"; };
 		78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASReplacementStringForResults.h; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				7835461113EA64C50049385C /* ActiveSupportKitTests.m */,
 				788DB0F614D323CA00AF938D /* InflectorTests.h */,
 				788DB0F714D323CA00AF938D /* InflectorTests.m */,
+				78D9883A14E9166D0081C350 /* EncodingTests.h */,
+				78D9883B14E9166D0081C350 /* EncodingTests.m */,
 				7835460B13EA64C50049385C /* Supporting Files */,
 			);
 			path = ActiveSupportKitTests;
@@ -517,6 +523,7 @@
 			files = (
 				7835461213EA64C50049385C /* ActiveSupportKitTests.m in Sources */,
 				788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */,
+				78D9883C14E9166D0081C350 /* EncodingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +551,7 @@
 			files = (
 				78AFBDB613EC58FC00BBFC62 /* ActiveSupportKitTests.m in Sources */,
 				788DB0FE14D3244A00AF938D /* InflectorTests.m in Sources */,
+				78D9883D14E9166D0081C350 /* EncodingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
