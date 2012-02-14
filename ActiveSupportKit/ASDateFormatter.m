@@ -70,25 +70,4 @@
 	return nil;
 }
 
-+ (NSDateFormatter *)enUSPOSIXDateFormatter
-{
-	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-	return dateFormatter;
-}
-
-+ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat
-{
-	NSDateFormatter *dateFormatter = [self enUSPOSIXDateFormatter];
-	[dateFormatter setDateFormat:dateFormat];
-	return dateFormatter;
-}
-
-+ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat timeZone:(NSTimeZone *)timeZone
-{
-	NSDateFormatter *dateFormatter = [self enUSPOSIXDateFormatterWithDateFormat:dateFormat];
-	[dateFormatter setTimeZone:timeZone];
-	return dateFormatter;
-}
-
 @end

@@ -58,17 +58,4 @@
  */
 - (NSString *)stringFromDate:(NSDate *)date;
 
-/*!
- * @brief Convenience class method for constructing a US English POSIX-locale
- * date formatter.
- * @details You only need to set up the date format and time zone. The returned
- * date formatter will work consistently for all users, regardless of both user
- * and system preferences.
- */
-+ (NSDateFormatter *)enUSPOSIXDateFormatter;
-
-// more convenience methods for constructing en-US POSIX date formatters using date format and time zone
-+ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat;
-+ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat timeZone:(NSTimeZone *)timeZone;
-
 @end
