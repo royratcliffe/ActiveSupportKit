@@ -77,4 +77,18 @@
 	return dateFormatter;
 }
 
++ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat
+{
+	NSDateFormatter *dateFormatter = [self enUSPOSIXDateFormatter];
+	[dateFormatter setDateFormat:dateFormat];
+	return dateFormatter;
+}
+
++ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat timeZone:(NSTimeZone *)timeZone
+{
+	NSDateFormatter *dateFormatter = [self enUSPOSIXDateFormatterWithDateFormat:dateFormat];
+	[dateFormatter setTimeZone:timeZone];
+	return dateFormatter;
+}
+
 @end

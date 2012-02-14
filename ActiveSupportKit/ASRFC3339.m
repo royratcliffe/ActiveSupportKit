@@ -29,21 +29,15 @@ ASDateFormatter *ASRFC3339DateFormatter()
 	static ASDateFormatter *__strong dateFormatter;
 	if (dateFormatter == nil)
 	{
-		NSMutableArray *dateFormats = [NSMutableArray array];
-		[dateFormats addObject:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+		dateFormatter = [[ASDateFormatter alloc] init];
+		NSTimeZone *gmt = [NSTimeZone timeZoneForSecondsFromGMT:0];
+		[dateFormatter addDateFormatter:[ASDateFormatter enUSPOSIXDateFormatterWithDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'" timeZone:gmt]];
 		NSMutableString *s = [NSMutableString string];
 		for (NSUInteger count = 0; count < 10; count++)
 		{
 			[s appendString:@"S"];
-			[dateFormats addObject:[NSString stringWithFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'%@'Z'", s]];
-		}
-		dateFormatter = [[ASDateFormatter alloc] init];
-		for (NSString *dateFormat in dateFormats)
-		{
-			NSDateFormatter *formatter = [ASDateFormatter enUSPOSIXDateFormatter];
-			[formatter setDateFormat:dateFormat];
-			[formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-			[dateFormatter addDateFormatter:formatter];
+			NSString *dateFormat = [NSString stringWithFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'%@'Z'", s];
+			[dateFormatter addDateFormatter:[ASDateFormatter enUSPOSIXDateFormatterWithDateFormat:dateFormat timeZone:gmt]];
 		}
 	}
 	return dateFormatter;

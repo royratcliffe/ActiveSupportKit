@@ -67,4 +67,8 @@
  */
 + (NSDateFormatter *)enUSPOSIXDateFormatter;
 
+// more convenience methods for constructing en-US POSIX date formatters using date format and time zone
++ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat;
++ (NSDateFormatter *)enUSPOSIXDateFormatterWithDateFormat:(NSString *)dateFormat timeZone:(NSTimeZone *)timeZone;
+
 @end
