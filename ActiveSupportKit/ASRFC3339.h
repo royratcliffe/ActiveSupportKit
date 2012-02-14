@@ -22,9 +22,9 @@
  *
  ******************************************************************************/
 
-#import <Foundation/Foundation.h>
+#import <ActiveSupportKit/ASDateFormatter.h>
 
-NSArray *ASRFC3339DateFormatters(void);
+ASDateFormatter *ASRFC3339DateFormatter(void);
 
 /*!
  * @brief Converts an RFC 3339 date-time string to a date.
@@ -43,7 +43,7 @@ NSArray *ASRFC3339DateFormatters(void);
  * translation if and when that becomes necessary. To mitigate the iterative
  * approach, the implementation caches the date formatters.
  */
-NSDate *ASDateFromRFC3339String(NSString *dateString);
+NSDate *ASDateFromRFC3339String(NSString *string);
 
 /*!
  * @brief Converts the given date to a string in RFC 3339 format.

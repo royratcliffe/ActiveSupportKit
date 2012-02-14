@@ -24,10 +24,10 @@
 
 #import "ASRFC3339.h"
 
-NSArray *ASRFC3339DateFormatters()
+ASDateFormatter *ASRFC3339DateFormatter()
 {
-	static NSArray *__strong dateFormatters;
-	if (dateFormatters == nil)
+	static ASDateFormatter *__strong dateFormatter;
+	if (dateFormatter == nil)
 	{
 		NSMutableArray *dateFormats = [NSMutableArray array];
 		[dateFormats addObject:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
@@ -37,42 +37,24 @@ NSArray *ASRFC3339DateFormatters()
 			[s appendString:@"S"];
 			[dateFormats addObject:[NSString stringWithFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'%@'Z'", s]];
 		}
-		NSMutableArray *formatters = [NSMutableArray array];
-		for (NSString *dateFormat in [dateFormats sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"length" ascending:YES]]])
+		dateFormatter = [[ASDateFormatter alloc] init];
+		for (NSString *dateFormat in dateFormats)
 		{
-			NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-			[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-			[dateFormatter setDateFormat:dateFormat];
-			[dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-			[formatters addObject:dateFormatter];
+			NSDateFormatter *formatter = [ASDateFormatter enUSPOSIXDateFormatter];
+			[formatter setDateFormat:dateFormat];
+			[formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+			[dateFormatter addDateFormatter:formatter];
 		}
-		dateFormatters = [formatters copy];
 	}
-	return dateFormatters;
+	return dateFormatter;
 }
 
-NSDate *ASDateFromRFC3339String(NSString *dateString)
+NSDate *ASDateFromRFC3339String(NSString *string)
 {
-	for (NSDateFormatter *dateFormatter in ASRFC3339DateFormatters())
-	{
-		NSDate *date = [dateFormatter dateFromString:dateString];
-		if (date && [dateString isEqualToString:[dateFormatter stringFromDate:date]])
-		{
-			return date;
-		}
-	}
-	return nil;
+	return [ASRFC3339DateFormatter() dateFromString:string];
 }
 
 NSString *ASRFC3339StringFromDate(NSDate *date)
 {
-	for (NSDateFormatter *dateFormatter in ASRFC3339DateFormatters())
-	{
-		NSString *string = [dateFormatter stringFromDate:date];
-		if (string && [date isEqualToDate:[dateFormatter dateFromString:string]])
-		{
-			return string;
-		}
-	}
-	return nil;
+	return [ASRFC3339DateFormatter() stringFromDate:date];
 }
