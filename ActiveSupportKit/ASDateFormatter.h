@@ -59,6 +59,9 @@
 
 /*!
  * @brief Converts date to string.
+ * @details Some conversions have multiple correct alternatives. The answer
+ * represents the shortest string. So, for example, if a formatter supports
+ * optional seconds, the resulting string will omit seconds if zero.
  */
 - (NSString *)stringFromDate:(NSDate *)date;
 
