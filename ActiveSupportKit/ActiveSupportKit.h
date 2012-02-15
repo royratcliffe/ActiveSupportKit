@@ -27,6 +27,7 @@
 #import <ActiveSupportKit/ASInflectorMethods.h>
 #import <ActiveSupportKit/ASInflector.h>
 #import <ActiveSupportKit/ASRFC3339.h>
+#import <ActiveSupportKit/ASRFC2822.h>
 #import <ActiveSupportKit/ASNull.h>
 
 // categories
