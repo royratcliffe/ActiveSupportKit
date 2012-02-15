@@ -45,8 +45,12 @@
  * @brief Adds a date formatter, automatically sorting the formatters by the
  * length of their date format strings. @details This produces the most compact
  * strings when converting from dates.
+ *
+ * The method name includes @c NS, for Next Step, emphasising the sub-formatter
+ * type. Active Support's date formatters comprise multiple NSDateFormatter
+ * instances.
  */
-- (void)addDateFormatter:(NSDateFormatter *)dateFormatter;
+- (void)addNSDateFormatter:(NSDateFormatter *)dateFormatter;
 
 /*!
  * @brief Converts string to date.

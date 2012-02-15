@@ -33,13 +33,13 @@ ASDateFormatter *ASRFC3339DateFormatter()
 	{
 		dateFormatter = [[ASDateFormatter alloc] init];
 		NSTimeZone *gmt = [NSTimeZone timeZoneForSecondsFromGMT:0];
-		[dateFormatter addDateFormatter:[NSDateFormatter enUSPOSIXDateFormatterWithDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'" timeZone:gmt]];
+		[dateFormatter addNSDateFormatter:[NSDateFormatter enUSPOSIXDateFormatterWithDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'" timeZone:gmt]];
 		NSMutableString *s = [NSMutableString string];
 		for (NSUInteger count = 0; count < 10; count++)
 		{
 			[s appendString:@"S"];
 			NSString *dateFormat = [NSString stringWithFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'%@'Z'", s];
-			[dateFormatter addDateFormatter:[NSDateFormatter enUSPOSIXDateFormatterWithDateFormat:dateFormat timeZone:gmt]];
+			[dateFormatter addNSDateFormatter:[NSDateFormatter enUSPOSIXDateFormatterWithDateFormat:dateFormat timeZone:gmt]];
 		}
 	}
 	return dateFormatter;

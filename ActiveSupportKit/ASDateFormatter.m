@@ -36,7 +36,7 @@
 	return self;
 }
 
-- (void)addDateFormatter:(NSDateFormatter *)dateFormatter
+- (void)addNSDateFormatter:(NSDateFormatter *)dateFormatter
 {
 	[_dateFormatters addObject:dateFormatter];
 	[_dateFormatters sortUsingComparator:^NSComparisonResult(id lhs, id rhs) {
