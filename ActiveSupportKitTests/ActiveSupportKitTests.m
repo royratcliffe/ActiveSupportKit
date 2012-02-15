@@ -206,4 +206,19 @@
 	STAssertEqualObjects(ASDateFromRFC3339String(@"1985-04-12T23:20:50.52Z"), [date dateByAddingTimeInterval:0.52], nil);
 }
 
+- (void)testRFC2822
+{
+	NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+	[dateComponents setYear:1999];
+	[dateComponents setMonth:12];
+	[dateComponents setDay:31];
+	[dateComponents setHour:19];
+	[dateComponents setMinute:0];
+	[dateComponents setSecond:0];
+	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+	[calendar setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+	NSDate *date = [calendar dateFromComponents:dateComponents];
+	STAssertEqualObjects(ASRFC2822StringFromDate(date), @"01 Jan 2000 00:00 +0000", nil);
+}
+
 @end
