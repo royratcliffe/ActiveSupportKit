@@ -31,7 +31,7 @@
  * Foundation date formatters. Conversions between strings and dates, and vice
  * versa, occur by asking a prospective date formatter for a conversion followed
  * by a reverse conversion. If the latter matches the input, either string or
- * date, conversion succeeds. This is a longer, more rigourous conversion
+ * date, conversion succeeds. This is a longer, more rigorous conversion
  * algorithm but proves more reliable. Conversions to and from strings
  * effectively test themselves.
  */
