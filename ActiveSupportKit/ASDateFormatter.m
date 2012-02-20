@@ -26,12 +26,15 @@
 
 @implementation ASDateFormatter
 
+@synthesize timeComparisonThreshold;
+
 - (id)init
 {
 	self = [super init];
 	if (self)
 	{
 		_dateFormatters = [NSMutableArray array];
+		[self setTimeComparisonThreshold:0.001];
 	}
 	return self;
 }
@@ -59,10 +62,14 @@
 
 - (NSString *)stringFromDate:(NSDate *)date
 {
+	// Date comparisons prove tricky. The -[NSDate isEqualToDate:anotherDate]
+	// detects sub-second differences in dates. It answers true if, and only if,
+	// the two dates match exactly. Therefore avoid using this method in case
+	// all formatters fail due to lack of time resolution.
 	for (NSDateFormatter *dateFormatter in _dateFormatters)
 	{
 		NSString *string = [dateFormatter stringFromDate:date];
-		if (string && [date isEqualToDate:[dateFormatter dateFromString:string]])
+		if (string && fabs([date timeIntervalSinceDate:[dateFormatter dateFromString:string]]) < [self timeComparisonThreshold])
 		{
 			return string;
 		}

@@ -42,6 +42,13 @@
 }
 
 /*!
+ * @brief Two dates match if their difference is less than the time comparison
+ * threshold. @details This defaults to one millisecond. Date-times compare
+ * equal if there difference does not equal or exceed this threshold.
+ */
+@property(assign, NS_NONATOMIC_IOSONLY) NSTimeInterval timeComparisonThreshold;
+
+/*!
  * @brief Adds a date formatter, automatically sorting the formatters by the
  * length of their date format strings. @details This produces the most compact
  * strings when converting from dates.
