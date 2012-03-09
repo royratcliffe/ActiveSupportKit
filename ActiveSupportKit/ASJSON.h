@@ -25,12 +25,12 @@
 #import <Foundation/Foundation.h>
 
 // data
-id ASJSONDecodeFromData(NSData *data, NSError *__autoreleasing *outError);
-NSData *ASJSONEncodeToData(id object, NSError *__autoreleasing *outError);
+id ASJSONDecodeFromData(NSData *data, NSError **outError);
+NSData *ASJSONEncodeToData(id object, NSError **outError);
 
 // string
-id ASJSONDecodeFromString(NSString *string, NSError *__autoreleasing *outError);
-NSString *ASJSONEncodeToString(id object, NSError *__autoreleasing *outError);
+id ASJSONDecodeFromString(NSString *string, NSError **outError);
+NSString *ASJSONEncodeToString(id object, NSError **outError);
 
 /*!
  * @result YES if the JSON object contains at least one circular reference; NO
