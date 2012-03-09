@@ -448,7 +448,7 @@
 		783545E113EA64C40049385C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 			};
 			buildConfigurationList = 783545E413EA64C40049385C /* Build configuration list for PBXProject "ActiveSupportKit" */;
