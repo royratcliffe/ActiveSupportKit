@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -101,18 +101,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 <span class="comment"> *</span>
 <a name="l00023"></a>00023 <span class="comment"> ******************************************************************************/</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
-<a name="l00026"></a>00026 <span class="comment"></span>
-<a name="l00027"></a>00027 <span class="comment">/*!</span>
-<a name="l00028"></a>00028 <span class="comment"> * @brief Converts an RFC 3339 date-time string to a date.</span>
-<a name="l00029"></a>00029 <span class="comment"> * @details Request for Comments 3339 describes a standard Internet date-time</span>
-<a name="l00030"></a>00030 <span class="comment"> * format as follows. @code yyyy-mm-ddThh:mm:ssZ @endcode where @c yyyy-mm-dd</span>
-<a name="l00031"></a>00031 <span class="comment"> * describes the year, month and day of month using decimal digits; @c hh:mm:ss</span>
-<a name="l00032"></a>00032 <span class="comment"> * describes hours, minutes and seconds. Time is expressed in Zulu time, more</span>
-<a name="l00033"></a>00033 <span class="comment"> * commonly known as Greenwich Mean Time. See Apple&#39;s Technical Q&amp;A QA1480 for</span>
-<a name="l00034"></a>00034 <span class="comment"> * more details.</span>
-<a name="l00035"></a>00035 <span class="comment"> */</span>
-<a name="l00036"></a>00036 NSDate *<a class="code" href="_a_s_r_f_c3339_8h.html#ad366128f38a49d7f089337639aed139f" title="Converts an RFC 3339 date-time string to a date.">ASDateFromRFC3339String</a>(NSString *dateTimeString);
+<a name="l00025"></a>00025 <span class="preprocessor">#import &lt;<a class="code" href="_a_s_date_formatter_8h.html">ActiveSupportKit/ASDateFormatter.h</a>&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <a class="code" href="interface_a_s_date_formatter.html" title="Formats and parses date-times using a sorted collection of Cocoa date formatters.">ASDateFormatter</a> *<a class="code" href="_a_s_r_f_c3339_8h.html#aecb765659d66ea7d64135571e3f91345">ASRFC3339DateFormatter</a>(<span class="keywordtype">void</span>);
+<a name="l00028"></a>00028 <span class="comment"></span>
+<a name="l00029"></a>00029 <span class="comment">/*!</span>
+<a name="l00030"></a>00030 <span class="comment"> * @brief Converts an RFC 3339 date-time string to a date.</span>
+<a name="l00031"></a>00031 <span class="comment"> * @details &lt;a href=&quot;http://www.ietf.org/rfc/rfc3339.txt&quot;&gt;Request for Comments</span>
+<a name="l00032"></a>00032 <span class="comment"> * 3339&lt;/a&gt; describes a standard Internet date-time format as follows. @code</span>
+<a name="l00033"></a>00033 <span class="comment"> * yyyy-mm-ddThh:mm:ssZ @endcode where @c yyyy-mm-dd describes the year, month</span>
+<a name="l00034"></a>00034 <span class="comment"> * and day of month using decimal digits; @c hh:mm:ss describes hours, minutes</span>
+<a name="l00035"></a>00035 <span class="comment"> * and seconds. Time is expressed in Zulu time, more commonly known as Greenwich</span>
+<a name="l00036"></a>00036 <span class="comment"> * Mean Time. See Apple&#39;s Technical Q&amp;A QA1480 for more details.</span>
+<a name="l00037"></a>00037 <span class="comment"> *</span>
+<a name="l00038"></a>00038 <span class="comment"> * @par Implementation Notes</span>
+<a name="l00039"></a>00039 <span class="comment"> * The implementation searches for the first successful formatter where the</span>
+<a name="l00040"></a>00040 <span class="comment"> * resulting date reverse-formats to a matching date string. This may result in</span>
+<a name="l00041"></a>00041 <span class="comment"> * a number of formatting and parsing iterations and therefore runs slower than</span>
+<a name="l00042"></a>00042 <span class="comment"> * a one-shot attempt. However, the algorithm effectively guarantees reverse</span>
+<a name="l00043"></a>00043 <span class="comment"> * translation if and when that becomes necessary. To mitigate the iterative</span>
+<a name="l00044"></a>00044 <span class="comment"> * approach, the implementation caches the date formatters.</span>
+<a name="l00045"></a>00045 <span class="comment"> */</span>
+<a name="l00046"></a>00046 NSDate *<a class="code" href="_a_s_r_f_c3339_8h.html#aba9aef7440477300e331f020ae038037" title="Converts an RFC 3339 date-time string to a date.">ASDateFromRFC3339String</a>(NSString *<span class="keywordtype">string</span>);
+<a name="l00047"></a>00047 <span class="comment"></span>
+<a name="l00048"></a>00048 <span class="comment">/*!</span>
+<a name="l00049"></a>00049 <span class="comment"> * @brief Converts the given date to a string in RFC 3339 format.</span>
+<a name="l00050"></a>00050 <span class="comment"> */</span>
+<a name="l00051"></a>00051 NSString *<a class="code" href="_a_s_r_f_c3339_8h.html#a75856feab4a4ecef663de826ca77bc91" title="Converts the given date to a string in RFC 3339 format.">ASRFC3339StringFromDate</a>(NSDate *date);
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -120,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -81,23 +81,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <div class="textblock"><code>#import &quot;<a class="el" href="_a_s_r_f_c3339_8h_source.html">ASRFC3339.h</a>&quot;</code><br/>
+<code>#import &quot;<a class="el" href="_n_s_date_formatter_09_active_support_8h_source.html">NSDateFormatter+ActiveSupport.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ASRFC3339.m:</div>
 <div class="dyncontent">
 <div class="center"><img src="_a_s_r_f_c3339_8m__incl.png" border="0" usemap="#_active_support_kit_2_a_s_r_f_c3339_8m" alt=""/></div>
 <map name="_active_support_kit_2_a_s_r_f_c3339_8m" id="_active_support_kit_2_a_s_r_f_c3339_8m">
-<area shape="rect" id="node3" href="_a_s_r_f_c3339_8h.html" title="ASRFC3339.h" alt="" coords="55,80,160,107"/></map>
+<area shape="rect" id="node3" href="_a_s_r_f_c3339_8h.html" title="ASRFC3339.h" alt="" coords="105,80,209,107"/><area shape="rect" id="node9" href="_n_s_date_formatter_09_active_support_8h.html" title="NSDateFormatter+ActiveSupport.h" alt="" coords="256,155,472,181"/><area shape="rect" id="node5" href="_a_s_date_formatter_8h.html" title="ActiveSupportKit/ASDateFormatter.h" alt="" coords="5,155,232,181"/></map>
 </div>
 </div>
 <p><a href="_a_s_r_f_c3339_8m_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_r_f_c3339_8m.html#ad366128f38a49d7f089337639aed139f">ASDateFromRFC3339String</a> (NSString *dateTimeString)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an RFC 3339 date-time string to a date.  <a href="#ad366128f38a49d7f089337639aed139f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_a_s_date_formatter.html">ASDateFormatter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_r_f_c3339_8m.html#a1830bf62f7d4d888776d091b481306d2">ASRFC3339DateFormatter</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_r_f_c3339_8m.html#aba9aef7440477300e331f020ae038037">ASDateFromRFC3339String</a> (NSString *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an RFC 3339 date-time string to a date.  <a href="#aba9aef7440477300e331f020ae038037"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_r_f_c3339_8m.html#a75856feab4a4ecef663de826ca77bc91">ASRFC3339StringFromDate</a> (NSDate *date)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the given date to a string in RFC 3339 format.  <a href="#a75856feab4a4ecef663de826ca77bc91"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ad366128f38a49d7f089337639aed139f"></a><!-- doxytag: member="ASRFC3339.m::ASDateFromRFC3339String" ref="ad366128f38a49d7f089337639aed139f" args="(NSString *dateTimeString)" -->
+<a class="anchor" id="aba9aef7440477300e331f020ae038037"></a><!-- doxytag: member="ASRFC3339.m::ASDateFromRFC3339String" ref="aba9aef7440477300e331f020ae038037" args="(NSString *string)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -105,7 +109,7 @@ Functions</h2></td></tr>
           <td class="memname">NSDate* ASDateFromRFC3339String </td>
           <td>(</td>
           <td class="paramtype">NSString *&#160;</td>
-          <td class="paramname"><em>dateTimeString</em></td><td>)</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -113,11 +117,52 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Converts an RFC 3339 date-time string to a date. </p>
-<p>Request for Comments 3339 describes a standard Internet date-time format as follows. </p>
+<p><a href="http://www.ietf.org/rfc/rfc3339.txt">Request for Comments 3339</a> describes a standard Internet date-time format as follows. </p>
 <div class="fragment"><pre class="fragment"> yyyy-mm-ddThh:mm:ssZ 
-</pre></div><p> where <code>yyyy-mm-dd</code> describes the year, month and day of month using decimal digits; <code>hh:mm:ss</code> describes hours, minutes and seconds. Time is expressed in Zulu time, more commonly known as Greenwich Mean Time. See Apple's Technical Q&amp;A QA1480 for more details. </p>
+</pre></div><p> where <code>yyyy-mm-dd</code> describes the year, month and day of month using decimal digits; <code>hh:mm:ss</code> describes hours, minutes and seconds. Time is expressed in Zulu time, more commonly known as Greenwich Mean Time. See Apple's Technical Q&amp;A QA1480 for more details.</p>
+<dl class="user"><dt><b>Implementation Notes</b></dt><dd>The implementation searches for the first successful formatter where the resulting date reverse-formats to a matching date string. This may result in a number of formatting and parsing iterations and therefore runs slower than a one-shot attempt. However, the algorithm effectively guarantees reverse translation if and when that becomes necessary. To mitigate the iterative approach, the implementation caches the date formatters. </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_s_r_f_c3339_8m_source.html#l00027">27</a> of file <a class="el" href="_a_s_r_f_c3339_8m_source.html">ASRFC3339.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_r_f_c3339_8m_source.html#l00048">48</a> of file <a class="el" href="_a_s_r_f_c3339_8m_source.html">ASRFC3339.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1830bf62f7d4d888776d091b481306d2"></a><!-- doxytag: member="ASRFC3339.m::ASRFC3339DateFormatter" ref="a1830bf62f7d4d888776d091b481306d2" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interface_a_s_date_formatter.html">ASDateFormatter</a>* ASRFC3339DateFormatter </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_r_f_c3339_8m_source.html#l00029">29</a> of file <a class="el" href="_a_s_r_f_c3339_8m_source.html">ASRFC3339.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a75856feab4a4ecef663de826ca77bc91"></a><!-- doxytag: member="ASRFC3339.m::ASRFC3339StringFromDate" ref="a75856feab4a4ecef663de826ca77bc91" args="(NSDate *date)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSString* ASRFC3339StringFromDate </td>
+          <td>(</td>
+          <td class="paramtype">NSDate *&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts the given date to a string in RFC 3339 format. </p>
+
+<p>Definition at line <a class="el" href="_a_s_r_f_c3339_8m_source.html#l00053">53</a> of file <a class="el" href="_a_s_r_f_c3339_8m_source.html">ASRFC3339.m</a>.</p>
 
 </div>
 </div>
@@ -127,7 +172,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <a href="_n_s_regular_expression_09_active_support_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">// ActiveSupportKit NSRegularExpression+ActiveSupport.h</span>
 <a name="l00002"></a>00002 <span class="comment">//</span>
-<a name="l00003"></a>00003 <span class="comment">// Copyright © 2011, Roy Ratcliffe, Pioneering Software, United Kingdom</span>
+<a name="l00003"></a>00003 <span class="comment">// Copyright © 2011, 2012, Roy Ratcliffe, Pioneering Software, United Kingdom</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
 <a name="l00005"></a>00005 <span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a copy</span>
 <a name="l00006"></a>00006 <span class="comment">// of this software and associated documentation files (the “Software”), to deal</span>
@@ -103,61 +103,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span>
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="interface_n_s_regular_expression_07_active_support_08.html">00027</a> <span class="keyword">@interface </span>NSRegularExpression(ActiveSupport)
-<a name="l00028"></a>00028 <span class="comment"></span>
-<a name="l00029"></a>00029 <span class="comment">/*!</span>
-<a name="l00030"></a>00030 <span class="comment"> * @brief Replaces all matches of a given regular expression in a given string</span>
-<a name="l00031"></a>00031 <span class="comment"> * using a given block to compute the replacement string for each match.</span>
-<a name="l00032"></a>00032 <span class="comment"> * @details The block accepts the match result, the progressively replaced</span>
-<a name="l00033"></a>00033 <span class="comment"> * string along with its progressive offset.</span>
-<a name="l00034"></a>00034 <span class="comment"> *</span>
-<a name="l00035"></a>00035 <span class="comment"> * Use the method as follows. Suppose you want to have strings of the form</span>
-<a name="l00036"></a>00036 <span class="comment"> * @c &quot;a/b/c&quot; and you want to replace every path element separator (the forward</span>
-<a name="l00037"></a>00037 <span class="comment"> * slashes) to double-colons and fold the following character to uppercase at</span>
-<a name="l00038"></a>00038 <span class="comment"> * the same time. This assumes the characters following the slashes are</span>
-<a name="l00039"></a>00039 <span class="comment"> * letters. We could use the regular expression @c &quot;/(.?)&quot; meaning a slash</span>
-<a name="l00040"></a>00040 <span class="comment"> * optionally followed by any character. The parentheses act as markers for</span>
-<a name="l00041"></a>00041 <span class="comment"> * substitution.</span>
-<a name="l00042"></a>00042 <span class="comment"> *</span>
-<a name="l00043"></a>00043 <span class="comment"> * @code</span>
-<a name="l00044"></a>00044 <span class="comment"> *  NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:@&quot;/(.?)&quot;</span>
-<a name="l00045"></a>00045 <span class="comment"> *                                                                      options:0</span>
-<a name="l00046"></a>00046 <span class="comment"> *                                                                        error:NULL];</span>
-<a name="l00047"></a>00047 <span class="comment"> *  NSString *answer = [re replaceMatchesInString:@&quot;a/b/c&quot;</span>
-<a name="l00048"></a>00048 <span class="comment"> *                     replacementStringForResult:^NSString *(NSTextCheckingResult *result,</span>
-<a name="l00049"></a>00049 <span class="comment"> *                                                            NSString *inString,</span>
-<a name="l00050"></a>00050 <span class="comment"> *                                                            NSInteger offset) {</span>
-<a name="l00051"></a>00051 <span class="comment"> *                         // See Note 1</span>
-<a name="l00052"></a>00052 <span class="comment"> *                         NSRegularExpression *re = [result regularExpression];</span>
-<a name="l00053"></a>00053 <span class="comment"> *                         // See Note 2</span>
-<a name="l00054"></a>00054 <span class="comment"> *                         NSString *s1 = [re replacementStringForResult:result</span>
-<a name="l00055"></a>00055 <span class="comment"> *                                                              inString:inString</span>
-<a name="l00056"></a>00056 <span class="comment"> *                                                                offset:offset</span>
-<a name="l00057"></a>00057 <span class="comment"> *                                                              template:@&quot;$1&quot;];</span>
-<a name="l00058"></a>00058 <span class="comment"> *                         return [@&quot;::&quot; stringByAppendingString:[s1 uppercaseString]];</span>
-<a name="l00059"></a>00059 <span class="comment"> *                     }];</span>
-<a name="l00060"></a>00060 <span class="comment"> *  NSLog(@&quot;\&quot;%@\&quot;&quot;, answer);</span>
-<a name="l00061"></a>00061 <span class="comment"> * @endcode</span>
-<a name="l00062"></a>00062 <span class="comment"> *</span>
-<a name="l00063"></a>00063 <span class="comment"> * The answer @c &quot;a::B::C&quot; appears in the log.</span>
-<a name="l00064"></a>00064 <span class="comment"> *</span>
-<a name="l00065"></a>00065 <span class="comment"> * @par Note 1</span>
-<a name="l00066"></a>00066 <span class="comment"> * Uses @c result to access the regular expression again. This step could be</span>
-<a name="l00067"></a>00067 <span class="comment"> * omitted because (in this example) this interior block has access to the</span>
-<a name="l00068"></a>00068 <span class="comment"> * exterior context, the @c re above. However, that is not always the</span>
-<a name="l00069"></a>00069 <span class="comment"> * case. Accessing the original regular expression via the matching result</span>
-<a name="l00070"></a>00070 <span class="comment"> * proves the best general approach.</span>
-<a name="l00071"></a>00071 <span class="comment"> *</span>
-<a name="l00072"></a>00072 <span class="comment"> * @par Note 2</span>
-<a name="l00073"></a>00073 <span class="comment"> * Pulls out @c s1 from the input string, the string matching the first</span>
-<a name="l00074"></a>00074 <span class="comment"> * parentheses. The @c &quot;$1&quot; template refers to this first matching part of the</span>
-<a name="l00075"></a>00075 <span class="comment"> * entire regular expression match. The block runs for every match. Of course,</span>
-<a name="l00076"></a>00076 <span class="comment"> * each match can have multiple matching subsections. See Apple documentation</span>
-<a name="l00077"></a>00077 <span class="comment"> * for @c NSRegularExpression for more details.</span>
-<a name="l00078"></a>00078 <span class="comment"> */</span>
-<a name="l00079"></a>00079 - (NSString *)replaceMatchesInString:(NSString *)string replacementStringForResult:(NSString *(^)(NSTextCheckingResult *result, NSString *inString, NSInteger offset))replacementStringForResult;
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="keyword">@end</span>
+<a name="l00027"></a><a class="code" href="_n_s_regular_expression_09_active_support_8h.html#a5496d9d3bc46f27bb1400a660f7d11da">00027</a> <span class="keyword">typedef</span> NSString *(^<a class="code" href="_n_s_regular_expression_09_active_support_8h.html#a5496d9d3bc46f27bb1400a660f7d11da">ASReplacementStringForResultBlock</a>)(NSTextCheckingResult *result, NSString *inString, NSInteger offset);
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="interface_n_s_regular_expression_07_active_support_08.html">00029</a> <span class="keyword">@interface </span>NSRegularExpression(ActiveSupport)
+<a name="l00030"></a>00030 <span class="comment"></span>
+<a name="l00031"></a>00031 <span class="comment">/*!</span>
+<a name="l00032"></a>00032 <span class="comment"> * @brief Replaces all matches of a given regular expression in a given string</span>
+<a name="l00033"></a>00033 <span class="comment"> * using a given block to compute the replacement string for each match.</span>
+<a name="l00034"></a>00034 <span class="comment"> * @result Answers the total number of replacements completed.</span>
+<a name="l00035"></a>00035 <span class="comment"> * @details The block accepts the match result, the progressively replaced</span>
+<a name="l00036"></a>00036 <span class="comment"> * string along with its progressive offset.</span>
+<a name="l00037"></a>00037 <span class="comment"> *</span>
+<a name="l00038"></a>00038 <span class="comment"> * Use the method as follows. Suppose you want to have strings of the form</span>
+<a name="l00039"></a>00039 <span class="comment"> * @c &quot;a/b/c&quot; and you want to replace every path element separator (the forward</span>
+<a name="l00040"></a>00040 <span class="comment"> * slashes) to double-colons and fold the following character to uppercase at</span>
+<a name="l00041"></a>00041 <span class="comment"> * the same time. This assumes the characters following the slashes are</span>
+<a name="l00042"></a>00042 <span class="comment"> * letters. We could use the regular expression @c &quot;/(.?)&quot; meaning a slash</span>
+<a name="l00043"></a>00043 <span class="comment"> * optionally followed by any character. The parentheses act as markers for</span>
+<a name="l00044"></a>00044 <span class="comment"> * substitution.</span>
+<a name="l00045"></a>00045 <span class="comment"> *</span>
+<a name="l00046"></a>00046 <span class="comment"> * @code</span>
+<a name="l00047"></a>00047 <span class="comment"> *  NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:@&quot;/(.?)&quot;</span>
+<a name="l00048"></a>00048 <span class="comment"> *                                                                      options:0</span>
+<a name="l00049"></a>00049 <span class="comment"> *                                                                        error:NULL];</span>
+<a name="l00050"></a>00050 <span class="comment"> *  NSString *answer = [re replaceMatchesInString:@&quot;a/b/c&quot;</span>
+<a name="l00051"></a>00051 <span class="comment"> *                     replacementStringForResult:^NSString *(NSTextCheckingResult *result,</span>
+<a name="l00052"></a>00052 <span class="comment"> *                                                            NSString *inString,</span>
+<a name="l00053"></a>00053 <span class="comment"> *                                                            NSInteger offset) {</span>
+<a name="l00054"></a>00054 <span class="comment"> *                         // See Note 1</span>
+<a name="l00055"></a>00055 <span class="comment"> *                         NSRegularExpression *re = [result regularExpression];</span>
+<a name="l00056"></a>00056 <span class="comment"> *                         // See Note 2</span>
+<a name="l00057"></a>00057 <span class="comment"> *                         NSString *s1 = [re replacementStringForResult:result</span>
+<a name="l00058"></a>00058 <span class="comment"> *                                                              inString:inString</span>
+<a name="l00059"></a>00059 <span class="comment"> *                                                                offset:offset</span>
+<a name="l00060"></a>00060 <span class="comment"> *                                                              template:@&quot;$1&quot;];</span>
+<a name="l00061"></a>00061 <span class="comment"> *                         return [@&quot;::&quot; stringByAppendingString:[s1 uppercaseString]];</span>
+<a name="l00062"></a>00062 <span class="comment"> *                     }];</span>
+<a name="l00063"></a>00063 <span class="comment"> *  NSLog(@&quot;\&quot;%@\&quot;&quot;, answer);</span>
+<a name="l00064"></a>00064 <span class="comment"> * @endcode</span>
+<a name="l00065"></a>00065 <span class="comment"> *</span>
+<a name="l00066"></a>00066 <span class="comment"> * The answer @c &quot;a::B::C&quot; appears in the log.</span>
+<a name="l00067"></a>00067 <span class="comment"> *</span>
+<a name="l00068"></a>00068 <span class="comment"> * @par Note 1</span>
+<a name="l00069"></a>00069 <span class="comment"> * Uses @c result to access the regular expression again. This step could be</span>
+<a name="l00070"></a>00070 <span class="comment"> * omitted because (in this example) this interior block has access to the</span>
+<a name="l00071"></a>00071 <span class="comment"> * exterior context, the @c re above. However, that is not always the</span>
+<a name="l00072"></a>00072 <span class="comment"> * case. Accessing the original regular expression via the matching result</span>
+<a name="l00073"></a>00073 <span class="comment"> * proves the best general approach.</span>
+<a name="l00074"></a>00074 <span class="comment"> *</span>
+<a name="l00075"></a>00075 <span class="comment"> * @par Note 2</span>
+<a name="l00076"></a>00076 <span class="comment"> * Pulls out @c s1 from the input string, the string matching the first</span>
+<a name="l00077"></a>00077 <span class="comment"> * parentheses. The @c &quot;$1&quot; template refers to this first matching part of the</span>
+<a name="l00078"></a>00078 <span class="comment"> * entire regular expression match. The block runs for every match. Of course,</span>
+<a name="l00079"></a>00079 <span class="comment"> * each match can have multiple matching subsections. See Apple documentation</span>
+<a name="l00080"></a>00080 <span class="comment"> * for @c NSRegularExpression for more details.</span>
+<a name="l00081"></a>00081 <span class="comment"> */</span>
+<a name="l00082"></a>00082 - (NSUInteger)replaceMatchesInString:(NSMutableString *)string replacementStringForResult:(<a class="code" href="_n_s_regular_expression_09_active_support_8h.html#a5496d9d3bc46f27bb1400a660f7d11da">ASReplacementStringForResultBlock</a>)replacementStringForResult;
+<a name="l00083"></a>00083 
+<a name="l00084"></a>00084 - (NSString *)stringByReplacingMatchesInString:(NSString *)string replacementStringForResult:(<a class="code" href="_n_s_regular_expression_09_active_support_8h.html#a5496d9d3bc46f27bb1400a660f7d11da">ASReplacementStringForResultBlock</a>)replacementStringForResult;
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086 <span class="keyword">@end</span>
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -165,7 +170,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

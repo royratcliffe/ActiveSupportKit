@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -88,27 +88,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_regular_expression_07_active_support_08.html#ad0ce7a39272506e50cf58aa9ece33026">replaceMatchesInString:replacementStringForResult:</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all matches of a given regular expression in a given string using a given block to compute the replacement string for each match.  <a href="#ad0ce7a39272506e50cf58aa9ece33026"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSUInteger)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_regular_expression_07_active_support_08.html#a8110e46ae8a7baa2905913f9a19863a9">replaceMatchesInString:replacementStringForResult:</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all matches of a given regular expression in a given string using a given block to compute the replacement string for each match.  <a href="#a8110e46ae8a7baa2905913f9a19863a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_regular_expression_07_active_support_08.html#af4f70b030f0021b6a5ba8e1ac3777463">stringByReplacingMatchesInString:replacementStringForResult:</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_n_s_regular_expression_09_active_support_8h_source.html#l00027">27</a> of file <a class="el" href="_n_s_regular_expression_09_active_support_8h_source.html">NSRegularExpression+ActiveSupport.h</a>.</p>
+<p>Definition at line <a class="el" href="_n_s_regular_expression_09_active_support_8h_source.html#l00029">29</a> of file <a class="el" href="_n_s_regular_expression_09_active_support_8h_source.html">NSRegularExpression+ActiveSupport.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ad0ce7a39272506e50cf58aa9ece33026"></a><!-- doxytag: member="NSRegularExpression(ActiveSupport)::replaceMatchesInString:replacementStringForResult:" ref="ad0ce7a39272506e50cf58aa9ece33026" args="(NSString *string,[replacementStringForResult] NSTextCheckingResult *result, NSString *inString, NSInteger offset replacementStringForResult)" -->
+<a class="anchor" id="a8110e46ae8a7baa2905913f9a19863a9"></a><!-- doxytag: member="NSRegularExpression(ActiveSupport)::replaceMatchesInString:replacementStringForResult:" ref="a8110e46ae8a7baa2905913f9a19863a9" args="(NSMutableString *string,[replacementStringForResult] ASReplacementStringForResultBlock replacementStringForResult)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (NSString *) replaceMatchesInString: </td>
+          <td class="memname">- (NSUInteger) replaceMatchesInString: </td>
           <td></td>
-          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramtype">(NSMutableString *)&#160;</td>
           <td class="paramname"><em>string</em></td>
         </tr>
         <tr>
           <td class="paramkey">replacementStringForResult:</td>
           <td></td>
-          <td class="paramtype">(NSTextCheckingResult *result, NSString *inString, NSInteger offset)&#160;</td>
+          <td class="paramtype">(<a class="el" href="_n_s_regular_expression_09_active_support_8h.html#a5496d9d3bc46f27bb1400a660f7d11da">ASReplacementStringForResultBlock</a>)&#160;</td>
           <td class="paramname"><em>replacementStringForResult</em>&#160;</td>
         </tr>
         <tr>
@@ -121,6 +122,7 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Replaces all matches of a given regular expression in a given string using a given block to compute the replacement string for each match. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Answers the total number of replacements completed.</dd></dl>
 <p>The block accepts the match result, the progressively replaced string along with its progressive offset.</p>
 <p>Use the method as follows. Suppose you want to have strings of the form <code>"a/b/c"</code> and you want to replace every path element separator (the forward slashes) to double-colons and fold the following character to uppercase at the same time. This assumes the characters following the slashes are letters. We could use the regular expression <code>"/(.?)"</code> meaning a slash optionally followed by any character. The parentheses act as markers for substitution.</p>
 <div class="fragment"><pre class="fragment">    NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:<span class="stringliteral">@&quot;/(.?)&quot;</span>
@@ -148,6 +150,35 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af4f70b030f0021b6a5ba8e1ac3777463"></a><!-- doxytag: member="NSRegularExpression(ActiveSupport)::stringByReplacingMatchesInString:replacementStringForResult:" ref="af4f70b030f0021b6a5ba8e1ac3777463" args="(NSString *string,[replacementStringForResult] ASReplacementStringForResultBlock replacementStringForResult)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) stringByReplacingMatchesInString: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>string</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">replacementStringForResult:</td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="_n_s_regular_expression_09_active_support_8h.html#a5496d9d3bc46f27bb1400a660f7d11da">ASReplacementStringForResultBlock</a>)&#160;</td>
+          <td class="paramname"><em>replacementStringForResult</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_n_s_regular_expression_09_active_support_8m_source.html#l00055">55</a> of file <a class="el" href="_n_s_regular_expression_09_active_support_8m_source.html">NSRegularExpression+ActiveSupport.m</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>ActiveSupportKit/<a class="el" href="_n_s_regular_expression_09_active_support_8h_source.html">NSRegularExpression+ActiveSupport.h</a></li>
 <li>ActiveSupportKit/<a class="el" href="_n_s_regular_expression_09_active_support_8m_source.html">NSRegularExpression+ActiveSupport.m</a></li>
@@ -158,7 +189,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

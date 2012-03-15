@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -97,8 +97,60 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSData *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_j_s_o_n_8m.html#a44f2949a96cc6c657723d063b79b95c2">ASJSONEncodeToData</a> (id object, NSError **outError)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_j_s_o_n_8m.html#ad9fe5d9e0eeb5a3a9843570213be6533">ASJSONDecodeFromString</a> (NSString *string, NSError **outError)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_j_s_o_n_8m.html#a953a956941fc6cd28f2418eb20cd1f70">ASJSONEncodeToString</a> (id object, NSError **outError)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_j_s_o_n_8m.html#a8f163a338867c1d013c79f61b72bd5bc">ASCheckJSONObjectForCircularReferences</a> (id object)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_j_s_o_n_8m.html#a958a99cfd060daa6cb3462540ea41180">ASAllObjectsInJSONObject</a> (id object)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Walks a JSON object and also checks the given JSON object for circular references, failing if circular.  <a href="#a958a99cfd060daa6cb3462540ea41180"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a958a99cfd060daa6cb3462540ea41180"></a><!-- doxytag: member="ASJSON.m::ASAllObjectsInJSONObject" ref="a958a99cfd060daa6cb3462540ea41180" args="(id object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">NSArray* ASAllObjectsInJSONObject </td>
+          <td>(</td>
+          <td class="paramtype">id&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Walks a JSON object and also checks the given JSON object for circular references, failing if circular. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>The JSON object to walk, where objects have one of three types: array, dictionary or primitive. Primitives include strings, numbers and date-times. The root JSON object can be any one of these three, as can array elements and dictionary objects. Dictionary keys can be strings only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Answers an array of unique objects extracted by walking the JSON <em>object</em>. The array contains all primitives, all arrays and their elements, and all dictionaries and their values. The array does <em>not</em> contain dictionary keys. You can extract dictionary keys from the result by picking out the dictionaries. Answers <code>nil</code> if the JSON object contains circular references.</dd></dl>
+<p>Walks the JSON object, adding each object to the resulting array one-by-one unless it encounters an object already seen. Checking for circular references uses the <code>-[NSArray firstObjectCommonWithArray:]</code> method. If using an array is not efficient, the implementation could improve by using a set rather than an array. As a disadvantage in that case, the ordering would become undefined. Dictionaries already make their ordering undefined. </p>
+
+<p>Definition at line <a class="el" href="_a_s_j_s_o_n_8m_source.html#l00053">53</a> of file <a class="el" href="_a_s_j_s_o_n_8m_source.html">ASJSON.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f163a338867c1d013c79f61b72bd5bc"></a><!-- doxytag: member="ASJSON.m::ASCheckJSONObjectForCircularReferences" ref="a8f163a338867c1d013c79f61b72bd5bc" args="(id object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL ASCheckJSONObjectForCircularReferences </td>
+          <td>(</td>
+          <td class="paramtype">id&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="return"><dt><b>Returns:</b></dt><dd>YES if the JSON object contains at least one circular reference; NO if it contains no circular references. </dd></dl>
+
+<p>Definition at line <a class="el" href="_a_s_j_s_o_n_8m_source.html#l00048">48</a> of file <a class="el" href="_a_s_j_s_o_n_8m_source.html">ASJSON.m</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae353e403c8e5ac28b6caab9b6b0c7718"></a><!-- doxytag: member="ASJSON.m::ASJSONDecodeFromData" ref="ae353e403c8e5ac28b6caab9b6b0c7718" args="(NSData *data, NSError **outError)" -->
 <div class="memitem">
 <div class="memproto">
@@ -221,7 +273,7 @@ Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

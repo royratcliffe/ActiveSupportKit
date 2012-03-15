@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -101,9 +101,12 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a4735bef8b5d76b5a4b5ee30fd764877d">addUncountable:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#ad9ea9e58accd06893a6bf0f479e87be7">addHumanRegularExpressionRule:options:replacement:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a59781eed4e8d18e5adbc7e49c439a6d9">addHumanStringRule:options:replacement:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a7dc5743e5fd6a3ef9e3668aa746ee0f5">addAcronym:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#af70fc4f089fa1f06d260637b3bd9d166">clear</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a32c1120080d3337135dd06c6fc5cf410">pluralize:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a192f5b2117a5d775986e3569118bd6b6">singularize:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a7a2ba8566512dfdb9a3c7931a11b6eca">camelize:uppercaseFirstLetter:</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#af43447d69cdc3058cb3fdb90c72bdd6e">underscore:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#ac890a7dd1902ebeac3e28b68e557f574">humanize:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a13eef0c8214b2b4857efb43dd87c206a">titleize:</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_a_s_inflector.html#a159667067d0b0d5a6ac7af3f1431dad5">init</a><code> [implementation]</code></td></tr>
@@ -116,13 +119,34 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#a81dbc6c7d90d394f923ce7a5dd7a4177">singulars</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#aee19490e374f052de7febec3bcd73115">uncountables</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">NSMutableArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#aeaa938ade2a6aafb576756a1f7251eb5">humans</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSMutableDictionary *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#a52b436dbfb6a4fba421c37d44220d523">acronyms</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_a_s_inflector.html#ac5ef1c644856a3f1e2bc497c04ae2744">acronymsRegularExpressionString</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Transforms words from singular to plural and vice versa, transforms lowercase and underscored words to human-readable form, etc. </p>
-<p><a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> departs somewhat with Rails in its design. Rails uses ActiveSupport and Inflector as nested modules, neither as classes. Rails also uses Inflections as the primary class for capturing the inflection behaviour. The module Inflector defines methods for accessing the default inflections instance. Objective-C has nothing quite like modules. Hence <a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> encapsulates the primary behaviour. You can access the shared inflector using +[<a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector]. </p>
+<p><a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> departs somewhat with Rails in its layout. Rails uses ActiveSupport and Inflector as nested modules, neither as classes. Rails also uses Inflections as the primary class for capturing the inflection behaviour. The module Inflector defines methods for accessing the default inflections instance. Objective-C has nothing quite like modules. Hence <a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> encapsulates the primary behaviour. You can access the shared inflector using +[<a class="el" href="interface_a_s_inflector.html" title="Transforms words from singular to plural and vice versa, transforms lowercase and underscored words t...">ASInflector</a> defaultInflector]. </p>
 
 <p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00039">39</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a7dc5743e5fd6a3ef9e3668aa746ee0f5"></a><!-- doxytag: member="ASInflector::addAcronym:" ref="a7dc5743e5fd6a3ef9e3668aa746ee0f5" args="(NSString *acronym)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) addAcronym: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>acronym</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00209">209</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad9ea9e58accd06893a6bf0f479e87be7"></a><!-- doxytag: member="ASInflector::addHumanRegularExpressionRule:options:replacement:" ref="ad9ea9e58accd06893a6bf0f479e87be7" args="(NSString *rule,[options] NSRegularExpressionOptions options,[replacement] NSString *replacement)" -->
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +242,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00217">217</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00223">223</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -377,7 +401,36 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00244">244</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00250">250</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a2ba8566512dfdb9a3c7931a11b6eca"></a><!-- doxytag: member="ASInflector::camelize:uppercaseFirstLetter:" ref="a7a2ba8566512dfdb9a3c7931a11b6eca" args="(NSString *term,[uppercaseFirstLetter] BOOL uppercaseFirstLetter)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) camelize: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>term</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">uppercaseFirstLetter:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>uppercaseFirstLetter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00276">276</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -395,7 +448,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00209">209</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00215">215</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -413,7 +466,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00034">34</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00032">32</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -432,7 +485,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00270">270</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00318">318</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -450,7 +503,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00160">160</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00158">158</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -469,7 +522,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00249">249</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00255">255</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -488,7 +541,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00258">258</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00264">264</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
@@ -507,11 +560,60 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00284">284</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00345">345</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af43447d69cdc3058cb3fdb90c72bdd6e"></a><!-- doxytag: member="ASInflector::underscore:" ref="af43447d69cdc3058cb3fdb90c72bdd6e" args="(NSString *camelCasedWord)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) underscore: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>camelCasedWord</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8m_source.html#l00304">304</a> of file <a class="el" href="_a_s_inflector_8m_source.html">ASInflector.m</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a52b436dbfb6a4fba421c37d44220d523"></a><!-- doxytag: member="ASInflector::acronyms" ref="a52b436dbfb6a4fba421c37d44220d523" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSMutableDictionary*) <a class="el" href="interface_a_s_inflector.html#a52b436dbfb6a4fba421c37d44220d523">acronyms</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00046">46</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5ef1c644856a3f1e2bc497c04ae2744"></a><!-- doxytag: member="ASInflector::acronymsRegularExpressionString" ref="ac5ef1c644856a3f1e2bc497c04ae2744" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) <a class="el" href="interface_a_s_inflector.html#ac5ef1c644856a3f1e2bc497c04ae2744">acronymsRegularExpressionString</a><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="_a_s_inflector_8h_source.html#l00047">47</a> of file <a class="el" href="_a_s_inflector_8h_source.html">ASInflector.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aeaa938ade2a6aafb576756a1f7251eb5"></a><!-- doxytag: member="ASInflector::humans" ref="aeaa938ade2a6aafb576756a1f7251eb5" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -582,7 +684,7 @@ Private Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">

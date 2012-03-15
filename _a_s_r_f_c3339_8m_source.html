@@ -27,7 +27,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.1&nbsp;(66.1)</span>
+   &#160;<span id="projectnumber">v1.2&nbsp;(105.0)</span>
    </div>
    
   </td>
@@ -103,23 +103,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025 <span class="preprocessor">#import &quot;<a class="code" href="_a_s_r_f_c3339_8h.html">ASRFC3339.h</a>&quot;</span>
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="_a_s_r_f_c3339_8m.html#ad366128f38a49d7f089337639aed139f">00027</a> NSDate *<a class="code" href="_a_s_r_f_c3339_8h.html#ad366128f38a49d7f089337639aed139f" title="Converts an RFC 3339 date-time string to a date.">ASDateFromRFC3339String</a>(NSString *dateTimeString)
-<a name="l00028"></a>00028 {
-<a name="l00029"></a>00029     <span class="keyword">static</span> NSDateFormatter *__strong dateFormatter;
-<a name="l00030"></a>00030     <span class="keywordflow">if</span> (dateFormatter == nil)
-<a name="l00031"></a>00031     {
-<a name="l00032"></a>00032         dateFormatter = [[NSDateFormatter alloc] init];
-<a name="l00033"></a>00033         [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@&quot;en_US_POSIX&quot;]];
-<a name="l00034"></a>00034         [dateFormatter setDateFormat:@&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss&#39;Z&#39;&quot;];
-<a name="l00035"></a>00035         [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-<a name="l00036"></a>00036         
-<a name="l00037"></a>00037         <span class="comment">// tidy up at exit</span>
-<a name="l00038"></a>00038         atexit_b(^{
-<a name="l00039"></a>00039             dateFormatter = nil;
-<a name="l00040"></a>00040         });
-<a name="l00041"></a>00041     }
-<a name="l00042"></a>00042     <span class="keywordflow">return</span> [dateFormatter dateFromString:dateTimeString];
-<a name="l00043"></a>00043 }
+<a name="l00027"></a>00027 <span class="preprocessor">#import &quot;<a class="code" href="_n_s_date_formatter_09_active_support_8h.html">NSDateFormatter+ActiveSupport.h</a>&quot;</span>
+<a name="l00028"></a>00028 
+<a name="l00029"></a><a class="code" href="_a_s_r_f_c3339_8m.html#a1830bf62f7d4d888776d091b481306d2">00029</a> <a class="code" href="interface_a_s_date_formatter.html" title="Formats and parses date-times using a sorted collection of Cocoa date formatters.">ASDateFormatter</a> *<a class="code" href="_a_s_r_f_c3339_8h.html#aecb765659d66ea7d64135571e3f91345">ASRFC3339DateFormatter</a>()
+<a name="l00030"></a>00030 {
+<a name="l00031"></a>00031     <span class="keyword">static</span> <a class="code" href="interface_a_s_date_formatter.html" title="Formats and parses date-times using a sorted collection of Cocoa date formatters.">ASDateFormatter</a> *__strong dateFormatter;
+<a name="l00032"></a>00032     <span class="keywordflow">if</span> (dateFormatter == nil)
+<a name="l00033"></a>00033     {
+<a name="l00034"></a>00034         dateFormatter = [[<a class="code" href="interface_a_s_date_formatter.html" title="Formats and parses date-times using a sorted collection of Cocoa date formatters.">ASDateFormatter</a> alloc] init];
+<a name="l00035"></a>00035         NSTimeZone *gmt = [NSTimeZone timeZoneForSecondsFromGMT:0];
+<a name="l00036"></a>00036         [dateFormatter addNSDateFormatter:[NSDateFormatter enUSPOSIXDateFormatterWithDateFormat:@&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss&#39;Z&#39;&quot; timeZone:gmt]];
+<a name="l00037"></a>00037         NSMutableString *s = [NSMutableString string];
+<a name="l00038"></a>00038         <span class="keywordflow">for</span> (NSUInteger count = 0; count &lt; 5; count++)
+<a name="l00039"></a>00039         {
+<a name="l00040"></a>00040             [s appendString:@&quot;S&quot;];
+<a name="l00041"></a>00041             NSString *dateFormat = [NSString stringWithFormat:@&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss&#39;.&#39;%@&#39;Z&#39;&quot;, s];
+<a name="l00042"></a>00042             [dateFormatter addNSDateFormatter:[NSDateFormatter enUSPOSIXDateFormatterWithDateFormat:dateFormat timeZone:gmt]];
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044     }
+<a name="l00045"></a>00045     <span class="keywordflow">return</span> dateFormatter;
+<a name="l00046"></a>00046 }
+<a name="l00047"></a>00047 
+<a name="l00048"></a><a class="code" href="_a_s_r_f_c3339_8m.html#aba9aef7440477300e331f020ae038037">00048</a> NSDate *<a class="code" href="_a_s_r_f_c3339_8h.html#aba9aef7440477300e331f020ae038037" title="Converts an RFC 3339 date-time string to a date.">ASDateFromRFC3339String</a>(NSString *<span class="keywordtype">string</span>)
+<a name="l00049"></a>00049 {
+<a name="l00050"></a>00050     <span class="keywordflow">return</span> [ASRFC3339DateFormatter() dateFromString:string];
+<a name="l00051"></a>00051 }
+<a name="l00052"></a>00052 
+<a name="l00053"></a><a class="code" href="_a_s_r_f_c3339_8m.html#a75856feab4a4ecef663de826ca77bc91">00053</a> NSString *<a class="code" href="_a_s_r_f_c3339_8h.html#a75856feab4a4ecef663de826ca77bc91" title="Converts the given date to a string in RFC 3339 format.">ASRFC3339StringFromDate</a>(NSDate *date)
+<a name="l00054"></a>00054 {
+<a name="l00055"></a>00055     <span class="keywordflow">return</span> [ASRFC3339DateFormatter() stringFromDate:date];
+<a name="l00056"></a>00056 }
 </pre></div></div>
 </div>
 <!-- window showing the filter options -->
@@ -127,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
