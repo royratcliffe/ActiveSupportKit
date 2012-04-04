@@ -105,7 +105,7 @@
 {
 	// require 'active_support'
 	// p ActiveSupport::JSON.decode("[\"hello world\"]")
-	NSError *error = nil;
+	NSError *__autoreleasing error = nil;
 	id object = ASJSONDecodeFromData([@"[\"hello world\"]" dataUsingEncoding:NSUTF8StringEncoding], &error);
 	STAssertTrue([object isKindOfClass:[NSArray class]], nil);
 	STAssertEquals([object count], (NSUInteger)1, nil);
