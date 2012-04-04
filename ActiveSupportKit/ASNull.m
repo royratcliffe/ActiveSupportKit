@@ -26,5 +26,13 @@
 
 id ASNilForNull(id object)
 {
-	return object != nil && object != [NSNull null] ? object : nil;
+	// Which is the most logical and simplest implementation? If you invert the
+	// condition, you get either of the following expressions:
+	//
+	//	object != nil && object != [NSNull null] ? object : nil
+	//	object == nil || object == [NSNull null] ? nil : object
+	//
+	// In other words, answer nil if the object is nil or null. However, nil is
+	// also not null. Therefore, the first condition becomes redundant.
+	return object == [NSNull null] ? nil : object;
 }

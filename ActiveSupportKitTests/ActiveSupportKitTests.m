@@ -151,4 +151,11 @@
 	STAssertEqualObjects(ASRFC2822StringFromDate(date), @"01 Jan 2000 00:00 +0000", nil);
 }
 
+- (void)testNilForNull
+{
+	STAssertNil(ASNilForNull([NSNull null]), nil);
+	STAssertNil(ASNilForNull(nil), nil);
+	STAssertNotNil(ASNilForNull([[NSObject alloc] init]), nil);
+}
+
 @end
