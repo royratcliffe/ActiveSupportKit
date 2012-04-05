@@ -349,10 +349,21 @@
 	});
 }
 
+- (NSString *)demodularize:(NSString *)path
+{
+	NSRange range = [path rangeOfString:@"::" options:NSBackwardsSearch];
+	return range.location != NSNotFound ? [path substringFromIndex:range.location + 2] : path;
+}
+
 - (NSString *)deconstantize:(NSString *)path
 {
 	NSRange range = [path rangeOfString:@"::" options:NSBackwardsSearch];
 	return [path substringWithRange:NSMakeRange(0, range.location != NSNotFound ? range.location : 0)];
+}
+
+- (NSString *)foreignKey:(NSString *)className separateClassNameAndIDWithUnderscore:(BOOL)yesOrNo
+{
+	return [[self underscore:[self demodularize:className]] stringByAppendingString:yesOrNo ? @"_id" : @"id"];
 }
 
 @end

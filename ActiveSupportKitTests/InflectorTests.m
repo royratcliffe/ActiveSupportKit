@@ -137,6 +137,13 @@
 	}
 }
 
+- (void)testDemodularize
+{
+	STAssertEqualObjects(@"Account", [[ASInflector defaultInflector] demodularize:@"MyApplication::Billing::Account"], nil);
+	STAssertEqualObjects(@"Account", [[ASInflector defaultInflector] demodularize:@"Account"], nil);
+	STAssertEqualObjects(@"", [[ASInflector defaultInflector] demodularize:@""], nil);
+}
+
 - (void)testDeconstantize
 {
 	STAssertEqualObjects(@"MyApplication::Billing", [[ASInflector defaultInflector] deconstantize:@"MyApplication::Billing::Account"], nil);
@@ -148,6 +155,15 @@
 	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@"Account"], nil);
 	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@"::Account"], nil);
 	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@""], nil);
+}
+
+- (void)testForeignKey
+{
+	STAssertEqualObjects(@"person_id", [[ASInflector defaultInflector] foreignKey:@"Person" separateClassNameAndIDWithUnderscore:YES], nil);
+	STAssertEqualObjects(@"account_id", [[ASInflector defaultInflector] foreignKey:@"MyApplication::Billing::Account" separateClassNameAndIDWithUnderscore:YES], nil);
+	
+	STAssertEqualObjects(@"personid", [[ASInflector defaultInflector] foreignKey:@"Person" separateClassNameAndIDWithUnderscore:NO], nil);
+	STAssertEqualObjects(@"accountid", [[ASInflector defaultInflector] foreignKey:@"MyApplication::Billing::Account" separateClassNameAndIDWithUnderscore:NO], nil);
 }
 
 @end
