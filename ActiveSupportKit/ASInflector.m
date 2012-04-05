@@ -349,4 +349,10 @@
 	});
 }
 
+- (NSString *)deconstantize:(NSString *)path
+{
+	NSRange range = [path rangeOfString:@"::" options:NSBackwardsSearch];
+	return [path substringWithRange:NSMakeRange(0, range.location != NSNotFound ? range.location : 0)];
+}
+
 @end

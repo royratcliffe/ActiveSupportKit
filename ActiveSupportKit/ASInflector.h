@@ -72,5 +72,6 @@
 - (NSString *)underscore:(NSString *)camelCasedWord;
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord;
 - (NSString *)titleize:(NSString *)word;
+- (NSString *)deconstantize:(NSString *)path;
 
 @end

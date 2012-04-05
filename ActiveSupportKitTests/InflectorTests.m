@@ -137,4 +137,17 @@
 	}
 }
 
+- (void)testDeconstantize
+{
+	STAssertEqualObjects(@"MyApplication::Billing", [[ASInflector defaultInflector] deconstantize:@"MyApplication::Billing::Account"], nil);
+	STAssertEqualObjects(@"::MyApplication::Billing", [[ASInflector defaultInflector] deconstantize:@"::MyApplication::Billing::Account"], nil);
+	
+	STAssertEqualObjects(@"MyApplication", [[ASInflector defaultInflector] deconstantize:@"MyApplication::Billing"], nil);
+	STAssertEqualObjects(@"::MyApplication", [[ASInflector defaultInflector] deconstantize:@"::MyApplication::Billing"], nil);
+	
+	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@"Account"], nil);
+	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@"::Account"], nil);
+	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@""], nil);
+}
+
 @end
