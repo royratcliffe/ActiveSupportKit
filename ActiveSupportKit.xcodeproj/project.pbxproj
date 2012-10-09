@@ -819,6 +819,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PATH = "${PATH}:/usr/local/bin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -830,6 +831,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PATH = "${PATH}:/usr/local/bin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
