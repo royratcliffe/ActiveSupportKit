@@ -112,7 +112,7 @@
 		783545F613EA64C50049385C /* ActiveSupportKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKit-Info.plist"; sourceTree = "<group>"; };
 		783545F813EA64C50049385C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		783545FA13EA64C50049385C /* ActiveSupportKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActiveSupportKit-Prefix.pch"; sourceTree = "<group>"; };
-		7835460313EA64C50049385C /* ActiveSupportKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ActiveSupportKitTests.octest; path = ActiveSupportKitFrameworkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7835460313EA64C50049385C /* ActiveSupportKitFrameworkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitFrameworkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7835460413EA64C50049385C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7835460C13EA64C50049385C /* ActiveSupportKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKitTests-Info.plist"; sourceTree = "<group>"; };
 		7835460E13EA64C50049385C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				783545EB13EA64C50049385C /* ActiveSupportKit.framework */,
-				7835460313EA64C50049385C /* ActiveSupportKitTests.octest */,
+				7835460313EA64C50049385C /* ActiveSupportKitFrameworkTests.octest */,
 				78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */,
 				78AFBD9D13EC587900BBFC62 /* ActiveSupportKitLibraryTests.octest */,
 			);
@@ -403,7 +403,7 @@
 			);
 			name = ActiveSupportKitFrameworkTests;
 			productName = ActiveSupportKitTests;
-			productReference = 7835460313EA64C50049385C /* ActiveSupportKitTests.octest */;
+			productReference = 7835460313EA64C50049385C /* ActiveSupportKitFrameworkTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */ = {
@@ -448,7 +448,7 @@
 		783545E113EA64C40049385C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Pioneering Software, United Kingdom";
 			};
 			buildConfigurationList = 783545E413EA64C40049385C /* Build configuration list for PBXProject "ActiveSupportKit" */;
