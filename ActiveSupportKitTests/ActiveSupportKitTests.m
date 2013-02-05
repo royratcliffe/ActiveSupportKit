@@ -1,6 +1,6 @@
 // ActiveSupportKit ActiveSupportKitTests.m
 //
-// Copyright © 2011, 2012, Roy Ratcliffe, Pioneering Software, United Kingdom
+// Copyright © 2011–2013, Roy Ratcliffe, Pioneering Software, United Kingdom
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the “Software”), to deal
@@ -148,7 +148,15 @@
 	NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 	[calendar setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
 	NSDate *date = [calendar dateFromComponents:dateComponents];
-	STAssertEqualObjects(ASRFC2822StringFromDate(date), @"01 Jan 2000 00:00 +0000", nil);
+	// Note, ASRFC2822StringFromDate applies the current time zone when
+	// converting from a date. This may not be Greenwich Mean Time. Fixing the
+	// time zone occurs when the ActiveSupport date formatter constructs its
+	// dependent NSDateFormatter objects. The sub-formatters apply the default
+	// time zone.
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+	[dateFormatter setDateFormat:@"dd MMM yyyy HH:mm ZZZ"];
+	STAssertEqualObjects(ASRFC2822StringFromDate(date), [dateFormatter stringFromDate:date], nil);
 }
 
 - (void)testNilForNull
