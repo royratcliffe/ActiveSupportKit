@@ -7,49 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7832703814115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832703614115C6F00ECCE7D /* NSObject+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7832703914115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832703614115C6F00ECCE7D /* NSObject+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7832703A14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832703714115C6F00ECCE7D /* NSObject+ActiveSupport.m */; };
 		7832703B14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832703714115C6F00ECCE7D /* NSObject+ActiveSupport.m */; };
-		7832704214115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832704014115D3400ECCE7D /* NSArray+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7832704314115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832704014115D3400ECCE7D /* NSArray+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7832704414115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832704114115D3400ECCE7D /* NSArray+ActiveSupport.m */; };
 		7832704514115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832704114115D3400ECCE7D /* NSArray+ActiveSupport.m */; };
-		783545F913EA64C50049385C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 783545F713EA64C50049385C /* InfoPlist.strings */; };
-		7835460513EA64C50049385C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
-		7835460913EA64C50049385C /* ActiveSupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783545EB13EA64C50049385C /* ActiveSupportKit.framework */; };
-		7835460F13EA64C50049385C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7835460D13EA64C50049385C /* InfoPlist.strings */; };
-		7835461213EA64C50049385C /* ActiveSupportKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461113EA64C50049385C /* ActiveSupportKitTests.m */; };
-		7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
-		7835BC751414B8E600CC4B56 /* Versioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835BC761414B8E600CC4B56 /* Versioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7835BC771414B8E600CC4B56 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BC741414B8E600CC4B56 /* Versioning.m */; };
 		7835BC781414B8E600CC4B56 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BC741414B8E600CC4B56 /* Versioning.m */; };
-		783BA26814E9D27300D6BDB1 /* ASRFC2822.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26614E9D27300D6BDB1 /* ASRFC2822.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783BA26914E9D27300D6BDB1 /* ASRFC2822.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26614E9D27300D6BDB1 /* ASRFC2822.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		783BA26A14E9D27300D6BDB1 /* ASRFC2822.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26714E9D27300D6BDB1 /* ASRFC2822.m */; };
 		783BA26B14E9D27300D6BDB1 /* ASRFC2822.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26714E9D27300D6BDB1 /* ASRFC2822.m */; };
-		783BA26F14E9D84A00D6BDB1 /* ASDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783BA27014E9D84A00D6BDB1 /* ASDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		783BA27114E9D84A00D6BDB1 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26E14E9D84A00D6BDB1 /* ASDateFormatter.m */; };
 		783BA27214E9D84A00D6BDB1 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26E14E9D84A00D6BDB1 /* ASDateFormatter.m */; };
-		784891E614EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		784891E714EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		784891E814EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 784891E514EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m */; };
 		784891E914EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 784891E514EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m */; };
 		78719ACD141541B200D102A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7835460D13EA64C50049385C /* InfoPlist.strings */; };
-		78719ACE141542CD00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
-		78719ACF141542CE00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78719AD0141543C800D102A0 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
-		788DB0F814D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
 		788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
-		788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
 		788DB0FE14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
-		788F9C1514D837F8000BA699 /* ASNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		788F9C1614D837F8000BA699 /* ASNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		788F9C1714D837F8000BA699 /* ASNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F9C1414D837F8000BA699 /* ASNull.m */; };
 		788F9C1814D837F8000BA699 /* ASNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F9C1414D837F8000BA699 /* ASNull.m */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBD9E13EC587900BBFC62 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7835460413EA64C50049385C /* SenTestingKit.framework */; };
@@ -59,41 +33,21 @@
 		78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
-		78B628FC141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
 		78B628FF141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
-		78D9883C14E9166D0081C350 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9883B14E9166D0081C350 /* EncodingTests.m */; };
 		78D9883D14E9166D0081C350 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9883B14E9166D0081C350 /* EncodingTests.m */; };
-		78E0B180140D320C004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78E0B181140D320C004E1041 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
 		78E0B186140D3D68004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78E77EC814E03C0D008C55C6 /* ASReplacementStringForResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E77EC914E03C0D008C55C6 /* ASReplacementStringForResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78E77ECC14E03C22008C55C6 /* ASReplacementStringForResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E77ECB14E03C21008C55C6 /* ASReplacementStringForResults.m */; };
 		78E77ECD14E03C22008C55C6 /* ASReplacementStringForResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E77ECB14E03C21008C55C6 /* ASReplacementStringForResults.m */; };
-		78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78ED15DC14B228B400149AEE /* ASRFC3339.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED15DB14B228B400149AEE /* ASRFC3339.m */; };
 		78ED15DD14B228B400149AEE /* ASRFC3339.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED15DB14B228B400149AEE /* ASRFC3339.m */; };
-		78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
 		78F3B50A14175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
-		78F3B5571418CEB8005D6F5D /* ASJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B5551418CEB7005D6F5D /* ASJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B5551418CEB7005D6F5D /* ASJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78F3B5591418CEB8005D6F5D /* ASJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B5561418CEB7005D6F5D /* ASJSON.m */; };
 		78F3B55A1418CEB8005D6F5D /* ASJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B5561418CEB7005D6F5D /* ASJSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7835460713EA64C50049385C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 783545E113EA64C40049385C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 783545EA13EA64C50049385C;
-			remoteInfo = ActiveSupportKit;
-		};
 		78AFBDA413EC587900BBFC62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 783545E113EA64C40049385C /* Project object */;
@@ -108,11 +62,7 @@
 		7832703714115C6F00ECCE7D /* NSObject+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ActiveSupport.m"; sourceTree = "<group>"; };
 		7832704014115D3400ECCE7D /* NSArray+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ActiveSupport.h"; sourceTree = "<group>"; };
 		7832704114115D3400ECCE7D /* NSArray+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ActiveSupport.m"; sourceTree = "<group>"; };
-		783545EB13EA64C50049385C /* ActiveSupportKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ActiveSupportKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		783545F613EA64C50049385C /* ActiveSupportKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKit-Info.plist"; sourceTree = "<group>"; };
-		783545F813EA64C50049385C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		783545FA13EA64C50049385C /* ActiveSupportKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ActiveSupportKit-Prefix.pch"; sourceTree = "<group>"; };
-		7835460313EA64C50049385C /* ActiveSupportKitFrameworkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActiveSupportKitFrameworkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7835460413EA64C50049385C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		7835460C13EA64C50049385C /* ActiveSupportKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ActiveSupportKitTests-Info.plist"; sourceTree = "<group>"; };
 		7835460E13EA64C50049385C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -153,24 +103,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		783545E713EA64C50049385C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78719ACE141542CD00D102A0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783545FF13EA64C50049385C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7835460513EA64C50049385C /* SenTestingKit.framework in Frameworks */,
-				7835460913EA64C50049385C /* ActiveSupportKit.framework in Frameworks */,
-				78719ACF141542CE00D102A0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78AFBD8C13EC587900BBFC62 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,8 +137,6 @@
 		783545EC13EA64C50049385C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				783545EB13EA64C50049385C /* ActiveSupportKit.framework */,
-				7835460313EA64C50049385C /* ActiveSupportKitFrameworkTests.octest */,
 				78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */,
 				78AFBD9D13EC587900BBFC62 /* ActiveSupportKitLibraryTests.octest */,
 			);
@@ -268,8 +198,6 @@
 		783545F513EA64C50049385C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				783545F613EA64C50049385C /* ActiveSupportKit-Info.plist */,
-				783545F713EA64C50049385C /* InfoPlist.strings */,
 				783545FA13EA64C50049385C /* ActiveSupportKit-Prefix.pch */,
 				7835BC731414B8E600CC4B56 /* Versioning.h */,
 				7835BC741414B8E600CC4B56 /* Versioning.m */,
@@ -303,29 +231,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		783545E813EA64C50049385C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7835461E13EA67C50049385C /* ActiveSupportKit.h in Headers */,
-				7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */,
-				78E0B180140D320C004E1041 /* ASInflector.h in Headers */,
-				7832703814115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */,
-				7832704214115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */,
-				78B628FC141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */,
-				7835BC751414B8E600CC4B56 /* Versioning.h in Headers */,
-				78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
-				78F3B5571418CEB8005D6F5D /* ASJSON.h in Headers */,
-				78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */,
-				788DB0F814D323CA00AF938D /* InflectorTests.h in Headers */,
-				788F9C1514D837F8000BA699 /* ASNull.h in Headers */,
-				78E77EC814E03C0D008C55C6 /* ASReplacementStringForResults.h in Headers */,
-				783BA26814E9D27300D6BDB1 /* ASRFC2822.h in Headers */,
-				783BA26F14E9D84A00D6BDB1 /* ASDateFormatter.h in Headers */,
-				784891E614EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78AFBD8D13EC587900BBFC62 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,43 +274,6 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		783545EA13EA64C50049385C /* ActiveSupportKitFramework */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7835461513EA64C50049385C /* Build configuration list for PBXNativeTarget "ActiveSupportKitFramework" */;
-			buildPhases = (
-				783545E613EA64C50049385C /* Sources */,
-				783545E713EA64C50049385C /* Frameworks */,
-				783545E813EA64C50049385C /* Headers */,
-				783545E913EA64C50049385C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ActiveSupportKitFramework;
-			productName = ActiveSupportKit;
-			productReference = 783545EB13EA64C50049385C /* ActiveSupportKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7835460213EA64C50049385C /* ActiveSupportKitFrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7835461813EA64C50049385C /* Build configuration list for PBXNativeTarget "ActiveSupportKitFrameworkTests" */;
-			buildPhases = (
-				783545FE13EA64C50049385C /* Sources */,
-				783545FF13EA64C50049385C /* Frameworks */,
-				7835460013EA64C50049385C /* Resources */,
-				7835460113EA64C50049385C /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7835460813EA64C50049385C /* PBXTargetDependency */,
-			);
-			name = ActiveSupportKitFrameworkTests;
-			productName = ActiveSupportKitTests;
-			productReference = 7835460313EA64C50049385C /* ActiveSupportKitFrameworkTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78AFBDB013EC587900BBFC62 /* Build configuration list for PBXNativeTarget "ActiveSupportKitLibrary" */;
@@ -463,8 +331,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				783545EA13EA64C50049385C /* ActiveSupportKitFramework */,
-				7835460213EA64C50049385C /* ActiveSupportKitFrameworkTests */,
 				78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */,
 				78AFBD9C13EC587900BBFC62 /* ActiveSupportKitLibraryTests */,
 				78D320D014A12AD2007B9EA4 /* ActiveSupportKitPages */,
@@ -473,22 +339,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		783545E913EA64C50049385C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				783545F913EA64C50049385C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7835460013EA64C50049385C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7835460F13EA64C50049385C /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78AFBD9A13EC587900BBFC62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,19 +350,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7835460113EA64C50049385C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		78AFBD9B13EC587900BBFC62 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,37 +366,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		783545E613EA64C50049385C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */,
-				78E0B181140D320C004E1041 /* ASInflector.m in Sources */,
-				7832703A14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */,
-				7832704414115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */,
-				78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */,
-				7835BC771414B8E600CC4B56 /* Versioning.m in Sources */,
-				78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */,
-				78F3B5591418CEB8005D6F5D /* ASJSON.m in Sources */,
-				78ED15DC14B228B400149AEE /* ASRFC3339.m in Sources */,
-				788F9C1714D837F8000BA699 /* ASNull.m in Sources */,
-				78E77ECC14E03C22008C55C6 /* ASReplacementStringForResults.m in Sources */,
-				783BA26A14E9D27300D6BDB1 /* ASRFC2822.m in Sources */,
-				783BA27114E9D84A00D6BDB1 /* ASDateFormatter.m in Sources */,
-				784891E814EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		783545FE13EA64C50049385C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7835461213EA64C50049385C /* ActiveSupportKitTests.m in Sources */,
-				788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */,
-				78D9883C14E9166D0081C350 /* EncodingTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		78AFBD8B13EC587900BBFC62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -594,11 +400,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7835460813EA64C50049385C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 783545EA13EA64C50049385C /* ActiveSupportKitFramework */;
-			targetProxy = 7835460713EA64C50049385C /* PBXContainerItemProxy */;
-		};
 		78AFBDA513EC587900BBFC62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */;
@@ -607,14 +408,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		783545F713EA64C50049385C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				783545F813EA64C50049385C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		7835460D13EA64C50049385C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -686,64 +479,6 @@
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = k;
-			};
-			name = Release;
-		};
-		7835461613EA64C50049385C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 120.3;
-				DYLIB_INSTALL_NAME_BASE = "@executable_path/../Frameworks/ObjectiveRailsKit.framework/Versions/Current/Frameworks";
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
-				INFOPLIST_FILE = "ActiveSupportKit/ActiveSupportKit-Info.plist";
-				PRODUCT_NAME = ActiveSupportKit;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		7835461713EA64C50049385C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 120.3;
-				DYLIB_INSTALL_NAME_BASE = "@executable_path/../Frameworks/ObjectiveRailsKit.framework/Versions/Current/Frameworks";
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
-				INFOPLIST_FILE = "ActiveSupportKit/ActiveSupportKit-Info.plist";
-				PRODUCT_NAME = ActiveSupportKit;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
-		7835461913EA64C50049385C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
-				INFOPLIST_FILE = "ActiveSupportKitTests/ActiveSupportKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		7835461A13EA64C50049385C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ActiveSupportKit/ActiveSupportKit-Prefix.pch";
-				INFOPLIST_FILE = "ActiveSupportKitTests/ActiveSupportKitTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -854,24 +589,6 @@
 			buildConfigurations = (
 				7835461313EA64C50049385C /* Debug */,
 				7835461413EA64C50049385C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7835461513EA64C50049385C /* Build configuration list for PBXNativeTarget "ActiveSupportKitFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7835461613EA64C50049385C /* Debug */,
-				7835461713EA64C50049385C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7835461813EA64C50049385C /* Build configuration list for PBXNativeTarget "ActiveSupportKitFrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7835461913EA64C50049385C /* Debug */,
-				7835461A13EA64C50049385C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
