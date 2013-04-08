@@ -354,11 +354,11 @@
 /* Begin PBXLegacyTarget section */
 		78D320D014A12AD2007B9EA4 /* ActiveSupportKitPages */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "-c \"$HOME/.rvm/bin/rvm-auto-ruby -r XcodePages -e XcodePages.doxygen_docset_install\"";
+			buildArgumentsString = "-f $PRODUCT_NAME/Makefile $ACTION";
 			buildConfigurationList = 78D320D114A12AD2007B9EA4 /* Build configuration list for PBXLegacyTarget "ActiveSupportKitPages" */;
 			buildPhases = (
 			);
-			buildToolPath = /bin/sh;
+			buildToolPath = /usr/bin/make;
 			buildWorkingDirectory = "";
 			dependencies = (
 			);
