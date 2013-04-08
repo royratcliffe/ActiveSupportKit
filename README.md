@@ -1,5 +1,7 @@
 # Active Support Kit
 
+[![Build Status](https://travis-ci.org/royratcliffe/ActiveSupportKit.png?branch=master)](https://travis-ci.org/royratcliffe/ActiveSupportKit)
+
 Active Support Kit mimics Ruby on Rails [Active Support][as]. Rails'
 ActiveSupport gem provides a collection of utility classes and standard library
 extensions designed primarily albeit not exclusively for working with the Rails
