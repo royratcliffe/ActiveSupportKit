@@ -1,5 +1,5 @@
-install:
-	$(HOME)/.rvm/bin/rvm-auto-ruby -r XcodePages -e XcodePages.doxygen_docset_install
+doxygen:
+	PROJECT_NAME=ActiveSupportKit $(HOME)/.rvm/bin/rvm-auto-ruby -r XcodePages -e XcodePages.doxygen_docset_install
 
 clean:
-	rm -rf $(PRODUCT_NAME)/html
+	rm -rf ActiveSupportKitPages/html
