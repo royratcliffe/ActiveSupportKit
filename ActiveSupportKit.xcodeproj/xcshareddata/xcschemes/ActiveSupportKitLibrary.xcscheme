@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ActiveSupportKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "78AFBD9C13EC587900BBFC62"
+               BuildableName = "ActiveSupportKitLibraryTests.octest"
+               BlueprintName = "ActiveSupportKitLibraryTests"
+               ReferencedContainer = "container:ActiveSupportKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
