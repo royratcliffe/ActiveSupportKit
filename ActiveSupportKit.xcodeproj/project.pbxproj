@@ -351,23 +351,6 @@
 		};
 /* End PBXHeadersBuildPhase section */
 
-/* Begin PBXLegacyTarget section */
-		78D320D014A12AD2007B9EA4 /* ActiveSupportKitPages */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "-f $PRODUCT_NAME/Makefile $ACTION";
-			buildConfigurationList = 78D320D114A12AD2007B9EA4 /* Build configuration list for PBXLegacyTarget "ActiveSupportKitPages" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = ActiveSupportKitPages;
-			passBuildSettingsInEnvironment = 1;
-			productName = ActiveSupportKitPages;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		783545EA13EA64C50049385C /* ActiveSupportKitFramework */ = {
 			isa = PBXNativeTarget;
@@ -467,7 +450,6 @@
 				7835460213EA64C50049385C /* ActiveSupportKitFrameworkTests */,
 				78AFBD8E13EC587900BBFC62 /* ActiveSupportKitLibrary */,
 				78AFBD9C13EC587900BBFC62 /* ActiveSupportKitLibraryTests */,
-				78D320D014A12AD2007B9EA4 /* ActiveSupportKitPages */,
 			);
 		};
 /* End PBXProject section */
@@ -819,33 +801,6 @@
 			};
 			name = Release;
 		};
-		78D320D214A12AD2007B9EA4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PATH = "${PATH}:/usr/local/bin";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		78D320D314A12AD2007B9EA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PATH = "${PATH}:/usr/local/bin";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -890,15 +845,6 @@
 			buildConfigurations = (
 				78AFBDB413EC587900BBFC62 /* Debug */,
 				78AFBDB513EC587900BBFC62 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		78D320D114A12AD2007B9EA4 /* Build configuration list for PBXLegacyTarget "ActiveSupportKitPages" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				78D320D214A12AD2007B9EA4 /* Debug */,
-				78D320D314A12AD2007B9EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
