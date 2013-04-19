@@ -49,7 +49,7 @@ Mirrors the Rails ActiveSupport::Inflector::Inflections class. Interface as foll
 
 ## Operating Systems
 
-The framework targets OS X 10.7 Lion and iOS 5.0. It depends on Foundation
+The framework targets the latest versions of OS X and iOS, and depends on Foundation
 framework's `NSJSONSerialization`, although you could easily adapt the
 underlying requirement for JSON serialisation. Earlier versions depended on
 [YAJL and some Objective-C wrappers](https://github.com/royratcliffe/yajl/tree/master/objc).
