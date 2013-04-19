@@ -11,7 +11,7 @@ task :doxygen do
   # [![text](uri)](uri). Instead, it dumps the Markdown as text. Replace this
   # text with an image element carrying the appropriate source, alternative text
   # and style.
-  doc_path = 'CFSocketsPages/html/index.html'
+  doc_path = File.join(XcodePages.output_directory, 'html', 'index.html')
   doc = Nokogiri::HTML.parse(open(doc_path))
   a = doc.xpath('//a[starts-with(., "![Build Status]")]').first
   text = a.children.first
