@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:af577adaab09d49dc83e31df087a89202"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_n_s_array_07_active_support_08.html#af577adaab09d49dc83e31df087a89202">toParam</a></td></tr>
+<tr class="memdesc:af577adaab09d49dc83e31df087a89202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends -[NSObject toParam] to every element of this array.  <a href="#af577adaab09d49dc83e31df087a89202">More...</a><br/></td></tr>
 <tr class="separator:af577adaab09d49dc83e31df087a89202"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e642008967893f91de87691f072064"><td class="memItemLeft" align="right" valign="top">(NSString *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_n_s_array_07_active_support_08.html#a95e642008967893f91de87691f072064">toQueryWithKey:</a></td></tr>
 <tr class="separator:a95e642008967893f91de87691f072064"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,7 +116,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sends -[NSObject toParam] to every element of this array. Collects the resulting strings. Finally joins the strings using forward slashes as separators. Useful for constructing URL paths from array elements. </p>
+
+<p>Sends -[NSObject toParam] to every element of this array. </p>
+<p>Collects the resulting strings. Finally joins the strings using forward slashes as separators. Useful for constructing URL paths from array elements. </p>
 
 <p>Definition at line <a class="el" href="_n_s_array_09_active_support_8m_source.html#l00030">30</a> of file <a class="el" href="_n_s_array_09_active_support_8m_source.html">NSArray+ActiveSupport.m</a>.</p>
 

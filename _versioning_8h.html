@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,15 +96,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Include dependency graph for Versioning.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_versioning_8h__incl.png" border="0" usemap="#_active_support_kit_2_versioning_8h" alt=""/></div>
-<map name="_active_support_kit_2_versioning_8h" id="_active_support_kit_2_versioning_8h">
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_versioning_8h__dep__incl.png" border="0" usemap="#_active_support_kit_2_versioning_8hdep" alt=""/></div>
 <map name="_active_support_kit_2_versioning_8hdep" id="_active_support_kit_2_versioning_8hdep">
-<area shape="rect" id="node3" href="_active_support_kit_8h.html" title="ActiveSupportKit/ActiveSupport\lKit.h" alt="" coords="78,83,284,127"/><area shape="rect" id="node9" href="_versioning_8m.html" title="ActiveSupportKit/Versioning.m" alt="" coords="309,91,509,119"/><area shape="rect" id="node5" href="_active_support_kit_tests_8m.html" title="ActiveSupportKitTests\l/ActiveSupportKitTests.m" alt="" coords="5,177,173,221"/><area shape="rect" id="node7" href="_encoding_tests_8m.html" title="ActiveSupportKitTests\l/EncodingTests.m" alt="" coords="198,177,348,221"/></map>
+<area shape="rect" id="node2" href="_active_support_kit_8h.html" title="ActiveSupportKit/ActiveSupport\lKit.h" alt="" coords="78,83,284,127"/><area shape="rect" id="node5" href="_versioning_8m.html" title="ActiveSupportKit/Versioning.m" alt="" coords="309,91,509,119"/><area shape="rect" id="node3" href="_active_support_kit_tests_8m.html" title="ActiveSupportKitTests\l/ActiveSupportKitTests.m" alt="" coords="5,177,173,221"/><area shape="rect" id="node4" href="_encoding_tests_8m.html" title="ActiveSupportKitTests\l/EncodingTests.m" alt="" coords="198,177,348,221"/></map>
 </div>
 </div>
 <p><a href="_versioning_8h_source.html">Go to the source code of this file.</a></p>
@@ -112,6 +110,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8764fb703e9a09d956015bd391caef84"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_versioning_8h.html#a8764fb703e9a09d956015bd391caef84">ActiveSupportKitVersionString</a> (void)</td></tr>
+<tr class="memdesc:a8764fb703e9a09d956015bd391caef84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Answers the current Apple-generic versioning-formatted version string.  <a href="#a8764fb703e9a09d956015bd391caef84">More...</a><br/></td></tr>
 <tr class="separator:a8764fb703e9a09d956015bd391caef84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -135,7 +134,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Answers the current Apple-generic versioning-formatted version string. The version string has been trimmed. It has no leading or trailing whitespace or newlines. Note that the raw C-based version string contrastingly has a single terminating newline character. </p>
+
+<p>Answers the current Apple-generic versioning-formatted version string. </p>
+<p>The version string has been trimmed. It has no leading or trailing whitespace or newlines. Note that the raw C-based version string contrastingly has a single terminating newline character. </p>
 
 <p>Definition at line <a class="el" href="_versioning_8m_source.html#l00027">27</a> of file <a class="el" href="_versioning_8m_source.html">Versioning.m</a>.</p>
 

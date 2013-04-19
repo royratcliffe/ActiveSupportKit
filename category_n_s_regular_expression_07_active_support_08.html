@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -129,29 +129,16 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Replaces all matches of a given regular expression in a given string using a given block to compute the replacement string for each match. </p>
-<dl class="section return"><dt>Returns</dt><dd>Answers the total number of replacements completed.</dd></dl>
 <p>The block accepts the match result, the progressively replaced string along with its progressive offset.</p>
 <p>Use the method as follows. Suppose you want to have strings of the form <code>"a/b/c"</code> and you want to replace every path element separator (the forward slashes) to double-colons and fold the following character to uppercase at the same time. This assumes the characters following the slashes are letters. We could use the regular expression <code>"/(.?)"</code> meaning a slash optionally followed by any character. The parentheses act as markers for substitution.</p>
-<div class="fragment"><div class="line">NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:<span class="stringliteral">@&quot;/(.?)&quot;</span></div>
-<div class="line">                                                                   options:0</div>
-<div class="line">                                                                     error:NULL];</div>
-<div class="line">NSString *answer = [re replaceMatchesInString:<span class="stringliteral">@&quot;a/b/c&quot;</span></div>
-<div class="line">                  replacementStringForResult:^NSString *(NSTextCheckingResult *result,</div>
-<div class="line">                                                         NSString *inString,</div>
-<div class="line">                                                         NSInteger offset) {</div>
-<div class="line">                      <span class="comment">// See Note 1</span></div>
-<div class="line">                      NSRegularExpression *re = [result regularExpression];</div>
-<div class="line">                      <span class="comment">// See Note 2</span></div>
-<div class="line">                      NSString *s1 = [re replacementStringForResult:result</div>
-<div class="line">                                                           inString:inString</div>
-<div class="line">                                                             offset:offset</div>
-<div class="line">                                                           <span class="keyword">template</span>:<span class="stringliteral">@&quot;$1&quot;</span>];</div>
-<div class="line">                      <span class="keywordflow">return</span> [<span class="stringliteral">@&quot;::&quot;</span> stringByAppendingString:[s1 uppercaseString]];</div>
-<div class="line">                  }];</div>
-<div class="line">NSLog(<span class="stringliteral">@&quot;\&quot;</span>%@\<span class="stringliteral">&quot;&quot;</span>, answer);</div>
-</div><!-- fragment --><p>The answer <code>"a::B::C"</code> appears in the log.</p>
-<dl class="section user"><dt>Note 1</dt><dd>Uses <code>result</code> to access the regular expression again. This step could be omitted because (in this example) this interior block has access to the exterior context, the <code>re</code> above. However, that is not always the case. Accessing the original regular expression via the matching result proves the best general approach.</dd></dl>
-<dl class="section user"><dt>Note 2</dt><dd>Pulls out <code>s1</code> from the input string, the string matching the first parentheses. The <code>"$1"</code> template refers to this first matching part of the entire regular expression match. The block runs for every match. Of course, each match can have multiple matching subsections. See Apple documentation for <code>NSRegularExpression</code> for more details. </dd></dl>
+<p>NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:"/(.?)" options:0 error:NULL]; NSString *answer = [re replaceMatchesInString:"a/b/c" replacementStringForResult:^NSString *(NSTextCheckingResult *result, NSString *inString, NSInteger offset) { // See Note 1 NSRegularExpression *re = [result regularExpression]; // See Note 2 NSString *s1 = [re replacementStringForResult:result inString:inString offset:offset template:"$1"];
+                       return [@"::" stringByAppendingString:[s1 uppercaseString]]; }]; NSLog(""%\"", answer);</p>
+<p>The answer <code>"a::B::C"</code> appears in the log.</p>
+<ul>
+<li>Note 1: Uses <code>result</code> to access the regular expression again. This step could be omitted because (in this example) this interior block has access to the exterior context, the <code>re</code> above. However, that is not always the case. Accessing the original regular expression via the matching result proves the best general approach.</li>
+<li>Note 2: Pulls out <code>s1</code> from the input string, the string matching the first parentheses. The <code>"$1"</code> template refers to this first matching part of the entire regular expression match. The block runs for every match. Of course, each match can have multiple matching subsections. See Apple documentation for <code>NSRegularExpression</code> for more details.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>Answers the total number of replacements completed. </dd></dl>
 
 <p>Definition at line <a class="el" href="_n_s_regular_expression_09_active_support_8m_source.html#l00029">29</a> of file <a class="el" href="_n_s_regular_expression_09_active_support_8m_source.html">NSRegularExpression+ActiveSupport.m</a>.</p>
 
