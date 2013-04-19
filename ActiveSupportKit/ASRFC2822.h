@@ -24,7 +24,7 @@
 
 #import <ActiveSupportKit/ASDateFormatter.h>
 
-/*!
+/**
  * See <a href="http://www.ietf.org/rfc/rfc2822.txt">Request for Comments
  * 2822</a>, section 3.3 Date and Time Specification, for details.
  */

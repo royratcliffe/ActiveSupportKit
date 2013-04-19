@@ -29,7 +29,7 @@
 - (NSUInteger)replaceMatchesInString:(NSMutableString *)string replacementStringForResult:(ASReplacementStringForResultBlock)replacementStringForResult
 {
 	NSUInteger numberOfReplacements = 0;
-	
+
 	NSInteger offset = 0;
 	for (NSTextCheckingResult *result in [self matchesInString:string options:0 range:NSMakeRange(0, [string length])])
 	{
@@ -38,7 +38,7 @@
 		// range to correct for progressive replacements.
 		NSRange resultRange = [result range];
 		resultRange.location += offset;
-		
+
 		// Pass the mutable string to the replacement block even though the
 		// interface specifies an immutable string. Do not make an immutable
 		// copy. NSMutableString inherits from NSString; hence they share a
@@ -48,16 +48,16 @@
 		offset += [replacementString length] - resultRange.length;
 		numberOfReplacements++;
 	}
-	
+
 	return numberOfReplacements;
 }
 
 - (NSString *)stringByReplacingMatchesInString:(NSString *)string replacementStringForResult:(ASReplacementStringForResultBlock)replacementStringForResult
 {
 	NSMutableString *mutableString = [string mutableCopy];
-	
+
 	[self replaceMatchesInString:mutableString replacementStringForResult:replacementStringForResult];
-	
+
 	return [mutableString copy];
 }
 
