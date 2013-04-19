@@ -318,15 +318,15 @@
 - (NSString *)humanize:(NSString *)lowerCaseAndUnderscoredWord
 {
 	NSMutableString *result = [ASInflectorApplyRulesAndReplacements(humans, lowerCaseAndUnderscoredWord) mutableCopy];
-	
+
 	// Strip any trailing "_id" string. The method could implement this without
 	// using regular expressions. Such might prove more efficient. Rails uses
 	// regular expressions however and since this framework aims to mimic Rails,
 	// use a regular expression too.
 	[[NSRegularExpression regularExpressionWithPattern:@"_id$" options:0 error:NULL] replaceMatchesInString:result options:0 range:NSMakeRange(0, [result length]) withTemplate:@""];
-	
+
 	[result replaceOccurrencesOfString:@"_" withString:@" " options:0 range:NSMakeRange(0, [result length])];
-	
+
 	// Match sequences of letters and numbers case-insensitively. Does the match
 	// correspond to an acronym? If it does, replace the acronym with its
 	// case-sensitive equivalent. Note, some acronyms use both upper and lower
@@ -336,7 +336,7 @@
 		NSString *result0 = [results objectAtIndex:0], *acronym = [acronyms objectForKey:result0];
 		return acronym ? acronym : [result0 lowercaseString];
 	});
-	
+
 	return ASStringByReplacingMatchesInStringUsingBlock(@"^\\w", 0, result, ^NSString *(NSArray *results) {
 		return [[results objectAtIndex:0] uppercaseString];
 	});
