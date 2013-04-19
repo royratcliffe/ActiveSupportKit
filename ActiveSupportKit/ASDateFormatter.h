@@ -55,8 +55,7 @@
  * Adds a date formatter, automatically sorting the formatters by the
  * length of their date format strings.
  *
- * This produces the most compact
- * strings when converting from dates.
+ * Sorting produces the most compact strings when converting from dates.
  *
  * The method name includes `NS`, for Next Step, emphasising the sub-formatter
  * type. Active Support's date formatters comprise multiple NSDateFormatter
