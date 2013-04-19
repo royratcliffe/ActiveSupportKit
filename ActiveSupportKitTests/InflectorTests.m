@@ -40,7 +40,7 @@
 	ASInflector *inflector = [[ASInflector alloc] init];
 	[inflector addPluralStringRule:@"person" options:NSCaseInsensitiveSearch replacement:@"people"];
 	STAssertEqualObjects([inflector pluralize:@"person"], @"people", nil);
-	
+
 	// The following tests a failure. It finds a match but replaces it with the
 	// literal replacement disregarding case considerations.
 	STAssertEqualObjects([inflector pluralize:@"Person"], @"people", nil);
@@ -52,7 +52,7 @@
 	[inflector addIrregularWithSingular:@"person" plural:@"people"];
 	STAssertEqualObjects([inflector pluralize:@"person"], @"people", nil);
 	STAssertEqualObjects([inflector pluralize:@"Person"], @"People", nil);
-	
+
 	// Ignores capitals after the first letter. Rails does that too.
 	//
 	//	require 'active_support'
@@ -148,10 +148,10 @@
 {
 	STAssertEqualObjects(@"MyApplication::Billing", [[ASInflector defaultInflector] deconstantize:@"MyApplication::Billing::Account"], nil);
 	STAssertEqualObjects(@"::MyApplication::Billing", [[ASInflector defaultInflector] deconstantize:@"::MyApplication::Billing::Account"], nil);
-	
+
 	STAssertEqualObjects(@"MyApplication", [[ASInflector defaultInflector] deconstantize:@"MyApplication::Billing"], nil);
 	STAssertEqualObjects(@"::MyApplication", [[ASInflector defaultInflector] deconstantize:@"::MyApplication::Billing"], nil);
-	
+
 	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@"Account"], nil);
 	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@"::Account"], nil);
 	STAssertEqualObjects(@"", [[ASInflector defaultInflector] deconstantize:@""], nil);
@@ -161,7 +161,7 @@
 {
 	STAssertEqualObjects(@"person_id", [[ASInflector defaultInflector] foreignKey:@"Person" separateClassNameAndIDWithUnderscore:YES], nil);
 	STAssertEqualObjects(@"account_id", [[ASInflector defaultInflector] foreignKey:@"MyApplication::Billing::Account" separateClassNameAndIDWithUnderscore:YES], nil);
-	
+
 	STAssertEqualObjects(@"personid", [[ASInflector defaultInflector] foreignKey:@"Person" separateClassNameAndIDWithUnderscore:NO], nil);
 	STAssertEqualObjects(@"accountid", [[ASInflector defaultInflector] foreignKey:@"MyApplication::Billing::Account" separateClassNameAndIDWithUnderscore:NO], nil);
 }

@@ -131,7 +131,7 @@
 	[dateComponents setMinute:20];
 	[dateComponents setSecond:50];
 	NSDate *date = [calendar dateFromComponents:dateComponents];
-	
+
 	STAssertEqualObjects(ASDateFromRFC3339String(@"1985-04-12T23:20:50Z"), date, nil);
 	STAssertEqualObjects(ASDateFromRFC3339String(@"1985-04-12T23:20:50.52Z"), [date dateByAddingTimeInterval:0.52], nil);
 }

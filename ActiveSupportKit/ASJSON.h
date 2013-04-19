@@ -32,14 +32,14 @@ NSData *ASJSONEncodeToData(id object, NSError **outError);
 id ASJSONDecodeFromString(NSString *string, NSError **outError);
 NSString *ASJSONEncodeToString(id object, NSError **outError);
 
-/*!
+/**
  * @result YES if the JSON object contains at least one circular reference; NO
  * if it contains no circular references.
  */
 BOOL ASCheckJSONObjectForCircularReferences(id object);
 
-/*!
- * @brief Walks a JSON object and also checks the given JSON object for circular
+/**
+ * Walks a JSON object and also checks the given JSON object for circular
  * references, failing if circular.
  * @param object The JSON object to walk, where objects have one of three types:
  * array, dictionary or primitive. Primitives include strings, numbers and
@@ -49,8 +49,9 @@ BOOL ASCheckJSONObjectForCircularReferences(id object);
  * object. The array contains all primitives, all arrays and their elements, and
  * all dictionaries and their values. The array does @em not contain dictionary
  * keys. You can extract dictionary keys from the result by picking out the
- * dictionaries. Answers @c nil if the JSON object contains circular references.
- * @details Walks the JSON object, adding each object to the resulting array
+ * dictionaries. Answers `nil` if the JSON object contains circular references.
+ *
+ * Walks the JSON object, adding each object to the resulting array
  * one-by-one unless it encounters an object already seen. Checking for circular
  * references uses the <code>-[NSArray firstObjectCommonWithArray:]</code>
  * method. If using an array is not efficient, the implementation could improve

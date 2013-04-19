@@ -125,13 +125,13 @@
 		7835BC741414B8E600CC4B56 /* Versioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Versioning.m; sourceTree = "<group>"; };
 		783BA26614E9D27300D6BDB1 /* ASRFC2822.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRFC2822.h; sourceTree = "<group>"; };
 		783BA26714E9D27300D6BDB1 /* ASRFC2822.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRFC2822.m; sourceTree = "<group>"; };
-		783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDateFormatter.h; sourceTree = "<group>"; };
+		783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ASDateFormatter.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		783BA26E14E9D84A00D6BDB1 /* ASDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDateFormatter.m; sourceTree = "<group>"; };
-		784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+ActiveSupport.h"; sourceTree = "<group>"; };
+		784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSDateFormatter+ActiveSupport.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		784891E514EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+ActiveSupport.m"; sourceTree = "<group>"; };
 		788DB0F614D323CA00AF938D /* InflectorTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InflectorTests.h; sourceTree = "<group>"; };
 		788DB0F714D323CA00AF938D /* InflectorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InflectorTests.m; sourceTree = "<group>"; };
-		788F9C1314D837F8000BA699 /* ASNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASNull.h; sourceTree = "<group>"; };
+		788F9C1314D837F8000BA699 /* ASNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ASNull.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		788F9C1414D837F8000BA699 /* ASNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASNull.m; sourceTree = "<group>"; };
 		78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libActiveSupportKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78AFBD9013EC587900BBFC62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,13 +142,13 @@
 		78D9883B14E9166D0081C350 /* EncodingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodingTests.m; sourceTree = "<group>"; };
 		78E0B17E140D320C004E1041 /* ASInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInflector.h; sourceTree = "<group>"; };
 		78E0B17F140D320C004E1041 /* ASInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInflector.m; sourceTree = "<group>"; };
-		78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASReplacementStringForResults.h; sourceTree = "<group>"; };
+		78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ASReplacementStringForResults.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78E77ECB14E03C21008C55C6 /* ASReplacementStringForResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASReplacementStringForResults.m; sourceTree = "<group>"; };
-		78ED15D714B2282E00149AEE /* ASRFC3339.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRFC3339.h; sourceTree = "<group>"; };
+		78ED15D714B2282E00149AEE /* ASRFC3339.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ASRFC3339.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78ED15DB14B228B400149AEE /* ASRFC3339.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRFC3339.m; sourceTree = "<group>"; };
 		78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+ActiveSupport.h"; sourceTree = "<group>"; };
 		78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+ActiveSupport.m"; sourceTree = "<group>"; };
-		78F3B5551418CEB7005D6F5D /* ASJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASJSON.h; sourceTree = "<group>"; };
+		78F3B5551418CEB7005D6F5D /* ASJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ASJSON.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		78F3B5561418CEB7005D6F5D /* ASJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASJSON.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

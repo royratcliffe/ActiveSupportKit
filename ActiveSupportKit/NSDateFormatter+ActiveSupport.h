@@ -26,10 +26,11 @@
 
 @interface NSDateFormatter(ActiveSupport)
 
-/*!
- * @brief Convenience class method for constructing a US English POSIX-locale
+/**
+ * Convenience class method for constructing a US English POSIX-locale
  * date formatter.
- * @details You only need to set up the date format and time zone. The returned
+ *
+ * You only need to set up the date format and time zone. The returned
  * date formatter will work consistently for all users, regardless of both user
  * and system preferences.
  */

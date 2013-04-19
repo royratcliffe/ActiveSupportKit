@@ -26,7 +26,7 @@
 
 NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstLetterInUppercase);
 
-/*!
+/**
  * Makes an underscored and lowercase form of the given string. Replaces
  * double-colons with slashes. Two or more capital letters followed by lower
  * case letters become separated words, separated that is by an underscore; the
@@ -37,8 +37,8 @@ NSString *ASInflectorCamelize(NSString *lowerCaseAndUnderscoredWord, BOOL firstL
  */
 NSString *ASInflectorUnderscore(NSString *camelCasedWord);
 
-/*!
- * @brief Replaces underscores with dashes.
+/**
+ * Replaces underscores with dashes.
  */
 NSString *ASInflectorDasherize(NSString *underscoredWord);
 

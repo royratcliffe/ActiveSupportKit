@@ -8,9 +8,13 @@ GEM
       multi_json (~> 1.0)
     i18n (0.6.1)
     multi_json (1.7.2)
+    nokogiri (1.5.9)
+    rake (10.0.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   XcodePages
+  nokogiri
+  rake
