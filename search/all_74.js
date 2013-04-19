@@ -20,6 +20,7 @@ var searchData=
   ['testjsondecode',['testJSONDecode',['../interface_active_support_kit_tests.html#a1f6394f9780dca301e2f642901aceba4',1,'ActiveSupportKitTests']]],
   ['testjsonencode',['testJSONEncode',['../interface_active_support_kit_tests.html#abfc231d29c89af7573256c966f088724',1,'ActiveSupportKitTests']]],
   ['testnilfornull',['testNilForNull',['../interface_active_support_kit_tests.html#a2e1d9798e62c775a7c87fb2079153490',1,'ActiveSupportKitTests']]],
+  ['testnullfornil',['testNullForNil',['../interface_active_support_kit_tests.html#a26c9762478bbd2c33efeb0b42b2d7d46',1,'ActiveSupportKitTests']]],
   ['testordinalize',['testOrdinalize',['../interface_active_support_kit_tests.html#a06ce7dd1d892852b9744021f5ab2a271',1,'ActiveSupportKitTests']]],
   ['testplurals',['testPlurals',['../interface_inflector_tests.html#ad2a3f1472d1fcdc214c5adfe2e40bc96',1,'InflectorTests']]],
   ['testrfc2822',['testRFC2822',['../interface_active_support_kit_tests.html#a0df17dcb98cc27ff2ef89777129930af',1,'ActiveSupportKitTests']]],

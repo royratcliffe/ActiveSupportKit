@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.5(120.3)</span>
+   &#160;<span id="projectnumber">v1.6(163.41)</span>
    </div>
   </td>
  </tr>
@@ -111,6 +111,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a72e77ceed75d8926328f97244f851f7f"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_null_8h.html#a72e77ceed75d8926328f97244f851f7f">ASNilForNull</a> (id object)</td></tr>
 <tr class="memdesc:a72e77ceed75d8926328f97244f851f7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filters NSNull instances.  <a href="#a72e77ceed75d8926328f97244f851f7f">More...</a><br/></td></tr>
 <tr class="separator:a72e77ceed75d8926328f97244f851f7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c63aa8aab1e4c33cbe6099cf6aacea"><td class="memItemLeft" align="right" valign="top">id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_s_null_8h.html#a66c63aa8aab1e4c33cbe6099cf6aacea">ASNullForNil</a> (id object)</td></tr>
+<tr class="separator:a66c63aa8aab1e4c33cbe6099cf6aacea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a72e77ceed75d8926328f97244f851f7f"></a>
@@ -131,6 +133,25 @@ Functions</h2></td></tr>
 <p>Answers the argument if the argument is not nil and not the <code>NSNull</code> singleton. Pass objects obtained from an array or dictionary through this helper in order to convert <code>NSNull</code> instances to <code>nil</code>. Collections such as arrays and dictionaries cannot retain <code>nil</code> elements. </p>
 
 <p>Definition at line <a class="el" href="_a_s_null_8m_source.html#l00027">27</a> of file <a class="el" href="_a_s_null_8m_source.html">ASNull.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a66c63aa8aab1e4c33cbe6099cf6aacea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">id ASNullForNil </td>
+          <td>(</td>
+          <td class="paramtype">id&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>Answers NSNull for <code>nil</code>. </dd></dl>
+
+<p>Definition at line <a class="el" href="_a_s_null_8m_source.html#l00040">40</a> of file <a class="el" href="_a_s_null_8m_source.html">ASNull.m</a>.</p>
 
 </div>
 </div>

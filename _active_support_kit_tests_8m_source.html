@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ActiveSupportKit
-   &#160;<span id="projectnumber">v1.5(120.3)</span>
+   &#160;<span id="projectnumber">v1.6(163.41)</span>
    </div>
   </td>
  </tr>
@@ -256,7 +256,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    STAssertNotNil(<a class="code" href="_a_s_null_8h.html#a72e77ceed75d8926328f97244f851f7f" title="Filters NSNull instances.">ASNilForNull</a>([[NSObject alloc] init]), nil);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="code" href="interface_active_support_kit_tests.html#a26c9762478bbd2c33efeb0b42b2d7d46">  169</a></span>&#160;- (void)<a class="code" href="interface_active_support_kit_tests.html#a26c9762478bbd2c33efeb0b42b2d7d46">testNullForNil</a></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">id</span> <span class="keywordtype">object</span> = [NSObject new];</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    STAssertEqualObjects([NSNull null], <a class="code" href="_a_s_null_8h.html#a66c63aa8aab1e4c33cbe6099cf6aacea">ASNullForNil</a>(nil), nil);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    STAssertEqualObjects(<span class="keywordtype">object</span>, <a class="code" href="_a_s_null_8h.html#a66c63aa8aab1e4c33cbe6099cf6aacea">ASNullForNil</a>(<span class="keywordtype">object</span>), nil);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
