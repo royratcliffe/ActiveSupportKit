@@ -166,4 +166,11 @@
 	STAssertNotNil(ASNilForNull([[NSObject alloc] init]), nil);
 }
 
+- (void)testNullForNil
+{
+	id object = [NSObject new];
+	STAssertEqualObjects([NSNull null], ASNullForNil(nil), nil);
+	STAssertEqualObjects(object, ASNullForNil(object), nil);
+}
+
 @end
