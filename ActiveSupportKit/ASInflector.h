@@ -24,8 +24,8 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @brief Transforms words from singular to plural and vice versa, transforms
+/**
+ * Transforms words from singular to plural and vice versa, transforms
  * lowercase and underscored words to human-readable form, etc.
  *
  * ASInflector departs somewhat with Rails in its layout. Rails uses

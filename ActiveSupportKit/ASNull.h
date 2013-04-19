@@ -24,11 +24,12 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @brief Filters NSNull instances.
- * @details Answers the argument if the argument is not nil and not the @c
- * NSNull singleton. Pass objects obtained from an array or dictionary through
- * this helper in order to convert @c NSNull instances to @c nil. Collections
- * such as arrays and dictionaries cannot retain @c nil elements.
+/**
+ * Filters NSNull instances.
+ *
+ * Answers the argument if the argument is not nil and not the
+ * `NSNull` singleton. Pass objects obtained from an array or dictionary through
+ * this helper in order to convert `NSNull` instances to `nil`. Collections
+ * such as arrays and dictionaries cannot retain `nil` elements.
  */
 id ASNilForNull(id object);

@@ -26,7 +26,7 @@
 
 @interface NSArray(ActiveSupport)
 
-/*!
+/**
  * Sends -[NSObject toParam] to every element of this array. Collects the
  * resulting strings. Finally joins the strings using forward slashes as
  * separators. Useful for constructing URL paths from array elements.

@@ -26,16 +26,17 @@
 
 ASDateFormatter *ASRFC3339DateFormatter(void);
 
-/*!
- * @brief Converts an RFC 3339 date-time string to a date.
- * @details <a href="http://www.ietf.org/rfc/rfc3339.txt">Request for Comments
- * 3339</a> describes a standard Internet date-time format as follows. @code
- * yyyy-mm-ddThh:mm:ssZ @endcode where @c yyyy-mm-dd describes the year, month
- * and day of month using decimal digits; @c hh:mm:ss describes hours, minutes
+/**
+ * Converts an RFC 3339 date-time string to a date.
+ *
+ * <a href="http://www.ietf.org/rfc/rfc3339.txt">Request for Comments
+ * 3339</a> describes a standard Internet date-time format as follows.
+ * `yyyy-mm-ddThh:mm:ssZ` where `yyyy-mm-dd` describes the year, month
+ * and day of month using decimal digits; `hh:mm:ss` describes hours, minutes
  * and seconds. Time is expressed in Zulu time, more commonly known as Greenwich
  * Mean Time. See Apple's Technical Q&A QA1480 for more details.
  *
- * @par Implementation Notes
+ * @par Implementation Notes:
  * The implementation searches for the first successful formatter where the
  * resulting date reverse-formats to a matching date string. This may result in
  * a number of formatting and parsing iterations and therefore runs slower than
@@ -45,7 +46,7 @@ ASDateFormatter *ASRFC3339DateFormatter(void);
  */
 NSDate *ASDateFromRFC3339String(NSString *string);
 
-/*!
- * @brief Converts the given date to a string in RFC 3339 format.
+/**
+ * Converts the given date to a string in RFC 3339 format.
  */
 NSString *ASRFC3339StringFromDate(NSDate *date);

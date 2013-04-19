@@ -24,15 +24,15 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @brief Active Support extensions to NSObject.
+/**
+ * Active Support extensions to NSObject.
  */
 @interface NSObject(ActiveSupport)
 
 - (NSString *)toParam;
 
-/*!
- * @brief Converts an object into a string suitable for use as an URL query
+/**
+ * Converts an object into a string suitable for use as an URL query
  * string using the given @a key as the parameter name.
  * @param key Parameter name assigned to this object.
  */

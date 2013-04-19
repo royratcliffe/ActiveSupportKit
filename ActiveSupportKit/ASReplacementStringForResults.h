@@ -26,23 +26,25 @@
 
 typedef NSString *(^ASReplacementStringForResultsBlock)(NSArray *results);
 
-/*!
- * @brief Helper function for simplifying regular-expression replacement.
- * @details The helper exists to simplify the common patterns of usage by the
+/**
+ * Helper function for simplifying regular-expression replacement.
+ *
+ * The helper exists to simplify the common patterns of usage by the
  * inflector. It also decodes the resulting ranges. The replacement handler
  * block, argument @a replacementStringForResults, takes an array of strings,
- * one for each captured range. The @a results array can contain @c NSNull
- * elements. These correspond to ranges @em not found.
+ * one for each captured range. The @a results array can contain `NSNull`
+ * elements. These correspond to ranges _not_ found.
  */
 NSString *ASStringByReplacingMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSString *string, ASReplacementStringForResultsBlock replacementStringForResults);
 
 NSUInteger ASReplaceMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSMutableString *string, ASReplacementStringForResultsBlock replacementStringForResults);
 
-/*!
- * @brief Safely extracts an array of captured ranges from a given text-checking result.
+/**
+ * Safely extracts an array of captured ranges from a given text-checking result.
+ *
  * @result Answers an array of string and nulls. Array elements are either
  * NSString or NSNull instances. String elements contain the captured text. Null
  * elements correspond to ranges not found. Pass elements through @ref
- * ASNilForNull to convert nulls to @c nil.
+ * ASNilForNull to convert nulls to `nil`.
  */
 NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString *inString, NSInteger offset);

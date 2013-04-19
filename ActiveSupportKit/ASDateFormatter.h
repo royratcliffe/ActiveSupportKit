@@ -24,10 +24,11 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @brief Formats and parses date-times using a sorted collection of Cocoa date
+/**
+ * Formats and parses date-times using a sorted collection of Cocoa date
  * formatters.
- * @details The Active Support date formatter encapsulates a collection of
+ *
+ * The Active Support date formatter encapsulates a collection of
  * Foundation date formatters. Conversions between strings and dates, and vice
  * versa, occur by asking a prospective date formatter for a conversion followed
  * by a reverse conversion. If the latter matches the input, either string or
@@ -41,32 +42,37 @@
 	NSMutableArray *__strong _dateFormatters;
 }
 
-/*!
- * @brief Two dates match if their difference is less than the time comparison
- * threshold. @details This defaults to one millisecond. Date-times compare
+/**
+ * Two dates match if their difference is less than the time comparison
+ * threshold.
+ *
+ * This defaults to one millisecond. Date-times compare
  * equal if there difference does not equal or exceed this threshold.
  */
 @property(assign, NS_NONATOMIC_IOSONLY) NSTimeInterval timeComparisonThreshold;
 
-/*!
- * @brief Adds a date formatter, automatically sorting the formatters by the
- * length of their date format strings. @details This produces the most compact
+/**
+ * Adds a date formatter, automatically sorting the formatters by the
+ * length of their date format strings.
+ *
+ * This produces the most compact
  * strings when converting from dates.
  *
- * The method name includes @c NS, for Next Step, emphasising the sub-formatter
+ * The method name includes `NS`, for Next Step, emphasising the sub-formatter
  * type. Active Support's date formatters comprise multiple NSDateFormatter
  * instances.
  */
 - (void)addNSDateFormatter:(NSDateFormatter *)dateFormatter;
 
-/*!
- * @brief Converts string to date.
+/**
+ * Converts string to date.
  */
 - (NSDate *)dateFromString:(NSString *)string;
 
-/*!
- * @brief Converts date to string.
- * @details Some conversions have multiple correct alternatives. The answer
+/**
+ * Converts date to string.
+ *
+ * Some conversions have multiple correct alternatives. The answer
  * represents the shortest string. So, for example, if a formatter supports
  * optional seconds, the resulting string will omit seconds if zero.
  */
