@@ -33,3 +33,8 @@
  * such as arrays and dictionaries cannot retain `nil` elements.
  */
 id ASNilForNull(id object);
+
+/**
+ * @result Answers NSNull for `nil`.
+ */
+id ASNullForNil(id object);
