@@ -36,3 +36,8 @@ id ASNilForNull(id object)
 	// also not null. Therefore, the first condition becomes redundant.
 	return object == [NSNull null] ? nil : object;
 }
+
+id ASNullForNil(id object)
+{
+	return object == nil ? [NSNull null] : object;
+}
