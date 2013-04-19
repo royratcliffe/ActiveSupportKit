@@ -14,7 +14,7 @@ some elements, e.g. dynamic typing, there remain significant differences. Ruby
 has singleton classes, for instance, and Rails makes extensive use of them.
 Objective-C has nothing equivalent.
 
-[as]:http://as.rubyonrails.org/
+[as]:http://api.rubyonrails.org/
 
 The kit provides a class and a set of helper methods in its first version, as
 follows. You can find more detailed documentation
