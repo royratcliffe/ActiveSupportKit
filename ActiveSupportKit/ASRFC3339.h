@@ -36,7 +36,7 @@ ASDateFormatter *ASRFC3339DateFormatter(void);
  * and seconds. Time is expressed in Zulu time, more commonly known as Greenwich
  * Mean Time. See Apple's Technical Q&A QA1480 for more details.
  *
- * @par Implementation Notes:
+ * ### Implementation Notes:
  * The implementation searches for the first successful formatter where the
  * resulting date reverse-formats to a matching date string. This may result in
  * a number of formatting and parsing iterations and therefore runs slower than

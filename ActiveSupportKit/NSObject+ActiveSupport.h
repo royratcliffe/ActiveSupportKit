@@ -33,7 +33,7 @@
 
 /**
  * Converts an object into a string suitable for use as an URL query
- * string using the given @a key as the parameter name.
+ * string using the given `key` as the parameter name.
  * @param key Parameter name assigned to this object.
  */
 - (NSString *)toQueryWithKey:(NSString *)key;

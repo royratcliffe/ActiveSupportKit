@@ -31,8 +31,8 @@ typedef NSString *(^ASReplacementStringForResultsBlock)(NSArray *results);
  *
  * The helper exists to simplify the common patterns of usage by the
  * inflector. It also decodes the resulting ranges. The replacement handler
- * block, argument @a replacementStringForResults, takes an array of strings,
- * one for each captured range. The @a results array can contain `NSNull`
+ * block, argument `replacementStringForResults`, takes an array of strings,
+ * one for each captured range. The `results` array can contain `NSNull`
  * elements. These correspond to ranges _not_ found.
  */
 NSString *ASStringByReplacingMatchesInStringUsingBlock(NSString *pattern, NSRegularExpressionOptions options, NSString *string, ASReplacementStringForResultsBlock replacementStringForResults);
@@ -44,7 +44,7 @@ NSUInteger ASReplaceMatchesInStringUsingBlock(NSString *pattern, NSRegularExpres
  *
  * @result Answers an array of string and nulls. Array elements are either
  * NSString or NSNull instances. String elements contain the captured text. Null
- * elements correspond to ranges not found. Pass elements through @ref
- * ASNilForNull to convert nulls to `nil`.
+ * elements correspond to ranges not found. Pass elements through
+ * `ASNilForNull` to convert nulls to `nil`.
  */
 NSArray *ASResultsFromTextCheckingResult(NSTextCheckingResult *result, NSString *inString, NSInteger offset);

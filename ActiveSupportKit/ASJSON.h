@@ -47,7 +47,7 @@ BOOL ASCheckJSONObjectForCircularReferences(id object);
  * elements and dictionary objects. Dictionary keys can be strings only.
  * @result Answers an array of unique objects extracted by walking the JSON @a
  * object. The array contains all primitives, all arrays and their elements, and
- * all dictionaries and their values. The array does @em not contain dictionary
+ * all dictionaries and their values. The array does _not_ contain dictionary
  * keys. You can extract dictionary keys from the result by picking out the
  * dictionaries. Answers `nil` if the JSON object contains circular references.
  *
