@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782AB968178B32CF008574C5 /* ActiveSupportKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; };
+		782AB969178B32CF008574C5 /* NSObject+ActiveSupport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7832703614115C6F00ECCE7D /* NSObject+ActiveSupport.h */; };
+		782AB96A178B32CF008574C5 /* NSArray+ActiveSupport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7832704014115D3400ECCE7D /* NSArray+ActiveSupport.h */; };
+		782AB96B178B32CF008574C5 /* NSDictionary+ActiveSupport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; };
+		782AB96C178B32CF008574C5 /* NSRegularExpression+ActiveSupport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; };
+		782AB96D178B32CF008574C5 /* NSDateFormatter+ActiveSupport.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */; };
+		782AB96E178B32CF008574C5 /* ASReplacementStringForResults.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */; };
+		782AB96F178B32CF008574C5 /* ASJSON.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78F3B5551418CEB7005D6F5D /* ASJSON.h */; };
+		782AB970178B32CF008574C5 /* ASInflectorMethods.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; };
+		782AB971178B32CF008574C5 /* ASInflector.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; };
+		782AB972178B32CF008574C5 /* ASDateFormatter.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */; };
+		782AB973178B32CF008574C5 /* ASRFC3339.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; };
+		782AB974178B32CF008574C5 /* ASRFC2822.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 783BA26614E9D27300D6BDB1 /* ASRFC2822.h */; };
+		782AB975178B32CF008574C5 /* ASNull.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; };
+		782AB976178B32CF008574C5 /* Versioning.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; };
 		7832703814115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832703614115C6F00ECCE7D /* NSObject+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7832703914115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832703614115C6F00ECCE7D /* NSObject+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7832703A14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832703714115C6F00ECCE7D /* NSObject+ActiveSupport.m */; };
 		7832703B14115C6F00ECCE7D /* NSObject+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832703714115C6F00ECCE7D /* NSObject+ActiveSupport.m */; };
 		7832704214115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832704014115D3400ECCE7D /* NSArray+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7832704314115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 7832704014115D3400ECCE7D /* NSArray+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7832704414115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832704114115D3400ECCE7D /* NSArray+ActiveSupport.m */; };
 		7832704514115D3400ECCE7D /* NSArray+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7832704114115D3400ECCE7D /* NSArray+ActiveSupport.m */; };
 		783545F913EA64C50049385C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 783545F713EA64C50049385C /* InfoPlist.strings */; };
@@ -24,19 +37,15 @@
 		7835461F13EA67C50049385C /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835462013EA67C50049385C /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
 		7835BC751414B8E600CC4B56 /* Versioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7835BC761414B8E600CC4B56 /* Versioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835BC731414B8E600CC4B56 /* Versioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7835BC771414B8E600CC4B56 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BC741414B8E600CC4B56 /* Versioning.m */; };
 		7835BC781414B8E600CC4B56 /* Versioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835BC741414B8E600CC4B56 /* Versioning.m */; };
 		783BA26814E9D27300D6BDB1 /* ASRFC2822.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26614E9D27300D6BDB1 /* ASRFC2822.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		783BA26914E9D27300D6BDB1 /* ASRFC2822.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26614E9D27300D6BDB1 /* ASRFC2822.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783BA26A14E9D27300D6BDB1 /* ASRFC2822.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26714E9D27300D6BDB1 /* ASRFC2822.m */; };
 		783BA26B14E9D27300D6BDB1 /* ASRFC2822.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26714E9D27300D6BDB1 /* ASRFC2822.m */; };
 		783BA26F14E9D84A00D6BDB1 /* ASDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		783BA27014E9D84A00D6BDB1 /* ASDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 783BA26D14E9D84A00D6BDB1 /* ASDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		783BA27114E9D84A00D6BDB1 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26E14E9D84A00D6BDB1 /* ASDateFormatter.m */; };
 		783BA27214E9D84A00D6BDB1 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 783BA26E14E9D84A00D6BDB1 /* ASDateFormatter.m */; };
 		784891E614EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		784891E714EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 784891E414EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		784891E814EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 784891E514EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m */; };
 		784891E914EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 784891E514EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.m */; };
 		78719ACD141541B200D102A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7835460D13EA64C50049385C /* InfoPlist.strings */; };
@@ -44,11 +53,9 @@
 		78719ACF141542CE00D102A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78719AD0141543C800D102A0 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
 		788DB0F814D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
-		788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */ = {isa = PBXBuildFile; fileRef = 788DB0F614D323CA00AF938D /* InflectorTests.h */; };
 		788DB0FD14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
 		788DB0FE14D3244A00AF938D /* InflectorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 788DB0F714D323CA00AF938D /* InflectorTests.m */; };
 		788F9C1514D837F8000BA699 /* ASNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		788F9C1614D837F8000BA699 /* ASNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 788F9C1314D837F8000BA699 /* ASNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		788F9C1714D837F8000BA699 /* ASNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F9C1414D837F8000BA699 /* ASNull.m */; };
 		788F9C1814D837F8000BA699 /* ASNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 788F9C1414D837F8000BA699 /* ASNull.m */; };
 		78AFBD9113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
@@ -56,32 +63,24 @@
 		78AFBDA113EC587900BBFC62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD9013EC587900BBFC62 /* Foundation.framework */; };
 		78AFBDB613EC58FC00BBFC62 /* ActiveSupportKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461113EA64C50049385C /* ActiveSupportKitTests.m */; };
 		78AFBDB813EC5B7F00BBFC62 /* ASInflectorMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7835461D13EA67C50049385C /* ASInflectorMethods.m */; };
-		78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461B13EA67C50049385C /* ActiveSupportKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 7835461C13EA67C50049385C /* ASInflectorMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78AFBDBC13EC5C5100BBFC62 /* libActiveSupportKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AFBD8F13EC587900BBFC62 /* libActiveSupportKit.a */; };
 		78B628FC141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78B628FA141163A2007A8602 /* NSDictionary+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78B628FE141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
 		78B628FF141163A2007A8602 /* NSDictionary+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78B628FB141163A2007A8602 /* NSDictionary+ActiveSupport.m */; };
 		78D9883C14E9166D0081C350 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9883B14E9166D0081C350 /* EncodingTests.m */; };
 		78D9883D14E9166D0081C350 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D9883B14E9166D0081C350 /* EncodingTests.m */; };
 		78E0B180140D320C004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E0B181140D320C004E1041 /* ASInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E0B17F140D320C004E1041 /* ASInflector.m */; };
-		78E0B186140D3D68004E1041 /* ASInflector.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E0B17E140D320C004E1041 /* ASInflector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E77EC814E03C0D008C55C6 /* ASReplacementStringForResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78E77EC914E03C0D008C55C6 /* ASReplacementStringForResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E77EC714E03C0D008C55C6 /* ASReplacementStringForResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78E77ECC14E03C22008C55C6 /* ASReplacementStringForResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E77ECB14E03C21008C55C6 /* ASReplacementStringForResults.m */; };
 		78E77ECD14E03C22008C55C6 /* ASReplacementStringForResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E77ECB14E03C21008C55C6 /* ASReplacementStringForResults.m */; };
 		78ED15D814B2282E00149AEE /* ASRFC3339.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */ = {isa = PBXBuildFile; fileRef = 78ED15D714B2282E00149AEE /* ASRFC3339.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78ED15DC14B228B400149AEE /* ASRFC3339.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED15DB14B228B400149AEE /* ASRFC3339.m */; };
 		78ED15DD14B228B400149AEE /* ASRFC3339.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ED15DB14B228B400149AEE /* ASRFC3339.m */; };
 		78F3B50714175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B50514175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B50914175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
 		78F3B50A14175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B50614175E5C005D6F5D /* NSRegularExpression+ActiveSupport.m */; };
 		78F3B5571418CEB8005D6F5D /* ASJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B5551418CEB7005D6F5D /* ASJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F3B5551418CEB7005D6F5D /* ASJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78F3B5591418CEB8005D6F5D /* ASJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B5561418CEB7005D6F5D /* ASJSON.m */; };
 		78F3B55A1418CEB8005D6F5D /* ASJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F3B5561418CEB7005D6F5D /* ASJSON.m */; };
 /* End PBXBuildFile section */
@@ -102,6 +101,33 @@
 			remoteInfo = ActiveSupportKitLibrary;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		782AB967178B3283008574C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				782AB968178B32CF008574C5 /* ActiveSupportKit.h in CopyFiles */,
+				782AB969178B32CF008574C5 /* NSObject+ActiveSupport.h in CopyFiles */,
+				782AB96A178B32CF008574C5 /* NSArray+ActiveSupport.h in CopyFiles */,
+				782AB96B178B32CF008574C5 /* NSDictionary+ActiveSupport.h in CopyFiles */,
+				782AB96C178B32CF008574C5 /* NSRegularExpression+ActiveSupport.h in CopyFiles */,
+				782AB96D178B32CF008574C5 /* NSDateFormatter+ActiveSupport.h in CopyFiles */,
+				782AB96E178B32CF008574C5 /* ASReplacementStringForResults.h in CopyFiles */,
+				782AB96F178B32CF008574C5 /* ASJSON.h in CopyFiles */,
+				782AB970178B32CF008574C5 /* ASInflectorMethods.h in CopyFiles */,
+				782AB971178B32CF008574C5 /* ASInflector.h in CopyFiles */,
+				782AB972178B32CF008574C5 /* ASDateFormatter.h in CopyFiles */,
+				782AB973178B32CF008574C5 /* ASRFC3339.h in CopyFiles */,
+				782AB974178B32CF008574C5 /* ASRFC2822.h in CopyFiles */,
+				782AB975178B32CF008574C5 /* ASNull.h in CopyFiles */,
+				782AB976178B32CF008574C5 /* Versioning.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7832703614115C6F00ECCE7D /* NSObject+ActiveSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ActiveSupport.h"; sourceTree = "<group>"; };
@@ -326,29 +352,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78AFBD8D13EC587900BBFC62 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				78AFBDBA13EC5BCD00BBFC62 /* ActiveSupportKit.h in Headers */,
-				78AFBDBB13EC5BD500BBFC62 /* ASInflectorMethods.h in Headers */,
-				78E0B186140D3D68004E1041 /* ASInflector.h in Headers */,
-				7832703914115C6F00ECCE7D /* NSObject+ActiveSupport.h in Headers */,
-				7832704314115D3400ECCE7D /* NSArray+ActiveSupport.h in Headers */,
-				78B628FD141163A2007A8602 /* NSDictionary+ActiveSupport.h in Headers */,
-				7835BC761414B8E600CC4B56 /* Versioning.h in Headers */,
-				78F3B50814175E5C005D6F5D /* NSRegularExpression+ActiveSupport.h in Headers */,
-				78F3B5581418CEB8005D6F5D /* ASJSON.h in Headers */,
-				78ED15D914B2282E00149AEE /* ASRFC3339.h in Headers */,
-				788DB0F914D323CA00AF938D /* InflectorTests.h in Headers */,
-				788F9C1614D837F8000BA699 /* ASNull.h in Headers */,
-				78E77EC914E03C0D008C55C6 /* ASReplacementStringForResults.h in Headers */,
-				783BA26914E9D27300D6BDB1 /* ASRFC2822.h in Headers */,
-				783BA27014E9D84A00D6BDB1 /* ASDateFormatter.h in Headers */,
-				784891E714EA9E03009F2BE7 /* NSDateFormatter+ActiveSupport.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -395,7 +398,7 @@
 			buildPhases = (
 				78AFBD8B13EC587900BBFC62 /* Sources */,
 				78AFBD8C13EC587900BBFC62 /* Frameworks */,
-				78AFBD8D13EC587900BBFC62 /* Headers */,
+				782AB967178B3283008574C5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
